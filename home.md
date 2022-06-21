@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: 2022-06-21T01:09:00.804Z
 ---
 
-# Welcome to the andyg.io Wiki
+# Welcome to my personal Wiki
 
 This is a place for me to put my own technical documentation outlining processes/procedures pertaining to work, my homelab, and more. 
 
