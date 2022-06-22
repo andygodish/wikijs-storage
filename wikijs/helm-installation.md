@@ -2,7 +2,7 @@
 title: Helm Installation
 description: Install Wikijs on a Kubernetes cluster using Helm. 
 published: true
-date: 2022-06-22T00:14:41.865Z
+date: 2022-06-22T00:18:43.337Z
 tags: helm, kubernetes, wikijs
 editor: markdown
 dateCreated: 2022-06-21T23:07:31.951Z
@@ -16,7 +16,7 @@ Install wiki js on a Kubernetes cluster with Helm.
 - Existing Kubernetes cluster
 - Helm
 
-## Installation
+## Installation<br>
 
 ### Create a namespace for your wikijs instance
 
@@ -46,7 +46,7 @@ Simple **values.yaml** example:
 
 - I am bringing my own tls cert and private key and telling the ingress resource (created by a helm chart template) to use an existing secret containing that data, called tls-ingress-wiki
 
-- Persistence is disabled in this example. You'll need to have a storeage class available for the dynamic provisioning of a PV. You're wiki deployment pods will fail to deploy due to a missing volume if you try to install this chart without a valid storageclass. <br></br>
+- Persistence is disabled in this example. You'll need to have a storeage class available for the dynamic provisioning of a PV. You're wiki deployment pods will fail to deploy due to a missing volume if you try to install this chart without a valid storageclass.
 ```
 ingress:
   enabled: true
