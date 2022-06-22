@@ -2,7 +2,7 @@
 title: Helm Installation
 description: Install Wikijs on a Kubernetes cluster using Helm. 
 published: true
-date: 2022-06-22T00:18:43.337Z
+date: 2022-06-22T00:19:49.916Z
 tags: helm, kubernetes, wikijs
 editor: markdown
 dateCreated: 2022-06-21T23:07:31.951Z
@@ -16,13 +16,13 @@ Install wiki js on a Kubernetes cluster with Helm.
 - Existing Kubernetes cluster
 - Helm
 
-## Installation<br>
+# Installation
 
-### Create a namespace for your wikijs instance
+## Create a namespace for your wikijs instance
 
 `kubectl create namespace wiki`
 
-### Add the requarks wikijs helm repository to your local machine
+## Add the requarks wikijs helm repository to your local machine
 
 `helm repo add requarks https://charts.js.wiki`
 
@@ -34,7 +34,7 @@ See the values.yaml file in the repo listed above for more information on config
 I am also maintaining a github repo where I can make potential modifications to various versions of the helm chart and package them as my own releases: 
 https://github.com/andygodish/wikijs-chart
 
-### Install 
+## Install 
 
 I'm using a values.yaml file to inject my desired configuration settings into the helm release. This will eventually be stored in its own repo following best practices for k8s configuration. 
 
