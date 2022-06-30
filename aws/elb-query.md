@@ -1,8 +1,8 @@
 ---
 title: Querying Elastic Load Balancers
-description: Quick hitter on how to use the AWS CLI to query ELBs. 
+description: Quick hitter on how to use the AWS CLI to query ELBs.
 published: true
-date: 2022-06-29T15:38:55.241Z
+date: 2022-06-30T20:57:31.697Z
 tags: aws
 editor: markdown
 dateCreated: 2022-06-29T15:38:55.241Z
@@ -27,5 +27,5 @@ Example scenario:
 Using my RKE2 bootstrap script requires the DNS name of the control plane loadbalancer, typically created previously using Terraform. The following command will give me a list of the DNS names associated with the ELBs in the configured region. 
 
 ```
-aws elb describe-load-balancers --query 'LoadBalancerDescriptions[*].LoadBalancerName'
+aws elb describe-load-balancers --query 'LoadBalancerDescriptions[*].DNSName'
 ```
