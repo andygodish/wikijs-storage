@@ -2,7 +2,7 @@
 title: Backup Postgresql Database
 description: Quick how-to on using pg_dump to backup a wikijs database running inside a Kubernetes pod.
 published: true
-date: 2022-06-30T02:37:42.698Z
+date: 2022-06-30T02:40:49.069Z
 tags: kubernetes, wikijs, psql
 editor: markdown
 dateCreated: 2022-06-30T02:27:02.716Z
@@ -53,7 +53,7 @@ Exec into the postgresql pod and run the following commands (adjust according to
 ```
 dropdb -U postgres wiki
 createdb -U postgres wiki
-cat ~/wikibackup.dump | pg_restore -U postgres -d wiki
+cat tmp/wikibackup.dump | pg_restore -U postgres -d wiki
 ```
 
 - You'll get an error when you try to drop the empty database indicating that another service is using it. Scale down the wiki deployment to 0 replicas to resolve this. Scale it back up once complete. 
