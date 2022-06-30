@@ -1,11 +1,11 @@
 ---
 title: Helm Installation
-description: Install Wikijs on a Kubernetes cluster using Helm. 
+description: Install Wikijs on a Kubernetes cluster using Helm.
 published: true
-date: 2022-06-22T00:19:49.916Z
+date: 2022-06-30T05:26:57.905Z
 tags: helm, kubernetes, wikijs
 editor: markdown
-dateCreated: 2022-06-21T23:07:31.951Z
+dateCreated: 2022-06-29T15:02:56.155Z
 ---
 
 # Wikijs Installation
@@ -58,7 +58,7 @@ ingress:
       pathType: Prefix 
   tls:
   - hosts:
-    - wiki.andyg.io
+    - wiki.example.com
     secretName: tls-ingress-wiki
 postgresql:
   enabled: true
