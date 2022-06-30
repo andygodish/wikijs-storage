@@ -1,11 +1,11 @@
 ---
 title: Backup Postgresql Database
-description: Quick how-to on using pg_dump to backup a wikijs database running inside a Kubernetes pod. 
+description: Quick how-to on using pg_dump to backup a wikijs database running inside a Kubernetes pod.
 published: true
-date: 2022-06-30T02:12:34.361Z
+date: 2022-06-30T02:37:42.698Z
 tags: kubernetes, wikijs, psql
 editor: markdown
-dateCreated: 2022-06-30T02:12:34.361Z
+dateCreated: 2022-06-30T02:27:02.716Z
 ---
 
 # Backup Postgres Database Running in K8s Pod
@@ -40,3 +40,20 @@ pg_dump <database> -U <user> -F c > /tmp/wikibackup.dump
 kubectl cp namespace/pod:tmp/wikibackup.dump /local/path/wikibackup.dump
 ```
 - You must name the destination file
+- Store this file in an external location like s3, minio, etc
+
+## Restoring Backup on a New Instance
+
+Get the wikibackup.dump onto a local machine with kubectl access to your cluster running your new wikijs deployment.
+
+Use `kubectl cp` to copy the file on the postgresql pod. 
+
+Exec into the postgresql pod and run the following commands (adjust according to configuration values used during helm installation - defaults shown below): 
+
+```
+dropdb -U postgres wiki
+createdb -U postgres wiki
+cat ~/wikibackup.dump | pg_restore -U postgres -d wiki
+```
+
+- You'll get an error when you try to drop the empty database indicating that another service is using it. Scale down the wiki deployment to 0 replicas to resolve this. Scale it back up once complete. 
