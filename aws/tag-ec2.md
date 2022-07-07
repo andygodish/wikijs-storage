@@ -1,8 +1,8 @@
 ---
-title: AWS CLI - Tag an EC2 
-description: Filter and tag a set of existing EC2 instances 
+title: AWS CLI - Tag an EC2
+description: Filter and tag a set of existing EC2 instances
 published: true
-date: 2022-06-30T00:57:55.210Z
+date: 2022-07-07T23:16:54.252Z
 tags: aws, aws-cli, ec2
 editor: markdown
 dateCreated: 2022-06-30T00:57:55.210Z
@@ -27,6 +27,14 @@ aws ec2 describe-instances --filters "Name=tag:Owner,Values=andyg" --query 'Rese
 ```
 
 Returned results will be a list of instanceIds that can be modified.
+
+### Querying Multiple Fields
+
+[Reference](https://serverfault.com/questions/669350/aws-cli-command-line-how-to-use-query-to-output-multiple-source-lines)
+
+Note the brackets in the last declaration.
+
+--query 'Reservations[].Instances[]`.[InstanceId,ImageId]`'
 
 ## Add a Tag
 
