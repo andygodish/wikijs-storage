@@ -2,7 +2,7 @@
 title: AWS CLI - Tag an EC2
 description: Filter and tag a set of existing EC2 instances
 published: true
-date: 2022-07-07T23:16:54.252Z
+date: 2022-07-07T23:17:19.315Z
 tags: aws, aws-cli, ec2
 editor: markdown
 dateCreated: 2022-06-30T00:57:55.210Z
