@@ -2,7 +2,7 @@
 title: Longhorn Installation Requirements
 description: How to guide on installing the prerequisites required for Longhorn. 
 published: true
-date: 2022-07-08T15:20:50.510Z
+date: 2022-07-08T16:47:03.753Z
 tags: kubernetes, longhorn
 editor: markdown
 dateCreated: 2022-07-08T15:10:59.891Z
