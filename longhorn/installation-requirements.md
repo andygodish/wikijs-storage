@@ -2,7 +2,7 @@
 title: Longhorn Installation Requirements
 description: How to guide on installing the prerequisites required for Longhorn. 
 published: true
-date: 2022-07-08T15:10:59.891Z
+date: 2022-07-08T15:20:50.510Z
 tags: kubernetes, longhorn
 editor: markdown
 dateCreated: 2022-07-08T15:10:59.891Z
@@ -40,6 +40,7 @@ curl -sSfL https://raw.githubusercontent.com/longhorn/longhorn/v1.3.0/scripts/en
 - Unable to use a TTY - input is not a terminal or the right kind of file
 	- outputted when running the verification script
   - [Stackoverflow Reference](https://stackoverflow.com/questions/60826194/kubectl-exec-fails-with-the-error-unable-to-use-a-tty-input-is-not-a-terminal)
+  	- When the flags -it are used with kubectl exec, it enables the TTY interactive mode. Given the error that you mentioned, it seems that some services dont allocate a TTY.
 
 ## Installing open-iscsi
 
