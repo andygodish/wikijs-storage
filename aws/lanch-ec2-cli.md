@@ -2,7 +2,7 @@
 title: Launch EC2 using AWS CLI
 description: Guide to launching EC2s using the AWS CLI with the intent of adding additional nodes existing K8s clusters.
 published: true
-date: 2022-07-08T01:48:28.722Z
+date: 2022-07-08T03:05:41.170Z
 tags: kubernetes, aws, aws-cli
 editor: markdown
 dateCreated: 2022-07-08T01:48:28.722Z
@@ -22,6 +22,7 @@ export AWS_DEFAULT_REGION=us-east-1
 ```
 
 [AWS Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-instances.html)
+[ec2 run-instances --options](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html)
 
 The following will disect this command given in the AWS documentation: 
 
@@ -46,6 +47,12 @@ Use the `--filters` option to search for instances with this tag:
 --filters "Name=tag:Owner,Values=andyg"
 ```
 
+If needed, you can filter by running instances: 
+
+```
+--filters "Name=instance-state-name,Values=running"
+```
+
 Query for these results with the following `--query` options:
 
 ```
@@ -67,12 +74,13 @@ With that info the `ec2 run-instances` command can be run to quickly stand up in
 
 ```
 aws ec2 run-instances \
---image-id ami-bbba86da \
+--associate-public-ip-address \
+--image-id ami-xxxxxxxx \
 --count 3 \
 --instance-type t2.xlarge \
---key-name andyg-keypair-goV9V8 \
---security-group-ids sg-0c5dfed0214263487 \
---subnet-id subnet-093d1fa49a2b408b2 \
+--key-name andyg-keypair-xxxxxx \
+--security-group-ids sg-xxxxxxxxxxxxxx \
+--subnet-id subnet-xxxxxxxxxxxxxx \
 --tag-specifications 'ResourceType=instance,Tags=[{Key=Owner,Value=andyg}]'
 ```
 
@@ -82,8 +90,56 @@ aws ec2 run-instances \
 
 ### RKE
 
-RKE is probably the simplest K8s distribution to join nodes. In the case of a typical lab environment that I run, my nodes are generally public facing. In this case, just grab the `PublicIpAddress` of each new instance and add them to your cluster.yml file. 
+RKE is probably the simplest K8s distribution to join these new nodes. In the case of a typical lab environment that I run, my nodes are generally public facing. Just grab the `PublicIpAddress` of each new instance and add them to your cluster.yml file. 
+
+```
+aws ec2 describe-instances --filters "Name=tag:Owner,Values=andyg" "Name=instance-state-name,Values=running" --query 'Reservations[].Instances[].[LaunchTime,PublicIpAddress]'
+```
+
+
+```
+# cluster.yml
+
+nodes:
+    - address: 192.168.0.101
+      user: centos
+      role:
+        - controlplane
+        - etcd
+        - worker
+      ssh_key_path: /path/to/key
+    - address: 192.168.0.116
+      user: centos
+      role:
+        - worker
+      ssh_key_path: /path/to/key
+    - address: 192.168.0.118          ##### Start New Nodes
+      user: centos
+      role:
+        - worker
+      ssh_key_path: /path/to/key
+    - address: 192.168.0.113
+      user: centos
+      role:
+        - worker
+      ssh_key_path: /path/to/key
+    - address: 192.168.0.186
+      user: centos
+      role:
+        - worker
+      ssh_key_path: /path/to/key
+```
+
+#### Install Docker on New Nodes
+
+- **TODO: Create a reference to your ansible playbook**
 
 ## Delete Instances
 
-Since these are not controlled by Terraform, you
+Since these are not controlled by Terraform, make sure these are deleted after use. 
+
+[AWS Documentataion](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/terminate-instances.html).
+
+```
+aws ec2 terminate-instances --instance-ids <i-instanceId1> <i-instanceId2> 
+```
