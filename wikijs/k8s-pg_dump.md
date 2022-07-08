@@ -2,10 +2,10 @@
 title: Backup Postgresql Database
 description: Quick how-to on using pg_dump to backup a wikijs database running inside a Kubernetes pod.
 published: true
-date: 2022-06-30T02:40:49.069Z
+date: 2022-07-08T03:06:59.012Z
 tags: kubernetes, wikijs, psql
 editor: markdown
-dateCreated: 2022-06-30T02:27:02.716Z
+dateCreated: 2022-07-07T23:08:33.138Z
 ---
 
 # Backup Postgres Database Running in K8s Pod
@@ -18,7 +18,7 @@ Following [these wikijs docs](https://docs.requarks.io/install/transfer), slight
 
 ## Prerequisites
 
-A working kubernetes cluster with kubectl access. 
+A working kubernetes cluster with kubectl access and a configured wikijs instance. 
 
 ## Exec into Pod, Run pg_dump
 
