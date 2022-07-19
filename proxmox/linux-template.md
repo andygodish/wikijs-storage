@@ -2,7 +2,7 @@
 title: Linux Template
 description: How-to guide showing the basics of creating a template out of your a linux box.
 published: true
-date: 2022-07-19T21:54:15.978Z
+date: 2022-07-19T22:54:11.514Z
 tags: linux, proxmox, template
 editor: markdown
 dateCreated: 2022-07-19T21:54:15.978Z
@@ -46,6 +46,39 @@ sudo ln -s /etc/machine-d /var/lib/dbux/machine-id
 
 TODO - add best practices to this section.
 
+## Creating Template in Proxmox
+
+- Shutdown machine
+- Right click machine --> convert to template
+
+### Remove Attachment to .iso for the Virtual Disk
+
+This was presented as a best practice, and not a requirement. 
+
+- Click Template --> Hardware --> CD/DVD Drive --> Edit --> Do not use any media
+	- Hardware --> Add --> CloudInit Drive --> Storage selection --> Create
+    	- Cloud Init --> make updates as needed (user+password, ssh pubkey, etc)
+     
+### Creating VMs 
+
+To create a new VM based on this template, just right click the template and click clone. 
+
+#### Update Hostname
+
+```
+sudo vi /etc/hostname
+---
+name-n
+```
+
+```
+sudo vi /etc/hosts
+---
+127.0.1.1 name-n
+```
+
+Reboot your nodes following these updates. 
+
 ## Centos
 
 I have a centos stream 8 box that I want to replicate so I can create an HA Kubernetes cluster on a small intel NUC. 
@@ -54,6 +87,24 @@ I have a centos stream 8 box that I want to replicate so I can create an HA Kube
 
 ```
 dnf search cloud-init
+```
+
+#### Clean Chache
+
+[Reference Guide](https://www.techrepublic.com/article/linux-101-how-to-clean-the-dnf-and-apt-caches/)
+
+Deletes cached information pertaining to updating and upgrading software packages, the data in these cahces can become corrupted.
+
+Cache files generated from the repository metadata.
+
+```
+sudo dnf clean dbcache
+```
+
+
+
+```
+sudo dnf clean all
 ```
 
 ## Ubuntu
