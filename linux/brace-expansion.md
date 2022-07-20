@@ -2,7 +2,7 @@
 title: Brace Expansion
 description: Quick how-to on brace expansion. 
 published: true
-date: 2022-07-20T19:59:08.318Z
+date: 2022-07-20T20:41:17.381Z
 tags: bash, brace-expansion
 editor: markdown
 dateCreated: 2022-07-20T19:54:42.554Z
