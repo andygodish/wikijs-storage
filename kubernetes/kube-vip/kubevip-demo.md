@@ -2,13 +2,13 @@
 title: Kube-VIP Demo
 description: Spinning up an RKE2 cluster to demonstrate basic usage of kube-vip.
 published: true
-date: 2022-07-20T21:54:16.072Z
+date: 2022-07-20T22:20:07.832Z
 tags: kubernetes, rke2, kubevip
 editor: markdown
 dateCreated: 2022-07-20T21:48:14.208Z
 ---
 
-# Kube-vip
+# Kube-vip (CP Loadbalancer)
 
 [Useful Information](https://gitlab.com/monachus/channel/-/tree/master/resources/2021-09-07-ha-rke2-kube-vip-rancher)
 
