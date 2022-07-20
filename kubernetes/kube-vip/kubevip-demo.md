@@ -2,7 +2,7 @@
 title: Kube-VIP Demo
 description: Spinning up an RKE2 cluster to demonstrate basic usage of kube-vip.
 published: true
-date: 2022-07-20T21:48:14.208Z
+date: 2022-07-20T21:54:16.072Z
 tags: kubernetes, rke2, kubevip
 editor: markdown
 dateCreated: 2022-07-20T21:48:14.208Z
@@ -100,7 +100,8 @@ token: <your-token>
 server: https://10.0.0.64:9345
 ```
 
-Once joined and presented in a ready status, you now have a working RKE2 cluster using kube-vip for 6443 traffic to the kube-apiserver. 
+Once joined and presented in a ready status, you now have a working RKE2 cluster using kube-vip for 6443 traffic to the kube-apiserver. Pretty cool. 
+
 
 
 
