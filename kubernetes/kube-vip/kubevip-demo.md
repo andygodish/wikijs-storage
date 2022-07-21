@@ -2,7 +2,7 @@
 title: Kube-VIP Demo
 description: Spinning up an RKE2 cluster to demonstrate basic usage of kube-vip.
 published: true
-date: 2022-07-20T23:38:15.408Z
+date: 2022-07-21T00:17:27.091Z
 tags: kubernetes, rke2, kubevip
 editor: markdown
 dateCreated: 2022-07-20T21:48:14.208Z
