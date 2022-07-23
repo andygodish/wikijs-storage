@@ -2,7 +2,7 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2022-07-23T18:56:21.307Z
+date: 2022-07-23T19:00:08.455Z
 tags: ansible, docker
 editor: markdown
 dateCreated: 2022-07-23T18:49:14.761Z
@@ -42,5 +42,10 @@ A bit on the `DEVIAN_FRONTNED` variable set in the subsequent commands:
 Simply prepending an apt command with `DEBIAN_FRONTEND=something` does not persist after the single command to which it is applied.
 
 `noninteractive` - This is the anti-frontend. It never interacts with you  at  all, and  makes  the  default  answers  be used for all questions. It might mail error messages to root, but that's it;  otherwise  it is  completely  silent  and  unobtrusive, a perfect frontend for automatic installs. If you are using this front-end, and require non-default  answers  to questions, you will need to preseed the debconf database; see the section below  on  Unattended  Package Installation for more details.
+
+### sshpass
+
+[Article explaining this tool](https://www.redhat.com/sysadmin/ssh-automation-sshpass)
+
 
 
