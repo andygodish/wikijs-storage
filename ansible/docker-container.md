@@ -2,7 +2,7 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2022-07-23T18:49:14.761Z
+date: 2022-07-23T18:56:21.307Z
 tags: ansible, docker
 editor: markdown
 dateCreated: 2022-07-23T18:49:14.761Z
@@ -33,10 +33,14 @@ WORKDIR /work
 
 Pretty straight forward. Using pip to install ansible.
 
-A bit on the DEVIAN_FRONTNED variable set in the subsequent commands: 
+### Noninteractive Frontend
 
+A bit on the `DEVIAN_FRONTNED` variable set in the subsequent commands: 
 
+[Referece](https://askubuntu.com/questions/972516/debian-frontend-environment-variable)
 
+Simply prepending an apt command with `DEBIAN_FRONTEND=something` does not persist after the single command to which it is applied.
 
+`noninteractive` - This is the anti-frontend. It never interacts with you  at  all, and  makes  the  default  answers  be used for all questions. It might mail error messages to root, but that's it;  otherwise  it is  completely  silent  and  unobtrusive, a perfect frontend for automatic installs. If you are using this front-end, and require non-default  answers  to questions, you will need to preseed the debconf database; see the section below  on  Unattended  Package Installation for more details.
 
 
