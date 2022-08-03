@@ -36,8 +36,8 @@ With this in its proper place on your first server node, use the install script 
 ### Convenient Node Variables
 
 ```
-export VIP=10.0.0.64
-export TAG=v0.4.4
+export VIP=192.168.1.64
+export TAG=v0.5.0
 export INTERFACE=ens18
 export CONTAINER_RUNTIME_ENDPOINT=unix:///run/k3s/containerd/containerd.sock
 export CONTAINERD_ADDRESS=/run/k3s/containerd/containerd.sock
