@@ -2,7 +2,7 @@
 title: Application Troubleshooting
 description: Notes on troubleshooting K8s applications.
 published: true
-date: 2022-08-09T15:02:15.100Z
+date: 2022-08-09T15:32:10.810Z
 tags: kubernetes
 editor: markdown
 dateCreated: 2022-08-09T15:02:15.100Z
@@ -37,3 +37,5 @@ Endpoints:                10.42.0.7:444,10.42.2.9:444 ##########
 Session Affinity:         None
 ...
 ```
+
+There is an endpoint controller that is responsible for detecting these endpoints. [See the K8s documentation.](https://kubernetes.io/docs/tasks/debug/debug-application/debug-service/#does-the-service-have-any-endpoints)
