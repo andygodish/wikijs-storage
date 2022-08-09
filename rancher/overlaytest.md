@@ -2,7 +2,7 @@
 title: Overlay Network Test
 description: Rancher provided script for troubleshooting the overlaynetwork of a k8s cluster.
 published: true
-date: 2022-08-09T15:27:44.952Z
+date: 2022-08-09T15:28:04.353Z
 tags: kubernetes, rancher, networking
 editor: markdown
 dateCreated: 2022-08-09T01:11:47.749Z
@@ -39,7 +39,5 @@ There may be output that indicates a node cannot communicate via a route on the 
 ## Cleanup
 
 ```
-```
 kubectl delete -f https://raw.githubusercontent.com/andygodish/rancher-overlaytest/main/overlaytest.yaml
-```
 ```
