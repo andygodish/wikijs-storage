@@ -2,7 +2,7 @@
 title: Overlay Network Test
 description: Rancher provided script for troubleshooting the overlaynetwork of a k8s cluster.
 published: true
-date: 2022-08-09T15:22:19.134Z
+date: 2022-08-09T15:27:44.952Z
 tags: kubernetes, rancher, networking
 editor: markdown
 dateCreated: 2022-08-09T01:11:47.749Z
@@ -35,3 +35,11 @@ curl -sfL https://raw.githubusercontent.com/andygodish/rancher-overlaytest/main/
 There may be output that indicates a node cannot communicate via a route on the overlaynetwork to another node. 
 
 - Check to make sure all required ports are open on the affected nodes. 
+
+## Cleanup
+
+```
+```
+kubectl delete -f https://raw.githubusercontent.com/andygodish/rancher-overlaytest/main/overlaytest.yaml
+```
+```
