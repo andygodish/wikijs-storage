@@ -2,7 +2,7 @@
 title: Application Troubleshooting
 description: Notes on troubleshooting K8s applications.
 published: true
-date: 2022-08-09T15:32:10.810Z
+date: 2022-08-09T15:35:46.987Z
 tags: kubernetes
 editor: markdown
 dateCreated: 2022-08-09T15:02:15.100Z
@@ -39,3 +39,5 @@ Session Affinity:         None
 ```
 
 There is an endpoint controller that is responsible for detecting these endpoints. [See the K8s documentation.](https://kubernetes.io/docs/tasks/debug/debug-application/debug-service/#does-the-service-have-any-endpoints)
+
+Understand that k8s runs a control loop that checks against each service's slector field. If there is a typo in that field (for example), the endpoint controller will not be able to find a valid endpoint.
