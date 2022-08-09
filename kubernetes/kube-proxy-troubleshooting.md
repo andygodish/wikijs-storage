@@ -2,7 +2,7 @@
 title: Kube-proxy Troubleshooting
 description: Notes on troubleshooting the kube-proxy.
 published: true
-date: 2022-08-09T15:57:19.451Z
+date: 2022-08-09T16:07:28.978Z
 tags: kubernetes, kube-proxy
 editor: markdown
 dateCreated: 2022-08-09T15:57:19.451Z
@@ -30,6 +30,9 @@ I1027 22:14:54.038238    5063 proxier.go:429] Not syncing iptables until Service
 
 > One of the possible reasons that kube-proxy cannot run correctly is that the required conntrack binary cannot be found. This may happen on some Linux systems, depending on how you are installing the cluster, for example, you are installing Kubernetes from scratch. If this is the case, you need to manually install the conntrack package (e.g. sudo apt install conntrack on Ubuntu) and then retry.
 
+## Curl your Service IP
+
+Get your service resource and note the cluster ip assigned. Using something like the swiss-army knife pod, curl against that IP and determine if you get the correct result. 
 
 ## RKE2 
 
