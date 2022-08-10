@@ -2,7 +2,7 @@
 title: Iptables Basics
 description: Just like the title says. 
 published: true
-date: 2022-08-10T21:28:24.025Z
+date: 2022-08-10T21:29:37.867Z
 tags: linux, iptables
 editor: markdown
 dateCreated: 2022-08-10T21:28:24.025Z
@@ -34,7 +34,7 @@ iptables -L
 - Forward 
 - Output 
 
-Kubernetes (the CNI specifically) adds several additional chaines. By default, RHEL systems supposedly come with preconfigured rules, this does not appear to be the case in my preconfigured centos-stream iso. 
+Kubernetes (the CNI specifically) adds several additional chaines. By default, RHEL systems supposedly come with preconfigured rules, this does not appear to be the case in my preconfigured centos-stream proxmox clone. 
 
 By default, you should see a policy ACCEPT for each Chain. This indicates the default action that should take place if there is not a matching rule in the chain.
 
