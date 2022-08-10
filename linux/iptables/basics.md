@@ -1,8 +1,8 @@
 ---
 title: Iptables Basics
-description: Just like the title says. 
+description: Just like the title says.
 published: true
-date: 2022-08-10T21:34:15.384Z
+date: 2022-08-10T21:35:04.927Z
 tags: linux, iptables
 editor: markdown
 dateCreated: 2022-08-10T21:28:24.025Z
@@ -55,7 +55,7 @@ Chain INPUT (policy ACCEPT)
 *Add a rule to allow all incoming and outgoing traffic, and change the default policy to drop.*
 
 sudo iptables -A CHAIN -j POLICY
-sudo iptables -P CHAIN -j POLICY
+sudo iptables -P CHAIN POLICY
 
 ```
 # All trafic 
