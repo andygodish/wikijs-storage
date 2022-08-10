@@ -1,8 +1,8 @@
 ---
 title: Iptables Basics
-description: Just like the title says.
+description: Just like the title says. 
 published: true
-date: 2022-08-10T21:35:04.927Z
+date: 2022-08-10T21:58:19.017Z
 tags: linux, iptables
 editor: markdown
 dateCreated: 2022-08-10T21:28:24.025Z
@@ -71,3 +71,14 @@ where,
 - `-j` target (or jump chain) 
 - `-P` policy
 
+*Allow all loopback traffic*
+
+sudo iptables -A CHAIN -j POLICY -TRAFFIC-DIRECTION INTERFACE
+
+```
+sudo iptables -A INPUT -j ACCEPT -i lo 
+sudo iptables -A OUTPUT -j ACCEPT -o lo 
+```
+where,
+- `-i lo` incoming traffic on the loopback interface
+- `-o lo` outgoing traffic
