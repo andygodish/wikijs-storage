@@ -2,7 +2,7 @@
 title: Iptables Basics
 description: Just like the title says. 
 published: true
-date: 2022-08-10T22:06:17.945Z
+date: 2022-08-10T22:16:16.431Z
 tags: linux, iptables
 editor: markdown
 dateCreated: 2022-08-10T21:28:24.025Z
@@ -34,7 +34,7 @@ iptables -L
 iptables -L -n -v --line-numbers
 ```
 where,
-- `-n` numbers instead of names
+- `-n` numbers instead of names (0.0.0.0/0 vs anywhere)
 - `-v` verbose output
 - `--line-numbers` shows the number in the chain
 
