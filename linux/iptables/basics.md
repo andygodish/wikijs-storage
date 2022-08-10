@@ -2,7 +2,7 @@
 title: Iptables Basics
 description: Just like the title says. 
 published: true
-date: 2022-08-10T21:58:19.017Z
+date: 2022-08-10T21:58:31.535Z
 tags: linux, iptables
 editor: markdown
 dateCreated: 2022-08-10T21:28:24.025Z
@@ -70,6 +70,8 @@ where,
 - `-A` append a rule to a chain
 - `-j` target (or jump chain) 
 - `-P` policy
+
+---
 
 *Allow all loopback traffic*
 
