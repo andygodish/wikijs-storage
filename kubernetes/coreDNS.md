@@ -2,7 +2,7 @@
 title: CoreDNS
 description: CoreDNS basics.
 published: true
-date: 2022-08-10T15:10:17.794Z
+date: 2022-08-10T15:13:55.339Z
 tags: kubernetes, coredns
 editor: markdown
 dateCreated: 2022-08-10T15:10:17.794Z
@@ -41,6 +41,12 @@ In testing a ping to simply `10-244-2-5.default.pod` resolved successfully. Does
 `/etc/coredns/Corefile`
 
 This is injected as a configmap for decoupling purposes. 
+
+Each line item in the Corefile represents a configured plugin. Custom plugins can also be written. 
+
+> Let’s talk about kubernetes plugin, Using the kubernetes plugin, CoreDNS will read zone data from a Kubernetes cluster. It implements the spec defined for Kubernetes DNS-Based service discovery
+
+Take a look at the various options found in the reference article linked above. 
 
 #### Kubelet Involvement
 
