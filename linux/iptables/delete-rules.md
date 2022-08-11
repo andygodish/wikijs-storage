@@ -2,7 +2,7 @@
 title: Delete Rules
 description: Deleting rules.
 published: true
-date: 2022-08-10T22:36:51.430Z
+date: 2022-08-11T14:58:04.830Z
 tags: linux, iptables, delete
 editor: markdown
 dateCreated: 2022-08-10T22:19:47.536Z
