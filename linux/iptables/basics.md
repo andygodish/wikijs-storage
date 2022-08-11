@@ -2,7 +2,7 @@
 title: Iptables Basics
 description: Just like the title says. 
 published: true
-date: 2022-08-10T22:16:16.431Z
+date: 2022-08-11T15:08:06.372Z
 tags: linux, iptables
 editor: markdown
 dateCreated: 2022-08-10T21:28:24.025Z
@@ -94,3 +94,12 @@ sudo iptables -A OUTPUT -j ACCEPT -o lo
 where,
 - `-i lo` incoming traffic on the loopback interface
 - `-o lo` outgoing traffic
+
+
+## Comments
+
+Add a comment to a rule with the `comment` module using the `--comment` parameter followed immediately by your comment in single quotes. 
+
+```
+sudo iptables -A INPUT -j ACCEPT -p tcp --dport 22 -m comment --comment 'allow ssh from all'
+```
