@@ -2,13 +2,23 @@
 title: Clustering
 description: How-to cluster Proxmox Nodes
 published: true
-date: 2022-08-12T04:34:52.945Z
+date: 2022-08-12T04:37:56.640Z
 tags: proxmox
 editor: markdown
 dateCreated: 2022-08-12T04:18:10.248Z
 ---
 
 # Clustering
+
+## Create Cluster 
+
+Pick a node, navigate to datacenter --> cluster. Click create cluster and verify the correct information. Pretty painless process.
+
+## Join Cluster
+
+On your OG node, click datacenter --> cluster --> join information. Copy it.
+
+On the node you wish to join to the cluster, paste this info in and verify the information is correct. 
 
 ## Removing Existing Cluster Configuration
 
