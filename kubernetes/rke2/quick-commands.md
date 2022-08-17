@@ -1,11 +1,11 @@
 ---
 title: RKE2 Quick Commands
-description: Quick snippets for copying and pasting commands for RKE2 clusters. 
+description: Quick snippets for copying and pasting commands for RKE2 clusters.
 published: true
-date: 2022-07-21T16:11:08.367Z
+date: 2022-08-17T13:01:37.079Z
 tags: kubernetes, rke2
 editor: markdown
-dateCreated: 2022-07-21T16:11:08.367Z
+dateCreated: 2022-08-17T03:18:29.409Z
 ---
 
 # RKE2 Quick Commands
@@ -33,14 +33,13 @@ while [[ ! -f /etc/rancher/rke2/rke2.yaml ]]; do
 done
 ```
 
-### Make a copy for modification:
+### Make a copy for modification & Modify:
+
+- RKE2 configuration should be set to include `write-kubeconfig-mode: "0644"`
+- Make sure your `cp_lb_host` variable is set
 
 ```
 cp /etc/rancher/rke2/rke2.yaml /tmp/rke2.yaml
-```
-
-### Modify the copy:
-
-```
 sed -i -e "s/127.0.0.1/${cp_lb_host}/g" /tmp/rke2.yaml
 ```
+
