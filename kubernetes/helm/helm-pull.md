@@ -2,7 +2,7 @@
 title: Helm Pull
 description: Commands used to download helm charts from a repository. 
 published: true
-date: 2022-08-19T01:26:32.679Z
+date: 2022-08-19T01:43:02.448Z
 tags: kubernetes, helm
 editor: markdown
 dateCreated: 2022-08-19T01:26:32.679Z
@@ -25,7 +25,8 @@ helm search repo rancher-stable -v
 Example: 
 
 ```
-helm pull rancher-stable --version v2.6.6
+helm pull rancher-stable/rancher --version v2.6.6
 ```
 
 You'll need to unpack the tgz file (`tar zxvf`) or use the `--untar` flag. 
+
