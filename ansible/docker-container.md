@@ -2,10 +2,10 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2022-07-23T19:00:08.455Z
+date: 2022-08-18T04:09:29.960Z
 tags: ansible, docker
 editor: markdown
-dateCreated: 2022-07-23T18:49:14.761Z
+dateCreated: 2022-08-17T03:12:17.961Z
 ---
 
 # Ansible in Docker

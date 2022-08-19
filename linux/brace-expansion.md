@@ -1,11 +1,11 @@
 ---
 title: Brace Expansion
-description: Quick how-to on brace expansion. 
+description: Quick how-to on brace expansion.
 published: true
-date: 2022-07-20T20:41:17.381Z
+date: 2022-08-18T04:10:39.236Z
 tags: bash, brace-expansion
 editor: markdown
-dateCreated: 2022-07-20T19:54:42.554Z
+dateCreated: 2022-08-17T03:13:55.703Z
 ---
 
 # Brace Expansion	

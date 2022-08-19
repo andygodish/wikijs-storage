@@ -1,11 +1,11 @@
 ---
 title: Helm Upgrade
-description: Upgrading a Rancher helm installation. 
+description: Upgrading a Rancher helm installation.
 published: true
-date: 2022-07-04T05:18:54.613Z
+date: 2022-08-18T04:12:30.666Z
 tags: rancher, upgrade
 editor: markdown
-dateCreated: 2022-07-04T05:18:54.613Z
+dateCreated: 2022-08-17T03:16:46.180Z
 ---
 
 # Rancher Upgrade 2.6.x --> 2.6.y

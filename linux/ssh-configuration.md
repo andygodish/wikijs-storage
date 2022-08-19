@@ -1,11 +1,11 @@
 ---
-title: SSH Configuration 
-description: How-to guid on configuring ssh access using a key for authentication. 
+title: SSH Configuration
+description: How-to guid on configuring ssh access using a key for authentication.
 published: true
-date: 2022-07-19T05:54:24.403Z
+date: 2022-08-18T04:11:30.319Z
 tags: linux, ssh
 editor: markdown
-dateCreated: 2022-07-19T05:54:24.403Z
+dateCreated: 2022-08-17T03:15:08.905Z
 ---
 
 # SSH Configuration

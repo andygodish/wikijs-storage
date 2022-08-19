@@ -2,10 +2,10 @@
 title: Unzip
 description: Command for unzipping a compressed file.
 published: true
-date: 2022-08-18T04:14:34.329Z
+date: 2022-08-17T13:18:06.201Z
 tags: powershell
 editor: markdown
-dateCreated: 2022-08-18T04:14:26.102Z
+dateCreated: 2022-08-17T13:08:26.817Z
 ---
 
 # Unzip

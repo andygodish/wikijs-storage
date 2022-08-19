@@ -2,10 +2,10 @@
 title: Sudoers
 description: How-to guide for configuring users as sudoers.
 published: true
-date: 2022-07-19T05:16:21.754Z
+date: 2022-08-18T04:11:38.758Z
 tags: linux, sudo, usermod
 editor: markdown
-dateCreated: 2022-07-19T05:16:21.754Z
+dateCreated: 2022-08-17T03:15:21.021Z
 ---
 
 # Sudo User Configuration

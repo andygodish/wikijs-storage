@@ -2,10 +2,10 @@
 title: Initial Configuration
 description: Initial setup steps for configuration a new proxmox server.
 published: true
-date: 2022-08-12T03:20:41.883Z
+date: 2022-08-18T04:12:13.021Z
 tags: proxmox
 editor: markdown
-dateCreated: 2022-08-12T03:20:41.883Z
+dateCreated: 2022-08-17T03:16:15.810Z
 ---
 
 # Initial Configuration

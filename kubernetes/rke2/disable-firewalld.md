@@ -2,10 +2,10 @@
 title: Disable Firewalld
 description: Firewalld should be disabled for RKE2 clusters.
 published: true
-date: 2022-07-19T23:35:03.830Z
+date: 2022-08-18T04:13:22.695Z
 tags: kubernetes, rke2, firewalld
 editor: markdown
-dateCreated: 2022-07-19T23:35:03.830Z
+dateCreated: 2022-08-17T03:18:14.648Z
 ---
 
 # Firewalld & RKE2

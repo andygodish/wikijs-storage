@@ -2,10 +2,10 @@
 title: Linux Template
 description: How-to guide showing the basics of creating a template out of your a linux box.
 published: true
-date: 2022-07-19T22:54:11.514Z
+date: 2022-08-18T04:12:21.975Z
 tags: linux, proxmox, template
 editor: markdown
-dateCreated: 2022-07-19T21:54:15.978Z
+dateCreated: 2022-08-17T03:16:30.980Z
 ---
 
 # Proxmox Linux Template

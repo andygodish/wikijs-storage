@@ -2,10 +2,10 @@
 title: Redirecting Output
 description: Quick how-tos on redirecting output in various scenarios.
 published: true
-date: 2022-07-21T19:32:43.738Z
-tags: linux, bash, command line
+date: 2022-08-18T04:11:21.847Z
+tags: bash, linux, command line
 editor: markdown
-dateCreated: 2022-07-21T19:32:43.738Z
+dateCreated: 2022-08-17T03:14:56.730Z
 ---
 
 # Redirecting Output	

@@ -2,10 +2,10 @@
 title: About This Wiki
 description: Homepage for wiki.andyg.io.
 published: true
-date: 2022-06-21T14:53:05.905Z
+date: 2022-08-18T04:09:21.410Z
 tags: home, about, wiki
 editor: markdown
-dateCreated: 2022-06-21T01:40:14.998Z
+dateCreated: 2022-08-17T03:12:05.674Z
 ---
 
 # Welcome to my Personal Wiki

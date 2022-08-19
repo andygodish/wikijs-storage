@@ -2,10 +2,10 @@
 title: Kubectl Patch Bindings - CIS Benchmark 5.1.5
 description: Kubectl one-liner used to removed the default service account from all clusterrole and role bindings.
 published: true
-date: 2022-07-15T14:52:41.062Z
+date: 2022-08-18T04:10:13.080Z
 tags: kubernetes, cis, kubectl
 editor: markdown
-dateCreated: 2022-07-15T14:52:41.062Z
+dateCreated: 2022-08-17T03:13:18.918Z
 ---
 
 # CIS Benchmark 5.1.5

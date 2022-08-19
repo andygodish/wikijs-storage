@@ -1,11 +1,11 @@
 ---
 title: Extending Linux File System
-description: How-to guide for extending linux file systems following the resizing of a volume. 
+description: How-to guide for extending linux file systems following the resizing of a volume.
 published: true
-date: 2022-07-08T17:16:56.094Z
+date: 2022-08-18T04:10:56.133Z
 tags: aws, ebs, fs, filesystem
 editor: markdown
-dateCreated: 2022-07-08T17:16:56.094Z
+dateCreated: 2022-08-17T03:14:20.024Z
 ---
 
 # Extending File Systems 

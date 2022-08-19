@@ -1,11 +1,11 @@
 ---
 title: Iptables Basics
-description: Just like the title says. 
+description: Just like the title says.
 published: true
-date: 2022-08-11T15:08:06.372Z
+date: 2022-08-18T04:13:39.940Z
 tags: linux, iptables
 editor: markdown
-dateCreated: 2022-08-10T21:28:24.025Z
+dateCreated: 2022-08-17T03:18:43.635Z
 ---
 
 # Iptables Basics	

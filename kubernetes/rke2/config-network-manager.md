@@ -1,11 +1,11 @@
 ---
 title: Network Manager Configuration
-description: Recommended configuration settings for Network Manager per the rke2 documentation. 
+description: Recommended configuration settings for Network Manager per the rke2 documentation.
 published: true
-date: 2022-07-20T15:24:56.468Z
+date: 2022-08-18T04:13:14.279Z
 tags: linux, redhat, networkmanager
 editor: markdown
-dateCreated: 2022-07-20T15:24:56.468Z
+dateCreated: 2022-08-17T03:18:00.088Z
 ---
 
 # RKE2 NetworkManager Configuration

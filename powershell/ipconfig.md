@@ -2,10 +2,10 @@
 title: ipconfig
 description: Info on ipconfig
 published: true
-date: 2022-08-18T04:14:22.382Z
+date: 2022-08-17T14:39:54.044Z
 tags: powershell
 editor: markdown
-dateCreated: 2022-08-18T04:14:14.148Z
+dateCreated: 2022-08-17T14:39:45.638Z
 ---
 
 # ipconfig

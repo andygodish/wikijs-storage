@@ -2,10 +2,10 @@
 title: Kube-proxy Troubleshooting
 description: Notes on troubleshooting the kube-proxy.
 published: true
-date: 2022-08-09T16:07:28.978Z
+date: 2022-08-18T04:10:30.654Z
 tags: kubernetes, kube-proxy
 editor: markdown
-dateCreated: 2022-08-09T15:57:19.451Z
+dateCreated: 2022-08-17T03:13:43.567Z
 ---
 
 # Kube-Proxy Troubleshooting

@@ -2,7 +2,7 @@
 title: WSL Quick Commands
 description: A list of quick commands for wsl.
 published: true
-date: 2022-08-18T03:29:11.418Z
+date: 2022-08-18T04:14:46.477Z
 tags: windows, wsl
 editor: markdown
 dateCreated: 2022-08-18T03:29:11.418Z

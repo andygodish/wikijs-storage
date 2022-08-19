@@ -2,10 +2,10 @@
 title: Helm Installation
 description: Install Wikijs on a Kubernetes cluster using Helm.
 published: true
-date: 2022-06-30T05:26:57.905Z
-tags: helm, kubernetes, wikijs
+date: 2022-08-18T04:12:48.064Z
+tags: kubernetes, helm, wikijs
 editor: markdown
-dateCreated: 2022-06-29T15:02:56.155Z
+dateCreated: 2022-08-17T03:17:15.531Z
 ---
 
 # Wikijs Installation

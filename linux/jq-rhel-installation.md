@@ -1,11 +1,11 @@
 ---
 title: Install jq on RHEL
-description: Quick referencing to installation guide(s) for jq. 
+description: Quick referencing to installation guide(s) for jq.
 published: true
-date: 2022-06-30T19:21:42.289Z
+date: 2022-08-18T04:11:04.594Z
 tags: kubernetes, linux, jq
 editor: markdown
-dateCreated: 2022-06-30T19:21:42.289Z
+dateCreated: 2022-08-17T03:14:32.323Z
 ---
 
 # Install jq on RHEL/Centos

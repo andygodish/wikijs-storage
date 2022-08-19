@@ -2,10 +2,10 @@
 title: Application Troubleshooting
 description: Notes on troubleshooting K8s applications.
 published: true
-date: 2022-08-09T15:35:46.987Z
+date: 2022-08-18T04:10:04.355Z
 tags: kubernetes
 editor: markdown
-dateCreated: 2022-08-09T15:02:15.100Z
+dateCreated: 2022-08-17T03:13:06.594Z
 ---
 
 # Application Troubleshooting

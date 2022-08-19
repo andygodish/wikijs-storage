@@ -2,10 +2,10 @@
 title: CoreDNS
 description: CoreDNS basics.
 published: true
-date: 2022-08-10T15:13:55.339Z
+date: 2022-08-18T04:10:21.805Z
 tags: kubernetes, coredns
 editor: markdown
-dateCreated: 2022-08-10T15:10:17.794Z
+dateCreated: 2022-08-17T03:13:31.326Z
 ---
 
 # CoreDNS	

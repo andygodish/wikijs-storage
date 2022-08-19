@@ -2,10 +2,10 @@
 title: Launch EC2 using AWS CLI
 description: Guide to launching EC2s using the AWS CLI with the intent of adding additional nodes existing K8s clusters.
 published: true
-date: 2022-07-08T03:05:41.170Z
-tags: kubernetes, aws, aws-cli
+date: 2022-08-18T04:09:47.248Z
+tags: aws, kubernetes, aws-cli
 editor: markdown
-dateCreated: 2022-07-08T01:48:28.722Z
+dateCreated: 2022-08-17T03:12:41.961Z
 ---
 
 # Launching EC2s via AWS CLI

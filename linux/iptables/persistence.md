@@ -2,10 +2,10 @@
 title: Persistence
 description: Persist your iptables rules across server reboots.
 published: true
-date: 2022-08-11T15:25:19.266Z
+date: 2022-08-18T04:14:05.461Z
 tags: linux, iptables
 editor: markdown
-dateCreated: 2022-08-11T15:25:19.266Z
+dateCreated: 2022-08-17T03:19:27.320Z
 ---
 
 # Iptables Persistence
