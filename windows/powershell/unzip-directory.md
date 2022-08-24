@@ -2,7 +2,7 @@
 title: Quick Commands
 description: Command for unzipping a compressed file.
 published: true
-date: 2022-08-24T21:18:44.189Z
+date: 2022-08-24T21:19:07.729Z
 tags: powershell
 editor: markdown
 dateCreated: 2022-08-18T04:14:26.102Z
