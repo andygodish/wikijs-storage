@@ -2,7 +2,7 @@
 title: Helm Pull
 description: Commands used to download helm charts from a repository. 
 published: true
-date: 2022-08-19T01:43:10.919Z
+date: 2022-08-25T14:49:44.511Z
 tags: kubernetes, helm
 editor: markdown
 dateCreated: 2022-08-19T01:26:32.679Z
@@ -16,6 +16,12 @@ When I need to make modifications to helm charts, I typically pull the chart dow
 
 ```
 helm search repo rancher-stable -v
+```
+
+#### List versions of a specifc chart in a repo
+
+```
+helm search repo bitnami/etcd -l
 ```
 
 ## Helm Pull
