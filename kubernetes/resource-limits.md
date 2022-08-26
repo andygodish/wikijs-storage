@@ -2,38 +2,56 @@
 title: Resource Limits
 description: Information pertaining to resource quotas on kubernetes workloads. 
 published: true
-date: 2022-08-25T15:35:36.805Z
+date: 2022-08-26T03:19:03.633Z
 tags: kubernetes
 editor: markdown
 dateCreated: 2022-08-25T15:35:36.805Z
 ---
 
-# Resources
+# Resource Limits and Requests
 
-By default, K8s assumes a request of `0.5 CPU` and `256Mi`. Modify these values in the resources stanza in your manifests. 
+An apparent memory leak was oberserved in one of our API server workloads that eventually cascaded into multiple crashlooping pods eventually bringing down a cluster node. The pods and kubelet process were observered to be comsuming a large pertentage of the node's available CPU. Limiting the amount of CPU a pod is able to use was the obvious solution to this problem.
 
-- 1m (millicore) is the lowest amount you can request
-- 0.1 CPU == 100m
-- 1 == 1 vCPU
+In K8s there is a resource of of LimitRange. When applied to a namespace, all pods sharing that namespace will inherit the resource configurations of that LimitRange. Consider a container requesting 1 millicore of CPU and 256Mi of memory with a cap of 1 CPU and 2Gi of memory: 
 
-Apparently there are also default limits set for containers in kubernetes, `1 CPU` and `512Mi`. 
+```
+# pod.spec.containers[*].resources:
 
-You need to create a LimitRange specifying the default request and limit within a given namespace. 
+  resources:
+      limits:
+        cpu: "1"
+        memory: 2Gi
+      requests:
+        cpu: 1m
+        memory: 256Mi
+```
+
+A LimitRange would automatically apply this configuration to each pod container at the time of scheduling. A LimitRange that applies the above confiuration would look like this: 
 
 ```
 apiVersion: v1
 kind: LimitRange
 metadata:
-  name: mem-limit-range
+  name: limit-range
 spec:
   limits:
   - default:
-      memory: 512Mi
+     memory: 2Gi
+     cpu: 1
     defaultRequest:
       memory: 256Mi
+      cpu: 0.25
     type: Container
 ```
 
-K8s will throttle CPU so it can't use more CPU resources than its limit.  
+Additional configuration details can be found in the [k8s documentation](https://kubernetes.io/docs/concepts/policy/limit-range/).
 
-A container can use more memory than its limit. If this happens constantly, the pod will eventually crash. 
+You can override these "default" values by setting a request on your deployment manifest directly. You'll need to delete any existing pods in that replicaset in order for the new requests configurations to be applied. 
+
+---
+
+## More Info
+
+- 1m (millicore) is the lowest amount of CPU a container can request.
+- K8s will throttle CPU so a resource can't use more CPU resources than its requested limit.  
+- A container can use more memory than its requested limit, but will eventually crash if its limit is exceeded for an extended period of time. 
