@@ -2,7 +2,7 @@
 title: DotNet Core Quick Commands
 description: Provides a list of quick commands that you should know working with .Net Core.
 published: true
-date: 2022-08-26T16:06:37.034Z
+date: 2022-08-26T16:11:57.431Z
 tags: dotnet
 editor: markdown
 dateCreated: 2022-08-26T15:08:22.943Z
@@ -46,6 +46,14 @@ Solution for me was to execute command "Restart OmniSharp". In VsCode:
 ctrl + shift + p
 ---
 Restart OmniSharp
+```
+
+## Run Your Application
+
+In the root of your scaffolded application:
+
+```
+dotnet run
 ```
 
 
