@@ -2,7 +2,7 @@
 title: Sudoers
 description: How-to guide for configuring users as sudoers.
 published: true
-date: 2022-08-18T04:11:38.758Z
+date: 2022-08-29T20:26:54.502Z
 tags: linux, sudo, usermod
 editor: markdown
 dateCreated: 2022-08-17T03:15:21.021Z
@@ -23,6 +23,8 @@ By default in Red Hat operating systems, users who are part of the wheel group h
 ```
 sudo usermod -aG wheel centos
 ```
+- In Ubuntu, the group is simply `sudo` instead of wheel. All other configuration steps are the same. 
+
 
 You can now run `sudo su` and switch to the root user. At this point, you will be prompted to enter a password. 
 
