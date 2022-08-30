@@ -2,7 +2,7 @@
 title: DotNet Core Quick Commands
 description: Provides a list of quick commands that you should know working with .Net Core.
 published: true
-date: 2022-08-26T16:11:57.431Z
+date: 2022-08-30T16:39:48.396Z
 tags: dotnet
 editor: markdown
 dateCreated: 2022-08-26T15:08:22.943Z
@@ -30,6 +30,16 @@ dotnet new webapi -minimal -n <Name>
 
 ```
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
+```
+
+## Secret Store
+
+You can initialize a "built-in" secret store by running `dotnet user-secrets init`. Look more into where/how these secrets are stored/accessed. 
+
+Once initialized, run the following command to add secrets to the store:
+
+```
+dotnet user-secrets set "Key" "value" 
 ```
 
 ## Weird Bug (VsCode)
