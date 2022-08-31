@@ -2,7 +2,7 @@
 title: DotNet Core Quick Commands
 description: Provides a list of quick commands that you should know working with .Net Core.
 published: true
-date: 2022-08-31T05:13:20.607Z
+date: 2022-08-31T05:26:26.383Z
 tags: dotnet
 editor: markdown
 dateCreated: 2022-08-26T15:08:22.943Z
@@ -77,5 +77,11 @@ You'll need to install the dotnet-ef tool gloabally and add your `~/.dotnet/tool
 
 ```
 dotnet tool install --global dotnet-ef
+```
+
+Note that you've only created migratins at this point. You will still need to run them against your database. You'll see a `Migrations` in the root directory of your project. To apply your migrations, run the following: 
+
+```
+dotnet-ef database update
 ```
 
