@@ -2,7 +2,7 @@
 title: DotNet Core Quick Commands
 description: Provides a list of quick commands that you should know working with .Net Core.
 published: true
-date: 2022-08-31T05:12:40.974Z
+date: 2022-08-31T05:13:20.607Z
 tags: dotnet
 editor: markdown
 dateCreated: 2022-08-26T15:08:22.943Z
@@ -74,4 +74,8 @@ dotnet-ef migrations add initialmigration
 - Where I believe the last portion is a name given by the user
 
 You'll need to install the dotnet-ef tool gloabally and add your `~/.dotnet/tools/` directory to your path. 
+
+```
+dotnet tool install --global dotnet-ef
+```
 
