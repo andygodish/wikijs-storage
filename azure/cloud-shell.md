@@ -2,7 +2,7 @@
 title: Cloud Shell
 description: Overview of the cloud shell feature in Azure.
 published: true
-date: 2022-08-31T22:48:49.502Z
+date: 2022-08-31T23:11:42.517Z
 tags: azure, cloud-shell
 editor: markdown
 dateCreated: 2022-08-31T22:35:15.516Z
@@ -27,6 +27,14 @@ az vm create \
 > --generate-ssh-keys
 ```
 
+## Remove VM using PS Cmdlet
+
+You need the resrouce group to do this. 
+
+```
+Remove-AzVM -Name LabVM -ResourceGroupName 72-ab4623df-accessing-and-using-the-azure-cloud-sh
+```
+
 ## Powershell Cmdlets
 
 Some examples, look at the documentation for a complete list. Not sure how useful this will be given my prefrence for bash. 
@@ -34,4 +42,12 @@ Some examples, look at the documentation for a complete list. Not sure how usefu
 ```
 Get-AzResourceGroup
 Get-AzStorageAccount
+```
+
+### Pipe ft to Format Output
+
+This appears to format PS output into a colume. Not sure if this has anything specifically to do with cloud shell.
+
+```
+Get-AzResource | ft
 ```
