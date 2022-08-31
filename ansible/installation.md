@@ -2,7 +2,7 @@
 title: Ansible Installation
 description: Primer on getting started with Ansible. 
 published: true
-date: 2022-08-31T20:44:15.451Z
+date: 2022-08-31T20:58:46.072Z
 tags: ansible
 editor: markdown
 dateCreated: 2022-08-31T20:44:15.451Z
@@ -37,4 +37,37 @@ Add this directory to your path variable:
 
 ```
 export PATH=$PATH:~/.local/bin
+```
+
+### Auto-completion
+
+I'm using zsh in my environment. It's worth noting that the docs state support is limited for zsh. 
+
+```
+python3 -m pip install --user argcomplete
+
+activate-global-python-argcomplete
+```
+
+Zsh specific:
+```
+autoload -U bashcompinit
+bashcompinit
+```
+
+Example `~/.zshrc` file:
+
+```
+autoload bashcompinit
+bashcompinit
+
+eval $(register-python-argcomplete ansible)
+eval $(register-python-argcomplete ansible-config)
+eval $(register-python-argcomplete ansible-console)
+eval $(register-python-argcomplete ansible-doc)
+eval $(register-python-argcomplete ansible-galaxy)
+eval $(register-python-argcomplete ansible-inventory)
+eval $(register-python-argcomplete ansible-playbook)
+eval $(register-python-argcomplete ansible-pull)
+eval $(register-python-argcomplete ansible-vault)
 ```
