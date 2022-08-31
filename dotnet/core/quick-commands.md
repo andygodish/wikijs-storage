@@ -2,7 +2,7 @@
 title: DotNet Core Quick Commands
 description: Provides a list of quick commands that you should know working with .Net Core.
 published: true
-date: 2022-08-30T16:39:48.396Z
+date: 2022-08-31T05:12:40.974Z
 tags: dotnet
 editor: markdown
 dateCreated: 2022-08-26T15:08:22.943Z
@@ -66,4 +66,12 @@ In the root of your scaffolded application:
 dotnet run
 ```
 
+## Perform a DB Migration
+
+```
+dotnet-ef migrations add initialmigration
+```
+- Where I believe the last portion is a name given by the user
+
+You'll need to install the dotnet-ef tool gloabally and add your `~/.dotnet/tools/` directory to your path. 
 
