@@ -2,7 +2,7 @@
 title: Quick Commands
 description: Command for unzipping a compressed file.
 published: true
-date: 2022-09-02T19:29:15.486Z
+date: 2022-09-02T19:35:36.361Z
 tags: powershell
 editor: markdown
 dateCreated: 2022-08-18T04:14:26.102Z
@@ -19,6 +19,9 @@ Expand-Archive .\Downloads\archived-files
 ```
 
 You'll need to move that unzipped directory to your desired location (for example: "C:\curl") and then add the path to its binary file to your Path. 
+
+## Write-Output
+- Similar to `echo` in linux - `Write-Output` is aliased to echo by default
 
 ## Out-File
 
