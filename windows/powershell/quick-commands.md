@@ -2,7 +2,7 @@
 title: Quick Commands
 description: Command for unzipping a compressed file.
 published: true
-date: 2022-08-24T21:21:01.900Z
+date: 2022-09-02T18:58:30.383Z
 tags: powershell
 editor: markdown
 dateCreated: 2022-08-18T04:14:26.102Z
@@ -35,3 +35,13 @@ This will need to be in your path to work. The `cmd` equivelent would be `where 
 Determine the ip address for a server running my network.
 
 `ipconfig`
+
+## New Item
+
+This is equivalent to `touch` in linux. 
+
+- [Reference Article](https://www.educative.io/answers/what-is-the-powershell-equivalent-of-touch)
+
+```
+ni <filename>.ps1
+```
