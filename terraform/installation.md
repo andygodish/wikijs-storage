@@ -2,7 +2,7 @@
 title: Terraform Installation and Configuration 
 description: Installation and configuration guide for terraform. 
 published: true
-date: 2022-09-03T18:39:17.419Z
+date: 2022-09-03T18:43:51.351Z
 tags: terraform
 editor: markdown
 dateCreated: 2022-09-03T18:39:17.419Z
@@ -49,4 +49,12 @@ Update again and install
 sudo apt update
 
 sudo apt install terraform
+```
+
+## Enable Auto-Completion
+
+Run this command and see the added lines at the bottom of your `~/.zshrc` file:
+
+```
+terraform -install-autocomplete
 ```
