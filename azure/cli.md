@@ -2,7 +2,7 @@
 title: Azure CLI 
 description: Overview of the Azure CLI tool.
 published: true
-date: 2022-09-03T20:15:28.473Z
+date: 2022-09-03T20:28:29.336Z
 tags: azure
 editor: markdown
 dateCreated: 2022-09-03T20:15:28.473Z
@@ -24,3 +24,28 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ```
 az upgrade
 ```
+
+## Login via CLI
+
+This command will open a web browser for you to continue your login process. You'll see all the subscriptions assigned to the logged in account ouputted once complete. 
+
+```
+az login
+```
+
+Confirm current supscription for you account:
+
+```
+az account show
+```
+
+- Query: view all subscription names and ids:
+
+These queries are case sensitive.
+
+```
+az account list --query "[?user.name=='Andrew.P.Godish@vailresorts.com'].{Name:name, ID:id, Default:isDefault}" --output Table
+```
+
+
+
