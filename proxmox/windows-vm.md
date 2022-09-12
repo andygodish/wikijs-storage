@@ -2,7 +2,7 @@
 title: Setting Up a Windows VM
 description: How-to set up a Windows VM on proxmox.
 published: true
-date: 2022-09-12T20:17:53.048Z
+date: 2022-09-12T21:53:29.863Z
 tags: proxmox, windows
 editor: markdown
 dateCreated: 2022-09-12T20:17:53.048Z
@@ -43,9 +43,15 @@ Don't start after creating - you need to add another disk for the virtio driver.
 
 ## Add another CD-ROM Drive
 
-Select you VM --> `Hardward`. Then click Add --> `CD/DVD Drive`. 
+Select you VM --> `Hardward`. Then click Add --> `CD/DVD Drive`. Select the appropriate storage containing your virtio drivers. 
 
+You can now start your VM for the first time.
 
+## Windows Installer
+
+Go through the installation process once started up. Nothing much to note from this process. 
+
+Once complete, check the `Device Manager` for `other devices`. These are devices unknown to the machine because the required driver is not detected on the machine. Right click each one and select `Update Driver`. Select the external disk (D drive in my case) and go through the update process. 
 
 
 
