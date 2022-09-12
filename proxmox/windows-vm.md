@@ -2,7 +2,7 @@
 title: Setting Up a Windows VM
 description: How-to set up a Windows VM on proxmox.
 published: true
-date: 2022-09-12T21:53:29.863Z
+date: 2022-09-12T22:27:35.894Z
 tags: proxmox, windows
 editor: markdown
 dateCreated: 2022-09-12T20:17:53.048Z
@@ -53,7 +53,7 @@ Go through the installation process once started up. Nothing much to note from t
 
 Once complete, check the `Device Manager` for `other devices`. These are devices unknown to the machine because the required driver is not detected on the machine. Right click each one and select `Update Driver`. Select the external disk (D drive in my case) and go through the update process. 
 
+## Install Qemu Agent
 
-
-
+Navigate to you D drive (Virtio Drivers for Proxmox) and find the guest-agent folder. Install the 64 bit version. 
 
