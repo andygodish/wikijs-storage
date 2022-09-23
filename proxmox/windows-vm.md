@@ -2,7 +2,7 @@
 title: Setting Up a Windows VM
 description: How-to set up a Windows VM on proxmox.
 published: true
-date: 2022-09-12T22:27:35.894Z
+date: 2022-09-23T23:05:55.832Z
 tags: proxmox, windows
 editor: markdown
 dateCreated: 2022-09-12T20:17:53.048Z
@@ -38,6 +38,8 @@ It'll be the same process for any type of windows product, in this example, I'm 
 - 2-4 Cores
 
 - 4GB of memory
+
+- Network Model: VirtIO (paravirtualized)
 
 Don't start after creating - you need to add another disk for the virtio driver. 
 
