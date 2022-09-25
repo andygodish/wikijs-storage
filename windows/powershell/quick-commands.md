@@ -2,7 +2,7 @@
 title: Quick Commands
 description: Command for unzipping a compressed file.
 published: true
-date: 2022-09-02T19:35:36.361Z
+date: 2022-09-25T20:33:44.994Z
 tags: powershell
 editor: markdown
 dateCreated: 2022-08-18T04:14:26.102Z
@@ -67,3 +67,21 @@ ni <filename>.ps1
  Get-Process | where {$_.CPU -gt 1000} | Out-File cpu.txt
 ```
 - Unclear on how the where command works with formatted output you get from a PS cmdlet like `Get-Process`
+
+## String Manipulation
+
+### \string.Split(" ")
+
+Say you have the variable, `$USERNAME = "Andy Godish"` and you want to split it into two variables; `$first` & `$last`,
+
+```
+$first = $USERNAME.Split(" ")[0].ToLower()
+```
+
+Where `(" ")` corresponds to the delimeter specific to this particular string. 
+
+### \<string>.Substring(x,y)
+
+Translates to: from character `x`, take `y` characters.
+
+For example, say you have two 
