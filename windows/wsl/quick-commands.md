@@ -2,7 +2,7 @@
 title: WSL Quick Commands
 description: A list of quick commands for wsl.
 published: true
-date: 2022-09-29T15:31:36.294Z
+date: 2022-09-29T15:36:16.192Z
 tags: windows, wsl
 editor: markdown
 dateCreated: 2022-08-18T03:29:11.418Z
@@ -32,6 +32,8 @@ wsl -- ip -o -4 -json addr list eth0 `
 ```
 
 ## Copy from Windows Mounted Drive
+
+- [Reference Article](https://ridicurious.com/2018/10/18/2-ways-to-copy-files-from-windows-10-to-windows-sub-system-for-linux/)
 
 Say you want to copy a file you downloaded in your windows os. Access it via the following path structure:
 
