@@ -2,7 +2,7 @@
 title: WSL Quick Commands
 description: A list of quick commands for wsl.
 published: true
-date: 2022-08-20T06:14:22.080Z
+date: 2022-09-29T15:31:36.294Z
 tags: windows, wsl
 editor: markdown
 dateCreated: 2022-08-18T03:29:11.418Z
@@ -29,4 +29,12 @@ wsl -- ip -o -4 -json addr list eth0 `
 | ConvertFrom-Json `
 | %{ $_.addr_info.local } `
 | ?{ $_ }
+```
+
+## Copy from Windows Mounted Drive
+
+Say you want to copy a file you downloaded in your windows os. Access it via the following path structure:
+
+```
+cp /mnt/c/Users/Andrew.P.Godish/Downloads/vr-infrastructure-actions-runner.2022-09-28.private-key.pem ~/.ssh
 ```
