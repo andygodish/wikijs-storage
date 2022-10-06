@@ -2,7 +2,7 @@
 title: Basic Installation
 description: Steps outlining installation of Rancher
 published: true
-date: 2022-10-05T20:09:20.858Z
+date: 2022-10-06T12:12:39.223Z
 tags: kubernetes, rancher
 editor: markdown
 dateCreated: 2022-10-05T20:09:20.858Z
@@ -41,4 +41,17 @@ helm install rancher rancher-<CHART_REPO>/rancher \
   --namespace cattle-system \
   --set hostname=rancher.lan \
   --set bootstrapPassword=admin
+```
+
+## Lab Specific Setup
+
+In my homelab, I typically use kube-vip to allow for the use of loadbalancer service types. My local DNS has an A record for `rancher.lan` at `192.168.1.112`. Edit the rancher service to be of type loadbalancer and assign it a `loadBalancerIP` corresponding to the above DNS settings: 
+
+```
+apiVersion: v1
+kind: Service
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.1.112
+  ...
 ```
