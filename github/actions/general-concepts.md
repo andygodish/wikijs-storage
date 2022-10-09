@@ -1,14 +1,14 @@
 ---
-title: Github Actions
+title: Build
 description: Basic concepts pertaining to Github Actions
 published: true
-date: 2022-10-09T00:43:42.392Z
-tags: github, git
+date: 2022-10-09T00:46:53.786Z
+tags: github, git, cicd
 editor: markdown
 dateCreated: 2022-10-09T00:43:42.392Z
 ---
 
-# Github Actions
+# Github Actions Build 
 
 I'm working through a github actions deepdive tutorial on A Cloud Guru and using this page as a space to take notes on concepts. 
 
