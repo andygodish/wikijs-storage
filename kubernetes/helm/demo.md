@@ -2,7 +2,7 @@
 title: Helm Demo
 description: Helm demonstration. 
 published: true
-date: 2022-10-26T14:50:03.590Z
+date: 2022-10-26T15:43:05.572Z
 tags: kubernetes, helm
 editor: markdown
 dateCreated: 2022-10-25T03:05:03.526Z
@@ -52,3 +52,10 @@ Surround the content of the ingress resource template with the following:
 ...
 {{- end }}
 ```
+
+### NodePort Configuration
+
+The following needs to be modified if ingressEnabled is set to false.
+
+- spec.type: NodePort
+- ports[0].nodePort: 30184
