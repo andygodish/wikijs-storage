@@ -2,10 +2,10 @@
 title: Helm Installation
 description: Install Wikijs on a Kubernetes cluster using Helm.
 published: true
-date: 2022-08-18T04:12:48.064Z
+date: 2022-11-02T22:32:21.300Z
 tags: kubernetes, helm, wikijs
 editor: markdown
-dateCreated: 2022-08-17T03:17:15.531Z
+dateCreated: 2022-11-02T20:35:09.653Z
 ---
 
 # Wikijs Installation
@@ -18,6 +18,8 @@ Install wiki js on a Kubernetes cluster with Helm.
 - [StorageClass (Optional)](https://github.com/rancher/local-path-provisioner)
 
 # Installation
+
+## Storage Class Installation
 
 If you are planning on persisting, make sure you have a viable storageclass installed that can be referenced in your helm chart values. In my lab environment, I like to use Rancher's local-path-provisioner with backups mounted to a NAS device. 
 
