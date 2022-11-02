@@ -2,7 +2,7 @@
 title: Helm Installation
 description: Install Wikijs on a Kubernetes cluster using Helm.
 published: true
-date: 2022-11-02T22:32:21.300Z
+date: 2022-11-02T22:39:05.162Z
 tags: kubernetes, helm, wikijs
 editor: markdown
 dateCreated: 2022-11-02T20:35:09.653Z
@@ -19,9 +19,15 @@ Install wiki js on a Kubernetes cluster with Helm.
 
 # Installation
 
-## Storage Class Installation
+## Storage Class
 
 If you are planning on persisting, make sure you have a viable storageclass installed that can be referenced in your helm chart values. In my lab environment, I like to use Rancher's local-path-provisioner with backups mounted to a NAS device. 
+
+### Issue
+
+When using the local-path provisoner, my pvc remained in a hanging state. See this [issue](https://github.com/bitnami/charts/issues/3471) for details. 
+
+This was due to the underlying node (Centos8) running with selinux enforcing. Setting selunix to passive resolved this issue upon upgrading the release. 
 
 ## Create a namespace for your wikijs instance
 
