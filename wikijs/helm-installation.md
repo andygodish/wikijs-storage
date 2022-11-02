@@ -15,8 +15,11 @@ Install wiki js on a Kubernetes cluster with Helm.
 ## Prerequisites
 - Existing Kubernetes cluster
 - Helm
+- [StorageClass (Optional)](https://github.com/rancher/local-path-provisioner)
 
 # Installation
+
+If you are planning on persisting, make sure you have a viable storageclass installed that can be referenced in your helm chart values. In my lab environment, I like to use Rancher's local-path-provisioner with backups mounted to a NAS device. 
 
 ## Create a namespace for your wikijs instance
 
