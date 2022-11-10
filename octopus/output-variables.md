@@ -2,7 +2,7 @@
 title: Output Variables
 description: Explanation and examples of how to use output variables on your projects.
 published: true
-date: 2022-11-07T23:36:29.644Z
+date: 2022-11-10T16:47:53.616Z
 tags: octopus
 editor: markdown
 dateCreated: 2022-11-02T20:34:30.513Z
@@ -55,3 +55,33 @@ roleRef:
 ```
 
 Note the clunky reference to the name of the step that produces the output variable. This is not made very clear in the Octopus documentation and took some playing around to figure it out. 
+
+## Examples: 
+
+For more information, please see [deployment details](#{if Octopus.Web.ServerUri}#{Octopus.Web.ServerUri}#{else}#{Octopus.Web.BaseUrl}#{/if}#{Octopus.Web.DeploymentLink})!
+
+#### Hyperlinks 
+
+\[\<displaytext\>](\<url\>)
+
+```
+[deployment details](#{Octopus.Web.ServerUri})
+```
+
+#### If Else Conditional
+
+```
+#{if Octopus.Web.ServerUri}#{Octopus.Web.ServerUri}#{else}#{Octopus.Web.BaseUrl}#{/if}
+```
+
+#### What's the difference between these Two?
+
+```
+#{Octopus.Web.ServerUri}
+vs 
+#{Octopus.Web.BaseUri}
+```
+
+
+
+
