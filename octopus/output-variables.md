@@ -2,7 +2,7 @@
 title: Output Variables
 description: Explanation and examples of how to use output variables on your projects.
 published: true
-date: 2022-11-10T16:47:53.616Z
+date: 2022-11-10T20:49:58.443Z
 tags: octopus
 editor: markdown
 dateCreated: 2022-11-02T20:34:30.513Z
@@ -82,6 +82,9 @@ vs
 #{Octopus.Web.BaseUri}
 ```
 
+#### Octopus Escapes Characters for You
+
+This value: `h_cSvVP&kc6#vL%` will translate to `h_cSvVP&amp;kc6#vL%` once applied. 
 
 
 
