@@ -2,10 +2,10 @@
 title: WSL Quick Commands
 description: A list of quick commands for wsl.
 published: true
-date: 2022-09-29T15:36:16.192Z
+date: 2022-11-29T22:10:14.212Z
 tags: windows, wsl
 editor: markdown
-dateCreated: 2022-08-18T03:29:11.418Z
+dateCreated: 2022-11-02T20:37:03.496Z
 ---
 
 # WSL 
@@ -39,4 +39,12 @@ Say you want to copy a file you downloaded in your windows os. Access it via the
 
 ```
 cp /mnt/c/Users/Andrew.P.Godish/Downloads/vr-infrastructure-actions-runner.2022-09-28.private-key.pem ~/.ssh
+```
+
+## Access WSL Filesystem
+
+From a PowerShell instance, change into a WSL directory:
+
+```
+cd \\wsl.localhost\Ubuntu-22.04\home\andy\
 ```
