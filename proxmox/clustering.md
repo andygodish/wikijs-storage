@@ -2,10 +2,10 @@
 title: Clustering
 description: How-to cluster Proxmox Nodes
 published: true
-date: 2022-08-23T15:15:21.447Z
+date: 2022-12-13T23:02:45.923Z
 tags: proxmox
 editor: markdown
-dateCreated: 2022-08-17T03:16:01.353Z
+dateCreated: 2022-12-03T06:29:22.092Z
 ---
 
 # Clustering
@@ -37,6 +37,10 @@ systemctl start pve-cluster
 ```
 
 This was prompted by an issue with my `/etc/hosts` file on my original pve server (the one where the cluster was created from). The old `10.` IP was being used to connect to the other node which utilized my new `192.168.1.0/24` subnet.
+
+### Hanging Nodes 
+
+After the previous steps are performed, I have observed that the Proxmox UI still shows the deleted node within the Datacenter. To remove this, remove the directory associated with the name of the node you wish to remove inside the `/etc/pve/nodes/` directory from the master node. 
 
 ## Updating the Expected Number of Nodes for Quorum
 
