@@ -2,7 +2,7 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-14T22:11:12.983Z
+date: 2022-12-14T22:17:28.783Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
@@ -11,6 +11,8 @@ dateCreated: 2022-12-14T21:42:07.571Z
 # Puppet Configuration
 
 ## Server Configuration
+
+- I couldn't get this installed on ubuntu 22.04, but centos 8 worked
 
 ### Configuration File
 
