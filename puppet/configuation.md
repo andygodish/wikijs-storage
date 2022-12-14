@@ -2,7 +2,7 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-14T22:17:28.783Z
+date: 2022-12-14T23:00:55.651Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
@@ -46,3 +46,11 @@ Access the CLI beforehand to perform your CA setup at `/opt/puppetlabs/bin/puppe
 systemctl start puppetserver
 ```
 - memory issues will present here
+
+## Puppet Agent
+
+### Server Configuration
+
+In the same `puppet.conf` configuration file used for server configuration, create a `[main]` block with a `server = puppetserver.com` configuration set to the hostname of your puppet server. 
+
+You can also access the `puppet` cli in a similar manner as the puppet server before the intial startup of the service to set this configuration value. 
