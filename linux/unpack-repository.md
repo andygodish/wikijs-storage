@@ -2,7 +2,7 @@
 title: Unpacking a Package Repository
 description: How to unpack package repositories pulled in from the internet.
 published: true
-date: 2022-12-14T19:02:38.370Z
+date: 2022-12-14T19:03:49.363Z
 tags: linux, dpkg, package-repository
 editor: markdown
 dateCreated: 2022-12-14T19:02:38.370Z
@@ -27,3 +27,9 @@ dpkg -i <installed_package>.deb
 ```
 
 Now, subsequent `apt` commands will work against this new package repository. 
+
+### Viewing Installed Repositories
+
+```
+sudo grep -rhE ^deb /etc/apt/sources.list* 
+```
