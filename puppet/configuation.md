@@ -2,7 +2,7 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-15T03:23:12.091Z
+date: 2022-12-15T03:35:40.010Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
@@ -10,6 +10,7 @@ dateCreated: 2022-12-14T21:42:07.571Z
 
 # Puppet Configuration
 - [Installation Docs](https://puppet.com/docs/puppet/7/install_agents.html#install_agents)
+- [Installation Guide for Centos/RHEL8](https://computingforgeeks.com/install-puppet-master-and-agent-on-centos-rhel-8/)
 
 ## Server Configuration
 
