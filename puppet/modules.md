@@ -2,7 +2,7 @@
 title: Puppet Modules
 description: Basics of Puppet Modules
 published: true
-date: 2022-12-15T04:44:19.514Z
+date: 2022-12-15T04:49:06.166Z
 tags: linux, puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-15T03:14:14.985Z
@@ -59,7 +59,19 @@ class <module>::<manifest> {
 
 Use `puppet parser validate install.pp` to lint your file. No return is good. 
 
+## Map Class back to Module --> Module to Agent Nodes 
 
+init.pp & site.pp files perform this function.  
+
+### init.pp Class
+
+Every module must have one of these. This is called when a module is referenced. 
+
+Use pdk to create a new class with the same name as the module in order to produce an init.pp file in your module's manifest dir.
+
+```
+pdk new class nginx
+```
 
 
 
