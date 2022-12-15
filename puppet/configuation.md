@@ -2,7 +2,7 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-15T03:35:40.010Z
+date: 2022-12-15T03:55:08.758Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
@@ -11,6 +11,7 @@ dateCreated: 2022-12-14T21:42:07.571Z
 # Puppet Configuration
 - [Installation Docs](https://puppet.com/docs/puppet/7/install_agents.html#install_agents)
 - [Installation Guide for Centos/RHEL8](https://computingforgeeks.com/install-puppet-master-and-agent-on-centos-rhel-8/)
+- [NTP Configuration](https://computingforgeeks.com/how-to-configure-ntp-server-using-chrony-on-rhel-8/)
 
 ## Server Configuration
 
@@ -34,6 +35,25 @@ vi /etc/default/puppetserver
 Find the line starting with the key, `JAVA_ARGS=`. You can update this to tell the server to use less memory if running on a smaller server. 
 
 *example:* change the instances of `2g` to `1g` or `512m`, etc; `JAVA_ARGS=-Xms512m -Xmx512m...`
+
+### Example Server Config
+
+```
+[master]
+dns_alt_names = puppetserver,puppetserver.lan.andyg.io,puppetserver01
+
+[main]
+certname = puppetserver.lan.andyg.io
+server = pupperserver.lan.andyg.io
+environment = production
+
+[server]
+vardir = /opt/puppetlabs/server/data/puppetserver
+logdir = /var/log/puppetlabs/puppetserver
+rundir = /var/run/puppetlabs/puppetserver
+pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid
+codedir = /etc/puppetlabs/code
+```
 
 ### CA Setup
 
