@@ -2,7 +2,7 @@
 title: Puppet Modules
 description: Basics of Puppet Modules
 published: true
-date: 2022-12-15T04:49:06.166Z
+date: 2022-12-15T04:51:18.797Z
 tags: linux, puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-15T03:14:14.985Z
@@ -73,5 +73,12 @@ Use pdk to create a new class with the same name as the module in order to produ
 pdk new class nginx
 ```
 
+In the nginx class, you simply need to attach all the manifests that you wish to be executed by the module. 
+
+```
+class nginx {
+  contain nginx::install
+}
+```
 
 
