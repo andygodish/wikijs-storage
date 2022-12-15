@@ -2,7 +2,7 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-15T03:55:08.758Z
+date: 2022-12-15T04:00:27.865Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
@@ -77,3 +77,12 @@ systemctl start puppetserver
 In the same `puppet.conf` configuration file used for server configuration, create a `[main]` block with a `server = puppetserver.com` configuration set to the hostname of your puppet server. 
 
 You can also access the `puppet` cli in a similar manner as the puppet server before the intial startup of the service to set this configuration value. 
+
+### Corresponding Puppet Agent Configuration
+
+```
+[main]
+certname = puppetagent.lan.andyg.io
+server = puppetserver.lan.andyg.io
+environment = production
+```
