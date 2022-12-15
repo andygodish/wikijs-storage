@@ -2,7 +2,7 @@
 title: Puppet Modules
 description: Basics of Puppet Modules
 published: true
-date: 2022-12-15T04:58:56.769Z
+date: 2022-12-15T05:00:50.432Z
 tags: linux, puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-15T03:14:14.985Z
@@ -105,5 +105,5 @@ From the agent node:
 puppet agent -t
 ```
 
-
+verify by running `which nginx`.
 
