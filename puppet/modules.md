@@ -2,7 +2,7 @@
 title: Puppet Modules
 description: Basics of Puppet Modules
 published: true
-date: 2022-12-15T04:54:17.260Z
+date: 2022-12-15T04:58:56.769Z
 tags: linux, puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-15T03:14:14.985Z
@@ -91,6 +91,18 @@ No pdk command for this one, just create a *site.pp* file:
 node <nodename-on-file> {
   class { 'nginx': }
 } 
+```
+
+- look up how to find agent nodes registered with the puppet server
+
+### Force a Puppet Run
+
+Tell puppet to run a *catalog converge* (merging of all modules mapped to the node, right meow).
+
+From the agent node: 
+
+```
+puppet agent -t
 ```
 
 
