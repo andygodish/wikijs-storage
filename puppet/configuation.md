@@ -2,7 +2,7 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-15T03:14:44.429Z
+date: 2022-12-15T03:23:12.091Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
@@ -24,6 +24,7 @@ Following installation, the configuration file for puppet and puppet server can 
 ```
 
 ### Default Puppet Server Configuration File
+- [JVM Tuning](https://puppet.com/docs/puppet/7/server/install_from_packages.html#running-puppet-server-on-a-vm)
 
 ```
 vi /etc/default/puppetserver
