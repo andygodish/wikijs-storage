@@ -2,13 +2,14 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-14T23:00:55.651Z
+date: 2022-12-15T03:14:44.429Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
 ---
 
 # Puppet Configuration
+- [Installation Docs](https://puppet.com/docs/puppet/7/install_agents.html#install_agents)
 
 ## Server Configuration
 
