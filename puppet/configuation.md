@@ -2,7 +2,7 @@
 title: Puppet Configuration
 description: All about the puppet configuration file. 
 published: true
-date: 2022-12-15T04:00:27.865Z
+date: 2022-12-15T04:07:43.143Z
 tags: puppet, configuration-management
 editor: markdown
 dateCreated: 2022-12-14T21:42:07.571Z
@@ -85,4 +85,28 @@ You can also access the `puppet` cli in a similar manner as the puppet server be
 certname = puppetagent.lan.andyg.io
 server = puppetserver.lan.andyg.io
 environment = production
+```
+
+### Signing Certificate for Agent
+
+Run this command on your agent node to populate the ca and SHA256 associated with the agent in the server's `ca list`,
+
+```
+puppet agent --test --ca_server=puppetmaster.computingforgeeks.com
+```
+
+You'll see an error with this command, but upon logging back into your server node, you can see this certificate request by running, 
+
+```
+puppetserver ca list
+---
+
+Requested Certificates:
+    puppetagent.lan.andyg.io       (SHA256)  C4:F8:D9:8E:5F...
+```
+
+Finally, sign it using the following command: 
+
+```
+puppetserver ca sign --certname puppetagent.lan.andyg.io
 ```
