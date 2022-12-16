@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T16:05:14.661Z
+date: 2022-12-16T16:06:35.883Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -112,10 +112,15 @@ echo "subjectAltName=DNS:*.dns.record,IP:192.168.1.123" >> extfile.cnf
 
 Important players:
 - the CA and its key
-- the CSR as your input
+- the CSR as your input + configuration
+
+The CAcreateserial parameter creates an incrementing serial number - this is important when generating multiple certificates.
 
 ```
 openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf -CAcreateserial
 ```
+
+
+
 
  
