@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T05:55:59.792Z
+date: 2022-12-16T06:02:22.263Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -47,6 +47,14 @@ These trusted public CAs can be viewed on your device.
 
 ## Self Signed Certificates
 
+On an internal network, you would establish a *private CA* that would sign your certificates so you can install them on your servers. 
+
+The CA would also need to be installed to the *trusted root CA store* off each client using your network.
+
+## Creating Your Own Certificate Authority
+
+Recall, this is needed in order to issue your self signed certificates
 
 
 
+ 
