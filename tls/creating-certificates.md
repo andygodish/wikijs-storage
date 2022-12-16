@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T16:06:35.883Z
+date: 2022-12-16T16:10:59.078Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -120,7 +120,13 @@ The CAcreateserial parameter creates an incrementing serial number - this is imp
 openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf -CAcreateserial
 ```
 
+## Building the Certificate Chain
 
+The ca.pem and the cert.pem must be combined to create the full certificate chain. You just combine the outputs into one file. 
 
+```
+cat cert.pem > fullchain.pem
 
- 
+cat ca.pem >>./fullchain.pem
+```
+
