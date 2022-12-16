@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T16:10:59.078Z
+date: 2022-12-16T16:12:22.266Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -130,3 +130,6 @@ cat cert.pem > fullchain.pem
 cat ca.pem >>./fullchain.pem
 ```
 
+## Upload the Certificate on Your Servers
+
+This will be slightly different depending on the application you are using. Follow the documentation. Typically, you will be uploading the private key and the certificate chain. 
