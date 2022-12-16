@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T15:44:11.257Z
+date: 2022-12-16T15:49:20.963Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -80,6 +80,23 @@ openssl x509 -in ca.pem -text
 
 ## Issuing Certificates
 
+The target addess you are navigating to in your browser is the important part to keep in mind when generating a certificate.
+
+### Generate another Private Key
+
+No need to protect this key with a password.
+
+```
+openssl genrsa -out key.pem 4096
+```
+
+### Generate a Certificate Signing Request
+
+So you're not actually generating a certificate at this point, just a request for the CA to sign one for you. 
+
+```
+openssl req -new -sha256 -subj "/CN=yourcn" -key key.pem -out cert.csr
+```
 
 
 
