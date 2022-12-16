@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T15:39:10.347Z
+date: 2022-12-16T15:43:44.019Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -69,6 +69,14 @@ Generate an x509 certificate using the private key as input from the previous st
 openssl req -new -x509 -sha256 -days 365 -key ca-key.pem -out ca.pem
 ```
 
+#### Reading a Certificate
+
+- Use `-text` for human readable format.
+- There is a `CA:TRUE` line for certs that are for CAs 
+
+```
+openssl x509 -in ca.pem -text
+``` 
 
 
 
