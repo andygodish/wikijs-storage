@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T15:38:52.743Z
+date: 2022-12-16T15:39:10.347Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -63,7 +63,7 @@ openssl genrsa -aes -out ca-key.pem 4096
 
 ### Generate CA Certificate
 
-Generate an x509 certificate using the private key from the previous step. 
+Generate an x509 certificate using the private key as input from the previous step. 
 
 ```
 openssl req -new -x509 -sha256 -days 365 -key ca-key.pem -out ca.pem
