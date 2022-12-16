@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T15:49:20.963Z
+date: 2022-12-16T15:57:56.095Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -94,11 +94,21 @@ openssl genrsa -out key.pem 4096
 
 So you're not actually generating a certificate at this point, just a request for the CA to sign one for you. 
 
+- the CN is not important
+
 ```
 openssl req -new -sha256 -subj "/CN=yourcn" -key key.pem -out cert.csr
 ```
 
+Adding in your DNS names/IP addresses to the certificate comes next. 
 
+To do this, you create a config file containing your SANs.
+
+```
+echo "subjectAltName=DNS:*.dns.record,IP:192.168.1.123" >> extfile.cnf
+```
+
+## Generate the Certificate from the CSR
 
 
 
