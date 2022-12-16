@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T05:52:27.065Z
+date: 2022-12-16T05:55:59.792Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -38,6 +38,14 @@ SAN 6: DNS Name=example2.com
 SAN 7: IP Address=93.184.216.34
 SAN 8: IP Address= 2606:2800:220:1:248:1893:25c8:1946
 ```
+
+#### Public CAs 
+
+Example: Digicert is stored on client devices by default. 
+
+These trusted public CAs can be viewed on your device. 
+
+## Self Signed Certificates
 
 
 
