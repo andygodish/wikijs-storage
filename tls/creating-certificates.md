@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T15:06:37.688Z
+date: 2022-12-16T15:38:52.743Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -53,11 +53,23 @@ The CA would also need to be installed to the *trusted root CA store* off each c
 
 ## Creating Your Own Certificate Authority
 
+### Private Key
+
 First, generate a new RSA key. This will be the private key of the CA cert, keep it safe. Because it is so sensitive, it is encrypted with `aes` and should also include a password. 
 
 ```
 openssl genrsa -aes -out ca-key.pem 4096
 ```
+
+### Generate CA Certificate
+
+Generate an x509 certificate using the private key from the previous step. 
+
+```
+openssl req -new -x509 -sha256 -days 365 -key ca-key.pem -out ca.pem
+```
+
+
 
 
 
