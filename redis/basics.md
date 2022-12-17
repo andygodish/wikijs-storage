@@ -2,7 +2,7 @@
 title: Redis Basics
 description: Just the basics of using Redis.
 published: true
-date: 2022-12-17T18:08:58.938Z
+date: 2022-12-17T19:25:23.147Z
 tags: storage, redis, data
 editor: markdown
 dateCreated: 2022-12-17T17:34:14.058Z
@@ -49,5 +49,34 @@ This is an optional featured introduced in 6.0 for situations where redis is not
 ### Persistence
 
 By default, Redis stores its data in memory. You need to mount that data somewhere to allow for the container to be destroyed/recreated. 
+
+There are two modes of persistence (see docs):
+- RDB mode
+- AOF mode
+
+#### RDB Mode
+
+In the config file, activate the line, `dbfilename dump.rdb`. You can edit the file location as you see fit. 
+
+#### AOF Mode
+
+In the config file, activate the line, `appendonly yes`. Then, set a filename to have redis write its operations tp, `appendfilename "appendonly.aof"`.
+
+---
+
+You can run both modes simultaneously by activating them both in the configuration. 
+
+To persist, create a docker volume called redis and map it to the /data/ dir in your container:
+
+```
+docker volume create redis
+
+# Corresponding volume:
+-v redis:/data/
+```
+
+
+
+
 
 
