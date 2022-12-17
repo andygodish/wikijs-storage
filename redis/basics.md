@@ -2,7 +2,7 @@
 title: Redis Basics
 description: Just the basics of using Redis.
 published: true
-date: 2022-12-17T19:25:23.147Z
+date: 2022-12-17T20:42:00.926Z
 tags: storage, redis, data
 editor: markdown
 dateCreated: 2022-12-17T17:34:14.058Z
@@ -11,6 +11,13 @@ dateCreated: 2022-12-17T17:34:14.058Z
 # Redis Basics	
 
 ## Bootstrapping with Docker
+
+```
+# TLDR Entire Command:
+docker run -it --rm --name redis --net redis -v C:\Users\Andrew.P.Godish\Desktop\config:/etc/redis -v redis:/data/ -p 6379:6379 redis:6.2-alpine redis-server /etc/redis/redis.conf
+
+docker run -it --rm --name redis --net redis -v ${PWD}/config:/etc/redis -v redis:/data/ -p 6379:6379 redis:6.2-alpine redis-server /etc/redis/redis.conf
+```
 
 Start a new docker network for the service. This will allow you to build additional applications on the same network. 
 
