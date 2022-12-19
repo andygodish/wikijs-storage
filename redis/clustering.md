@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T17:33:30.329Z
+date: 2022-12-19T17:37:18.786Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -123,6 +123,14 @@ You should run 3 instances of the sentinel (in additional to your redis nodes). 
 
 - Tell sentinel which node to monitor (aka your master) and give it a name (mymaster)
 - if the master is down for more than 5000 milliseconds, start the failover process
+
+**NOTE**: I ran into an error where sentinel wasn't able to connect to the redis-0 hostname (docker container name). I was able to resolve with this stackoverflow answer: 
+
+> Only sentinel with version above 6.2 can resolve host names, but this is not enabled by default. Adding sentinel resolve-hostnames yes to sentinel.conf will help.
+>
+> If your sentinel has older versions, the hostname redis_node should be replaced by and ip.
+> 
+> For more details, check out IP Addresses and DNS names in Redis document
 
 ```
 mkdir sentinel-{0,1,2}
