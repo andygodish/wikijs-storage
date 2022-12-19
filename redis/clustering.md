@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T16:44:05.651Z
+date: 2022-12-19T16:44:55.726Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -74,7 +74,7 @@ docker run -d --rm --name redis-0 \
   redis:6.2-alpine redis-server /etc/redis/redis.conf
 ```
 
-#### Single Liners (command above):
+#### Single Liners (same command above):
 ```
 docker run -d --rm --name redis-0 --net redis -v ${PWD}/redis-0:/etc/redis/ redis:6.2-alpine redis-server /etc/redis/redis.conf
 ```
@@ -86,5 +86,7 @@ docker run -d --rm --name redis-1 --net redis -v ${PWD}/redis-1:/etc/redis/ redi
 ```
 docker run -d --rm --name redis-2 --net redis -v ${PWD}/redis-2:/etc/redis/ redis:6.2-alpine redis-server /etc/redis/redis.conf
 ```
+
+
 
 
