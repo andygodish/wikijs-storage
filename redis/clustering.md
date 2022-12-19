@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T16:45:26.315Z
+date: 2022-12-19T17:00:03.150Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -86,6 +86,33 @@ docker run -d --rm --name redis-1 --net redis -v ${PWD}/redis-1:/etc/redis/ redi
 ```
 docker run -d --rm --name redis-2 --net redis -v ${PWD}/redis-2:/etc/redis/ redis:6.2-alpine redis-server /etc/redis/redis.conf
 ```
+
+---
+
+Next, run a [simple application](https://github.com/andygodish/redis-docker/tree/main/applications/client) that can connect to the master node and write data. 
+
+Once data has been written to the master, exec into one of the two worker nodes and utilize the `redis-cli` to verify that the data has been replicated over to that node. 
+
+```
+docker exec -it redis-2 sh
+```
+
+```
+redis-cli
+```
+
+```
+auth password
+```
+
+```
+keys *
+```
+
+Upon executing the previous command, you should see a key assosiated with the sample application called *counter*.
+
+
+
 
 
 
