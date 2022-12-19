@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T16:03:52.936Z
+date: 2022-12-19T16:08:14.968Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -45,5 +45,14 @@ requirepass password
 
 The *masterauth* password is used by the workers to connect to the master node. This is also included on the master node itself becuase when running in HA, the master node can rotate among all nodes in the cluster. 
 
+### Persistence
+
+Set up configurations to include both modes of persistence, `RDB` & `AOF`.
+
+#### RDB
+
+```
+echo 'dbfilename "dump.rdb"' >> redis-{0,1,2}/redis.conf
+```
 
 
