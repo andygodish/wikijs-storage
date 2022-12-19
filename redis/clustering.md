@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T16:36:01.416Z
+date: 2022-12-19T16:44:05.651Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -63,5 +63,28 @@ appendfilename "appendonly.aof"
 EOF
 ```
 
+### Start Containers
+
+If running on the same local machine, make sure you have a docker network called `redis` created.
+
+```
+docker run -d --rm --name redis-0 \
+  --net redis \ 
+  -v ${PWD}/redis-0:/etc/redis/ \
+  redis:6.2-alpine redis-server /etc/redis/redis.conf
+```
+
+#### Single Liners (command above):
+```
+docker run -d --rm --name redis-0 --net redis -v ${PWD}/redis-0:/etc/redis/ redis:6.2-alpine redis-server /etc/redis/redis.conf
+```
+
+```
+docker run -d --rm --name redis-1 --net redis -v ${PWD}/redis-1:/etc/redis/ redis:6.2-alpine redis-server /etc/redis/redis.conf
+```
+
+```
+docker run -d --rm --name redis-2 --net redis -v ${PWD}/redis-2:/etc/redis/ redis:6.2-alpine redis-server /etc/redis/redis.conf
+```
 
 
