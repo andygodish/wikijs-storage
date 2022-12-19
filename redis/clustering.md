@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T17:00:15.280Z
+date: 2022-12-19T17:15:45.969Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -111,9 +111,54 @@ keys *
 
 Upon executing the previous command, you should see a key assosiated with the sample application called *counter*.
 
+Replication does not equal HA. For that, you need to utilize Redis Sentinel
 
+## High Availability
 
+The purpose of Sentinel is to elect a new leader should the master node die.
 
+You should run 3 instances of the sentinel (in additional to your redis nodes). For failover to work, there needs to be a majority vote by the sentinels. 
 
+### Configuration
+
+- Tell sentinel which node to monitor (aka your master) and give it a name (mymaster)
+- if the master is down for more than 5000 milliseconds, start the failover process
+
+```
+mkdir sentinel-{0,1,2}
+
+cat <<EOF > sentinel-{0,1,2}/sentinel.conf
+port 5000
+sentinel monitor mymaster redis-0 6379 2
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 60000
+sentinel parallel-syncs mymaster 1
+sentinel auth-pass mymaster password
+EOF
+```
+
+Running the sentinel containers in docker:
+
+- Note that this is using the same redis image
+	- You start in *sentinel* mode by running `redis-sentinel`
+```
+docker run -d --rm --name sentinel-0 --net redis \
+    -v ${PWD}/sentinel-0:/etc/redis/ \
+    redis:6.0-alpine \
+    redis-sentinel /etc/redis/sentinel.conf
+```
+#### Single Liners (same command above):
+
+```
+docker run -d --rm --name sentinel-0 --net redis -v ${PWD}/sentinel-0:/etc/redis/ redis:6.2-alpine redis-sentinel /etc/redis/sentinel.conf
+```
+
+```
+docker run -d --rm --name sentinel-1 --net redis -v ${PWD}/sentinel-1:/etc/redis/ redis:6.2-alpine redis-sentinel /etc/redis/sentinel.conf
+```
+
+```
+docker run -d --rm --name sentinel-2 --net redis -v ${PWD}/sentinel-2:/etc/redis/ redis:6.2-alpine redis-sentinel /etc/redis/sentinel.conf
+```
 
 
