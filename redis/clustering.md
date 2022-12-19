@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T17:15:45.969Z
+date: 2022-12-19T17:17:54.371Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -161,4 +161,10 @@ docker run -d --rm --name sentinel-1 --net redis -v ${PWD}/sentinel-1:/etc/redis
 docker run -d --rm --name sentinel-2 --net redis -v ${PWD}/sentinel-2:/etc/redis/ redis:6.2-alpine redis-sentinel /etc/redis/sentinel.conf
 ```
 
+### Check the Health of the Sentinels
 
+```
+docker logs sentinel-0
+```
+
+Look for information indicating the *+monitor* is up and running as well as both of your relipicas as indicated by a *+slave* in the logs. 
