@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T17:18:14.733Z
+date: 2022-12-19T17:33:30.329Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -128,12 +128,10 @@ You should run 3 instances of the sentinel (in additional to your redis nodes). 
 mkdir sentinel-{0,1,2}
 
 cat <<EOF > sentinel-{0,1,2}/sentinel.conf
-port 5000
 sentinel monitor mymaster redis-0 6379 2
-sentinel down-after-milliseconds mymaster 5000
-sentinel failover-timeout mymaster 60000
+sentinel down-after-milliseconds mymaster 60000
+sentinel failover-timeout mymaster 180000
 sentinel parallel-syncs mymaster 1
-sentinel auth-pass mymaster password
 EOF
 ```
 
