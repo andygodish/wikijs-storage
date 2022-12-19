@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T17:37:18.786Z
+date: 2022-12-19T17:43:35.764Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -136,6 +136,7 @@ You should run 3 instances of the sentinel (in additional to your redis nodes). 
 mkdir sentinel-{0,1,2}
 
 cat <<EOF > sentinel-{0,1,2}/sentinel.conf
+sentinel resolve-hostnames yes
 sentinel monitor mymaster redis-0 6379 2
 sentinel down-after-milliseconds mymaster 60000
 sentinel failover-timeout mymaster 180000
@@ -173,4 +174,16 @@ docker run -d --rm --name sentinel-2 --net redis -v ${PWD}/sentinel-2:/etc/redis
 docker logs sentinel-0
 ```
 
-Look for information indicating the *+monitor* is up and running as well as both of your relipicas as indicated by a *+fix-slave-config* in the logs. 
+Look for information indicating the *+monitor* is up and running as well as both of your relipicas as indicated by a *+fix-slave-config* in the logs. You'll also want to see information about your other two sentinel servers. 
+
+#### Exec into Sentinel Containers
+
+```
+docker exec -it sentinel-0 sh
+redis-cli -p 26379
+info
+sentinel master mymaster
+```
+
+Verify by looking at the number of sentinels line in the output of the last command. That should read 2.
+
