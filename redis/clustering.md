@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T17:43:35.764Z
+date: 2022-12-19T18:29:03.437Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -32,6 +32,7 @@ protected-mode no
 port 6379
 masterauth password
 requirepass password 
+replica-announce-ip redis-0
 ```
 
 ```
@@ -41,6 +42,7 @@ port 6379
 slaveof redis-0 6379
 masterauth password
 requirepass password
+replica-announce-ip redis-1
 ```
 
 The *masterauth* password is used by the workers to connect to the master node. This is also included on the master node itself becuase when running in HA, the master node can rotate among all nodes in the cluster. 
@@ -136,12 +138,20 @@ You should run 3 instances of the sentinel (in additional to your redis nodes). 
 mkdir sentinel-{0,1,2}
 
 cat <<EOF > sentinel-{0,1,2}/sentinel.conf
+port 5000
 sentinel resolve-hostnames yes
 sentinel monitor mymaster redis-0 6379 2
 sentinel down-after-milliseconds mymaster 60000
 sentinel failover-timeout mymaster 180000
 sentinel parallel-syncs mymaster 1
 EOF
+
+echo "sentinel announce-ip redis-0" >> sentinel-0/sentinel.conf
+echo "sentinel announce-port 5000" >> sentinel-0/sentinel.conf
+echo "sentinel announce-ip redis-1" >> sentinel-1/sentinel.conf
+echo "sentinel announce-port 5000" >> sentinel-1/sentinel.conf
+echo "sentinel announce-ip redis-2" >> sentinel-2/sentinel.conf
+echo "sentinel announce-port 5000" >> sentinel-2/sentinel.conf
 ```
 
 Running the sentinel containers in docker:
@@ -180,7 +190,7 @@ Look for information indicating the *+monitor* is up and running as well as both
 
 ```
 docker exec -it sentinel-0 sh
-redis-cli -p 26379
+redis-cli -p 5000
 info
 sentinel master mymaster
 ```
