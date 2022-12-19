@@ -2,7 +2,7 @@
 title: Redis Cluster
 description: Working with replication and clustering for Redis. 
 published: true
-date: 2022-12-19T17:00:03.150Z
+date: 2022-12-19T17:00:15.280Z
 tags: clustering, redis, ha, replication
 editor: markdown
 dateCreated: 2022-12-19T15:58:06.784Z
@@ -110,7 +110,6 @@ keys *
 ```
 
 Upon executing the previous command, you should see a key assosiated with the sample application called *counter*.
-
 
 
 
