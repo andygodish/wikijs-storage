@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T20:25:46.386Z
+date: 2022-12-21T20:29:28.334Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -77,4 +77,4 @@ I already wrote a [demo wiki](https://github.com/andygodish/wikijs-storage/blob/
 
 Refer to the [kube-vip documentation](https://kube-vip.io/) as well. You'll want to adjust the version TAG variable to the [latest release](https://github.com/kube-vip/kube-vip/releases) as well. Doublecheck the interface variable too.
 
-
+This process installs kube-vip as a daemonset in the cluster. You should see a single kube-vip pod running almost immediately following the installation command. 
