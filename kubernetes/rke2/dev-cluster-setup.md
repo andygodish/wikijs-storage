@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T17:18:18.166Z
+date: 2022-12-21T17:27:21.418Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -27,7 +27,13 @@ A couple things to note:
 - The `192.168.2.64` ip in the `tls-san` array will be the VIP used in future the kube-vip configuration - above that is the DNS I am using locally for that VIP
 
 ```
+mkdir -p /etc/rancher/rke2
+
+cat <<EOF > /etc/rancher/rke2/config.yaml
 disable: rke2-ingress-nginx
+write-kubeconfig-mode "0644"
+node_label: 
+- "env=dev"
 tls-san:
 - server-0
 - server-0.lan.andyg.io
