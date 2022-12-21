@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T21:02:03.598Z
+date: 2022-12-21T23:14:15.116Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -92,3 +92,15 @@ sed -i -e "s/127.0.0.1/${VIP}/g" /tmp/rke2.yaml
 
 **From your development machine**, copy the temporary rke2.yaml yaml file and set its path equal to your `KUBECONFIG` env variable. You should now be able to access the cluster via kubectl.  
 
+### Joining Additional Server Nodes
+
+For the remaining two server nodes, you'll first want to repeat the rke2 configuration step by creating the `/etc/rancher/rke2/config.yaml` file with updated information in the tls-san block pertaining to the new server nodes. 
+
+Additionally, you will need to include keys for the server and the join token. The latter of which can be retrived from your initial server node at `/var/lib/rancher/rke2/server/token`.
+
+```
+cat <<EOF >> /etc/rancher/rke2/config.yaml
+server: https://192.168.2.64:9435
+token: <join-token>
+EOF
+```
