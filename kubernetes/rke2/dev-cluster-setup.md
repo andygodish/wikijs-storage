@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T23:19:08.742Z
+date: 2022-12-21T23:31:02.198Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -102,7 +102,7 @@ Additionally, you will need to include keys for the server and the join token. T
 
 ```
 cat <<EOF >> /etc/rancher/rke2/config.yaml
-server: https://192.168.2.64:9435
+server: https://192.168.2.64:9345
 token: <join-token>
 EOF
 ```
