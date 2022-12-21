@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T20:36:41.492Z
+date: 2022-12-21T20:48:27.394Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -80,5 +80,12 @@ Refer to the [kube-vip documentation](https://kube-vip.io/) as well. You'll want
 This process installs kube-vip as a daemonset in the cluster. You should see a single kube-vip pod running almost immediately following the installation command. Test this by pinging the address used for the vip, `192.168.2.64`.
 
 #### Accessing the Cluster Remotely
+
+Move the `rke2.yaml` kubeconfig file created during the rke2 installation process to a tmeporary directory and updated the server to reflect your *kube-vip* instead of localhost. 
+
+```
+cp /etc/rancher/rke2/rke2.yaml /tmp/rke2.yaml
+sed -i -e "s/127.0.0.1/${VIP}/g" /tmp/rke2.yaml
+```
 
 
