@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T20:53:12.947Z
+date: 2022-12-21T20:59:36.338Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -18,6 +18,8 @@ dateCreated: 2022-12-21T16:46:51.163Z
 **Service Mesh:** Istio 
 
 ### Initial Server Node
+
+**Don't forget to change the hostname of your VM**
 
 #### config.yaml
 
