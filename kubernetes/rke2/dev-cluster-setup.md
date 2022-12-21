@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T20:06:51.540Z
+date: 2022-12-21T20:12:40.846Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -50,6 +50,21 @@ curl -sfL https://get.rke2.io | INSTALL_RKE2_CHANNEL=stable sh -
 
 Since I am running on Centos Stream, I will need to disable firewalld per the 
 [rke2 documentation](/kubernetes/rke2/config-network-manager)https://docs.rke2.io/known_issues?_highlight=firewalld).
+
+```
+systemctl --now disable firewalld
+```
+
+Additionally, when running NetworkManager, you need to make sure it is configured to ignore calico/flannel related network interfaces. [Docs](https://docs.rke2.io/known_issues?_highlight=firewalld#networkmanager).
+
+```
+# create a configuration file called rke2-canal.conf in /etc/NetworkManager/conf.d
+---
+[keyfile]
+unmanaged-devices=interface-name:cali*;interface-name:flannel*
+
+```
+
 ```
 systemcctl --now enable rke2-server
 ```
