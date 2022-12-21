@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T20:20:52.802Z
+date: 2022-12-21T20:21:52.243Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -73,5 +73,6 @@ systemctl --now enable rke2-server
 
 #### Kube-VIP
 
+I already wrote a [demo wiki](https://github.com/andygodish/wikijs-storage/blob/main/kubernetes/kube-vip/kubevip-demo.md) for the initial set up of `kube-vip`. Check it out. 
 
 
