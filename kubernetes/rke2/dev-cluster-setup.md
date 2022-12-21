@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T20:01:40.258Z
+date: 2022-12-21T20:06:51.540Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -46,5 +46,11 @@ Use the installation script from the [rke2 docs](https://docs.rke2.io/upgrade/ma
 
 ```
 curl -sfL https://get.rke2.io | INSTALL_RKE2_CHANNEL=stable sh -
+```
+
+Since I am running on Centos Stream, I will need to disable firewalld per the 
+[rke2 documentation](/kubernetes/rke2/config-network-manager)https://docs.rke2.io/known_issues?_highlight=firewalld).
+```
+systemcctl --now enable rke2-server
 ```
 
