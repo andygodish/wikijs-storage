@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T23:31:02.198Z
+date: 2022-12-21T23:33:14.389Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -107,7 +107,7 @@ token: <join-token>
 EOF
 ```
 
-Repeat the following steps outlined above: 
+Repeat the following steps outlined in the *Initial Server Node* section: 
 - Disable firewalld if required
 - Configure NetworkManager (reload)
 - Download rke2 installation binary
