@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T23:16:34.651Z
+date: 2022-12-21T23:18:26.747Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -66,6 +66,8 @@ cat <<EOF >> /etc/NetworkManager/conf.d/rke2-canal
 unmanaged-devices=interface-name:cali*;interface-name:flannel*
 EOF
 ```
+
+Be sure to reload NetworkManager, `systemctl reload NetworkManager`.
 
 Start and enable rke2-server,
 
