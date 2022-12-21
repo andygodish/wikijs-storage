@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T17:16:14.324Z
+date: 2022-12-21T17:18:18.166Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -34,3 +34,4 @@ tls-san:
 - dev-rke2.lan.andyg.io
 - 192.168.2.64
 ```
+
