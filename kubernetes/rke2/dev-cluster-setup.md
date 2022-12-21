@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T19:42:43.563Z
+date: 2022-12-21T20:00:58.813Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -40,5 +40,11 @@ tls-san:
 - dev-rke2.lan.andyg.io
 - 192.168.2.64
 EOF
+```
+
+Use the installation script from the rke2 docs to install rke2-server from the stable channel: 
+
+```
+curl -sfL https://get.rke2.io | INSTALL_RKE2_CHANNEL=stable sh -
 ```
 
