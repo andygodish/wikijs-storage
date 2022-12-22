@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-21T23:33:14.389Z
+date: 2022-12-22T04:15:17.395Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -102,6 +102,24 @@ Additionally, you will need to include keys for the server and the join token. T
 
 ```
 cat <<EOF >> /etc/rancher/rke2/config.yaml
+server: https://192.168.2.64:9345
+token: <join-token>
+EOF
+```
+
+Repeat the following steps outlined in the *Initial Server Node* section: 
+- Disable firewalld if required
+- Configure NetworkManager (reload)
+- Download rke2 installation binary
+- Enable and start the rke2-server service
+
+### Joining Worker Nodes
+
+The configuration file for a simple worker nodes just needs to specify a server and join token,
+
+```
+mkdir -p /etc/rancher/rke2
+cat <<EOF > /etc/rancher/rke2/config.yaml
 server: https://192.168.2.64:9345
 token: <join-token>
 EOF
