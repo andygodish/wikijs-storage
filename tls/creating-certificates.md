@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-16T16:12:22.266Z
+date: 2022-12-22T17:20:48.523Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -106,6 +106,32 @@ To do this, you create a config file containing your SANs.
 
 ```
 echo "subjectAltName=DNS:*.dns.record,IP:192.168.1.123" >> extfile.cnf
+```
+
+You can include this in the CSR by using the `-config` option pointing to a configuration file:
+
+```
+openssl req -new -sha256 -subj "/CN=something.com" -config req.conf  -key key.pem -out cert.csr
+---
+# req.conf contents
+
+[req]
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+prompt = no
+[req_distinguished_name]
+C = US
+ST = CO
+L = City
+O = vailresorts
+OU = appi
+CN = freerideredis.vailresorts.com
+[v3_req]
+keyUsage = keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = freerideredis.vailresorts.com        <----------*********
 ```
 
 ## Generate the Certificate from the CSR
