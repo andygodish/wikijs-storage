@@ -2,7 +2,7 @@
 title: Creating TLS Certificates
 description: Writing down this process so I don't forget next time I have to do this for work. 
 published: true
-date: 2022-12-22T17:20:48.523Z
+date: 2022-12-22T18:33:48.769Z
 tags: ssl/tls, tls
 editor: markdown
 dateCreated: 2022-12-16T03:13:16.457Z
@@ -123,15 +123,15 @@ prompt = no
 C = US
 ST = CO
 L = City
-O = vailresorts
+O = site
 OU = appi
-CN = freerideredis.vailresorts.com
+CN = dns.site.com
 [v3_req]
 keyUsage = keyEncipherment, dataEncipherment
 extendedKeyUsage = serverAuth
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = freerideredis.vailresorts.com        <----------*********
+DNS.1 = dns.site.com        <----------*********
 ```
 
 ## Generate the Certificate from the CSR
