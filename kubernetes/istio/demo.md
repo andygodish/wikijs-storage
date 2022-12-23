@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-23T06:18:24.708Z
+date: 2022-12-23T06:33:52.030Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -80,5 +80,14 @@ export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
 echo "http://$GATEWAY_URL/productpage"
 ```
 
+## More about Gateways and Virtual Services
+
+These are Istio CRDs that allow the management of inbound and outbound traffic for the service mesh. 
+
+> Gateway configurations are applied to **standalone Envoy proxies** that are running at the edge of the mesh, rather than sidecar Envoy proxies running alongside your service workloads.
+
+Gateways allow access to Istio's *traffic routing*.
+
+A Gateway is bound to a `VirtualService` to specify routing for the Gateway. Routing rules for external traffic are then configured on the `VirtualService`.
 
 
