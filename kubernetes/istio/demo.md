@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-23T05:51:50.550Z
+date: 2022-12-23T06:13:01.549Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -31,6 +31,10 @@ You need this label for sidecar injection to take place within a namespace:
 kubectl label namespace default istio-injection=enabled
 ```
 
+### Modify The Istio-Ingressgateway Service
+
+If you're not using an external loadbalancer, edit the `istio-ingressgateway` service deployed during the istio installation to be of type NodePort instead of LoadBalancer.
+
 ### Installing the Sample Application
 
 Install the *bookinfo* application with the following command:
@@ -48,5 +52,25 @@ nf_nat_redirect
 xt_REDIRECT
 xt_owner
 EOF
+```
+
+Verify the deployment with this curl command: 
+
+```
+kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
+```
+
+You can also run `istioctl analyze` for further validation.
+
+---
+
+### Quick Commands for Accessing Demo Apps
+
+```
+export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
+export INGRESS_HOST=$(kubectl get po -l istio=ingressgateway -n istio-system -o jsonpath='{.items[0].status.hostIP}')
+export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+echo "http://$GATEWAY_URL/productpage"
 ```
 
