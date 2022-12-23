@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-23T06:45:39.317Z
+date: 2022-12-23T06:52:12.985Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -113,3 +113,19 @@ The `selector` used in the Gateway maps the Gateway resource to the `istio-ingre
 
 The above example allows external traffic from *all* hosts into the mesh on port 80.
 
+## Kiali Dashboard
+
+The addons directory contains a Kiali deployment.
+
+```
+kubectl apply -f samples/addons
+kubectl rollout status deployment/kiali -n istio-system
+```
+
+Once installed, launch the dashboard with `istioctl dashboard kiali`.
+
+Open the webapp in your browser and navigate to the *graph* sectin on the left tab. Switch to the namespace you wish to view trace data for. Generate some trace data with the following for loop:
+
+```
+for i in $(seq 1 100); do curl -s -o /dev/null "http://$GATEWAY_URL/productpage"; done
+```
