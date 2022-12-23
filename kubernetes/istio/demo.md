@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-23T06:40:22.301Z
+date: 2022-12-23T06:45:39.317Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -111,4 +111,5 @@ spec:
 
 The `selector` used in the Gateway maps the Gateway resource to the `istio-ingressgateway` service deployed in the `istio-system` namespace. 
 
+The above example allows external traffic from *all* hosts into the mesh on port 80.
 
