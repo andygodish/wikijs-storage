@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-23T06:33:52.030Z
+date: 2022-12-23T06:40:22.301Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -89,5 +89,26 @@ These are Istio CRDs that allow the management of inbound and outbound traffic f
 Gateways allow access to Istio's *traffic routing*.
 
 A Gateway is bound to a `VirtualService` to specify routing for the Gateway. Routing rules for external traffic are then configured on the `VirtualService`.
+
+### Sample Gateway
+
+```
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  ...
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*'
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
+```
+
+The `selector` used in the Gateway maps the Gateway resource to the `istio-ingressgateway` service deployed in the `istio-system` namespace. 
 
 
