@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-23T06:13:01.549Z
+date: 2022-12-23T06:15:33.032Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -74,3 +74,4 @@ export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
 echo "http://$GATEWAY_URL/productpage"
 ```
 
+> For some reason, it takes several minutes for me to be able to reach the product page using the http NodePort. 
