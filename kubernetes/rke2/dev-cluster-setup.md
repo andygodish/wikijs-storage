@@ -2,7 +2,7 @@
 title: Setting Up a Dev Cluster
 description: Breakdown of how I am using RKE2 to run a development cluster in my homelab. 
 published: true
-date: 2022-12-23T22:17:11.123Z
+date: 2022-12-23T22:52:07.617Z
 tags: kubernetes, rke2, homelab, development
 editor: markdown
 dateCreated: 2022-12-21T16:46:51.163Z
@@ -136,3 +136,16 @@ curl -sfL https://get.rke2.io | INSTALL_RKE2_CHANNEL=stable INSTALL_RKE2_TYPE="a
 ```
 
 Finally, start and enable the `rke2-agent` service.
+
+## Storage Class
+
+- [Rancher's Local Path Povisioner](https://github.com/rancher/local-path-provisioner)
+
+This storage class dynamically applies a hostpath volume and claim and saves you the hassle of doing it manually. Follow the installation steps outlined in the GitHub Readme above. Or,
+
+```
+kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.23/deploy/local-path-storage.yaml
+```
+
+
+
