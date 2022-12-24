@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-23T06:52:12.985Z
+date: 2022-12-24T20:08:43.896Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -44,6 +44,15 @@ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
 **NOTE** - The `istio-init` containers will crashloop when running on an OS running SELinux. [This article](https://www.suse.com/support/kb/doc/?id=000020241) solved the issue for me. TLDR, run this on your worker nodes:
+
+```
+modprobe br_netfilter 
+modprobe nf_nat_redirect 
+modprobe xt_REDIRECT 
+modprobe xt_owner
+```
+
+To load on reboot of the node, run:
 
 ```
 cat >/etc/modules-load.d/istio-iptables.conf <<EOF
