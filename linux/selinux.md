@@ -2,7 +2,7 @@
 title: SELINUX
 description: Notes and quick commands for SELINUX
 published: true
-date: 2022-12-03T17:32:23.521Z
+date: 2022-12-24T19:48:51.313Z
 tags: linux, security, selinux
 editor: markdown
 dateCreated: 2022-12-03T17:32:23.521Z
@@ -20,7 +20,7 @@ In my development environment, I am usually deploying to centos 8 VMs that are b
 sudo setenforce 0
 ```
 
-To verify the status, run `sudo setenforce 0`.
+To verify the status, run `getenforce`.
 
 
 
