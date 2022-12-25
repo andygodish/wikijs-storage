@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-25T05:50:19.219Z
+date: 2022-12-25T05:50:49.757Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -107,8 +107,8 @@ You do not need to include the `- match` array if attempting to use the `/` path
 kind: VirtualService
 spec:
   ...
-  http:
-  - match:
+  http:          
+  - match:              <---- Omit this part
     - uri:
         exact: /
 ```
