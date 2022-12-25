@@ -2,7 +2,7 @@
 title: Istio Demo
 description: Outlining the basics of Istio 1.16 from the demo provided in their documentation.
 published: true
-date: 2022-12-24T20:08:43.896Z
+date: 2022-12-25T05:50:19.219Z
 tags: kubernetes, istio, service mesh
 editor: markdown
 dateCreated: 2022-12-23T05:43:00.976Z
@@ -98,6 +98,21 @@ These are Istio CRDs that allow the management of inbound and outbound traffic f
 Gateways allow access to Istio's *traffic routing*.
 
 A Gateway is bound to a `VirtualService` to specify routing for the Gateway. Routing rules for external traffic are then configured on the `VirtualService`.
+
+#### Matching the Root Path in Your Virtual Services
+
+You do not need to include the `- match` array if attempting to use the `/` path. Just omit it from the VirtualService spec entirely. 
+
+```
+kind: VirtualService
+spec:
+  ...
+  http:
+  - match:
+    - uri:
+        exact: /
+```
+
 
 ### Sample Gateway
 
