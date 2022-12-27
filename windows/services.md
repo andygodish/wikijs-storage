@@ -2,13 +2,13 @@
 title: Windows Services
 description: How to manage services running on Windows servers.
 published: true
-date: 2022-12-27T17:50:47.502Z
+date: 2022-12-27T17:57:20.876Z
 tags: windows, services, sysadmin
 editor: markdown
 dateCreated: 2022-12-27T17:50:47.502Z
 ---
 
-# Windows Servers
+# Windows Services
 
 To view a list of running services on a Windows machine, you can use the following methods:
 
