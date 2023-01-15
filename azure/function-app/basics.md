@@ -2,7 +2,7 @@
 title: Function App
 description: Getting started with Azure Function Apps. 
 published: true
-date: 2023-01-15T20:26:49.366Z
+date: 2023-01-15T21:46:33.351Z
 tags: azure, function-app, serverless
 editor: markdown
 dateCreated: 2023-01-15T20:13:52.860Z
@@ -34,4 +34,15 @@ Finally, create the base function app c# code by running the following command:
 
 ```
 func new --name HttpExample --template "HTTP trigger" --authlevel anonymous
+```
+
+## Application Code
+
+In order to make an HTTP request to an external API, we need to utilize the `System.Net.http` namespace and create a new client object which can leverage the `GetAsync` method. 
+
+```
+using System.Net.Http;
+---
+HttpClient client = new HttpClient()
+var response = await client.GetAsync("https://api.coinbase.com/v2/prices/BTC-USD/sell/")
 ```
