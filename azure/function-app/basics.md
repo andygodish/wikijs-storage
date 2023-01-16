@@ -2,7 +2,7 @@
 title: Function App
 description: Getting started with Azure Function Apps. 
 published: true
-date: 2023-01-16T04:50:10.379Z
+date: 2023-01-16T04:51:52.209Z
 tags: azure, function-app, serverless
 editor: markdown
 dateCreated: 2023-01-15T20:13:52.860Z
@@ -51,3 +51,4 @@ var responseBody = await response.Content.ReadAsStreamAsync();
 
 return new OkObjectResult(responseBody);
 ```
+
