@@ -2,7 +2,7 @@
 title: Function App
 description: Getting started with Azure Function Apps. 
 published: true
-date: 2023-01-16T04:49:30.869Z
+date: 2023-01-16T04:50:10.379Z
 tags: azure, function-app, serverless
 editor: markdown
 dateCreated: 2023-01-15T20:13:52.860Z
@@ -42,8 +42,10 @@ In order to make an HTTP request to an external API, we need to utilize the `Sys
 
 ```
 using System.Net.Http;
----
+...
+...
 HttpClient client = new HttpClient()
+
 var response = await client.GetAsync("https://api.coinbase.com/v2/prices/BTC-USD/sell/")
 var responseBody = await response.Content.ReadAsStreamAsync();
 
