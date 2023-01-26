@@ -2,7 +2,7 @@
 title: Managing Self Hosted Github Runners
 description: Tidbits about managing self hosted github actions runners. 
 published: true
-date: 2023-01-26T17:03:50.288Z
+date: 2023-01-26T18:34:33.535Z
 tags: github, cicd, github actions
 editor: markdown
 dateCreated: 2023-01-26T05:30:10.862Z
@@ -74,3 +74,6 @@ helm install base-runner ./ \
   --set runnerImage=quay.io/andygodish/gh-runners-base \
   --set runnerTag=v1.0.0
 ```
+
+## Deploying the Buildah Runner
+
