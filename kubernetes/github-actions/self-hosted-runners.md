@@ -2,7 +2,7 @@
 title: Managing Self Hosted Github Runners
 description: Tidbits about managing self hosted github actions runners. 
 published: true
-date: 2023-01-26T16:09:31.302Z
+date: 2023-01-26T17:01:36.050Z
 tags: github, cicd, github actions
 editor: markdown
 dateCreated: 2023-01-26T05:30:10.862Z
@@ -43,7 +43,25 @@ Where `RELEASE_NAME` is the future name of you helm release.
 
 Set your helm chart values to utilize a pre-created `serviceaccount` and container registry secret. By default, the helm chart expects a service account named `runner`. 
 
-Assuming you already have a Kubernetes cluster to work with, 
+```
+kubectl create serviceaccount runner
+```
+
+I'm using quay.io to pull in the image registry. They provide a copy and paste option for yaml associated with a pull secret. It'll look something like this once generated:
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay
+data:
+  .dockerconfigjson: XXXXX
+type: kubernetes.io/dockerconfigjson
+```
+
+---
+
+Assuming you already have a Kubernetes cluster to work with,
 
 ```
 helm install base-runner ./ \    
