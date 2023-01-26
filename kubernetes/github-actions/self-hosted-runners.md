@@ -2,7 +2,7 @@
 title: Managing Self Hosted Github Runners
 description: Tidbits about managing self hosted github actions runners. 
 published: true
-date: 2023-01-26T05:35:44.701Z
+date: 2023-01-26T05:40:42.896Z
 tags: github, cicd, github actions
 editor: markdown
 dateCreated: 2023-01-26T05:30:10.862Z
@@ -16,3 +16,4 @@ There are two primary issues that I encountered, one is that the use of the redh
 
 To get around this issue, my plan is to utilize the `base` image found in the same OpenShift repo mentioned above as an intermediary runner that would simply spin up short lasting runners with more application specific tools needed by a development team. 
 
+For example, say you have an early stage workflow that just needs to build and push an image to a registry. To avoid 
