@@ -2,7 +2,7 @@
 title: Managing Self Hosted Github Runners
 description: Tidbits about managing self hosted github actions runners. 
 published: true
-date: 2023-01-26T18:34:33.535Z
+date: 2023-01-26T21:32:34.632Z
 tags: github, cicd, github actions
 editor: markdown
 dateCreated: 2023-01-26T05:30:10.862Z
@@ -77,3 +77,15 @@ helm install base-runner ./ \
 
 ## Deploying the Buildah Runner
 
+Same command as above, just change the image to `quay.io/andygodish/gh-runners-builhah` and the number of replicas to `0`.
+
+```
+helm install buildah-runner ./ \
+  --set-string githubOwner=$GITHUB_OWNER \
+  --set-string githubPat=$GITHUB_PAT \
+  --set-string githubRepository=$GITHUB_REPO \
+  --set runnerLabels="{helm, base, dev}" \
+  --set runnerImage=quay.io/andygodish/gh-runners-buildah \
+  --set runnerTag=v1.0.0 \
+  --set replicas=0
+```
