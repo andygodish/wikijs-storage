@@ -2,7 +2,7 @@
 title: Managing Self Hosted Github Runners
 description: Tidbits about managing self hosted github actions runners. 
 published: true
-date: 2023-01-26T17:01:36.050Z
+date: 2023-01-26T17:03:50.288Z
 tags: github, cicd, github actions
 editor: markdown
 dateCreated: 2023-01-26T05:30:10.862Z
@@ -58,6 +58,8 @@ data:
   .dockerconfigjson: XXXXX
 type: kubernetes.io/dockerconfigjson
 ```
+
+Create the secret from the yaml file and add the secret name to you helm values under `imagePullSecrets`
 
 ---
 
