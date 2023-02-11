@@ -2,7 +2,7 @@
 title: Reverse Lookup
 description: The antithesis of nslookup.
 published: true
-date: 2023-01-24T04:45:50.610Z
+date: 2023-02-11T20:28:23.761Z
 tags: linux, command line
 editor: markdown
 dateCreated: 2023-01-24T04:45:50.610Z
@@ -42,4 +42,8 @@ Non-authoritative answer:
 Name:   blog.lan.andyg.io
 Address: 192.168.2.86
 ```
+
+## Arin.net
+
+This site, https://www.arin.net/, gives you a ton of information pertaining to a reverse lookup. I used this at work to determine that a random dst IP associated with dropped packets was in fact related to Azure Monitoring. 
 
