@@ -2,7 +2,7 @@
 title: Bootstrapping Flux
 description: Getting started with Flux.
 published: true
-date: 2023-03-13T22:08:24.830Z
+date: 2023-03-13T22:10:35.418Z
 tags: kubernetes, flux, gitops
 editor: markdown
 dateCreated: 2023-03-13T22:08:24.830Z
@@ -36,6 +36,10 @@ flux bootstrap github \
 --personal
 ```
 
-Verify by checking that the `flux-system` namespace has been created in your cluster. 
+Verify by checking,
+
+- that the `flux-system` namespace has been created in your cluster
+- the `flux-system` directory has been created in your new repo
+- the deploy key for your flux app-cluster has been created
 
 
