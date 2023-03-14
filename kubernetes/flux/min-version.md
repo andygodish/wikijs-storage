@@ -2,7 +2,7 @@
 title: Minimum Version Requirements
 description: Short script for determining if your cluster meets the minimum requirements for flux. 
 published: true
-date: 2023-03-14T15:47:58.073Z
+date: 2023-03-14T16:00:23.160Z
 tags: kubernetes, bash, flux
 editor: markdown
 dateCreated: 2023-03-14T15:47:58.073Z
@@ -12,20 +12,18 @@ dateCreated: 2023-03-14T15:47:58.073Z
 
 - [Docs] (https://fluxcd.io/flux/installation/#prerequisites)
 
+Write a bash script that first captures two variables. One indicating the current version of k8s installed locally, and one indicating a static minimum required by the flux documentation. In this case, `1.23.0`.
+
+In order to determine if the minimum version requirements are met, sort the output of both variables in ascending order, with each on a new line, and proceed only if the minimum version is the first listed. 
+
 ```
 echo "Installing flux from kustomization"
 KUBECTL_VERSION=$(kubectl version --client --short | awk -F "v" '{print $NF}')
 KUBECTL_MIN_VERSION="1.23.0"
 
 if [ "$(printf '%s\n' "$KUBECTL_MIN_VERSION" "$KUBECTL_VERSION" | sort -V | head -n1)" = "$KUBECTL_MIN_VERSION" ]; then
-  kubectl kustomize "$FLUX_KUSTOMIZATION" | sed "s/registry1.dso.mil/${REGISTRY_URL}/g" | kubectl apply -f -
-else
-  if [ command -v kustomize ] >/dev/null 2>&1; then
-    echo "Kustomize not found"
-    exit 1
-  else
-    kustomize build "$FLUX_KUSTOMIZATION" | sed "s/registry1.dso.mil/${REGISTRY_URL}/g" | kubectl apply -f -
-  fi
+  ...
+  #install via kustomize
 fi
 ```
 
