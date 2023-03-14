@@ -2,7 +2,7 @@
 title: Minimum Version Requirements
 description: Short script for determining if your cluster meets the minimum requirements for flux. 
 published: true
-date: 2023-03-14T16:00:23.160Z
+date: 2023-03-14T16:01:22.195Z
 tags: kubernetes, bash, flux
 editor: markdown
 dateCreated: 2023-03-14T15:47:58.073Z
@@ -23,7 +23,8 @@ KUBECTL_MIN_VERSION="1.23.0"
 
 if [ "$(printf '%s\n' "$KUBECTL_MIN_VERSION" "$KUBECTL_VERSION" | sort -V | head -n1)" = "$KUBECTL_MIN_VERSION" ]; then
   ...
-  #install via kustomize
+    #install via kustomize
+  ...
 fi
 ```
 
