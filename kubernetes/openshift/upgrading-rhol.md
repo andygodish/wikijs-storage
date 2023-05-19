@@ -42,14 +42,87 @@ In the openshift portal:
 
 From this page, create a new one.
 
-This is where you can definie configurations specific to Splunk. See OpenShift documentation on forwarder configurations specific to your logging tool. In my case, we wanted a configuration that did not utilize ElasticSearch. 
+This is where you can definie configurations specific to Splunk. See OpenShift documentation on forwarder configurations specific to your logging tool. In my case, we wanted a configuration that did not utilize ElasticSearch. The end result is the creation of a CR called `ClusterLogging`.
+
+- [More information about the OpenShift Custom Resources](https://docs.openshift.com/container-platform/4.10/logging/cluster-logging.html#cluster-logging-about_cluster-logging)
 
 ### Creating the Forwarder Pods
 
 #### Create a Splunk HEC
 
-This get applied as a secret in the openshift-loggin namespace
+This get applied as a secret in the openshift-loggin namespace. This can be created in Spluk by navigating to:
 
+`Settings (NavBar) > Data Inputs > HTTP Events Collector (Local Inputs)`
 
+From here, you can define a new token. In my case, I want to set the "selected index" to just use "openshift." There are 3 clusters in our infrastructure, all of which route logs to this index. The logs from different clusters are separated by the "Source" field. This can be set when creating the token.
 
+In the openshift-logging namespace, create a secret called `splunk-token` with a single field called, `hecToken`,
+
+```
+oc -n openshift-logging create secret generic splunk-secret --from-literal hecToken=<HEC_Token>
+```
+
+You can then reference this secret in the spec.outputs of the ClusterLogForwarder CR ike so:
+
+```
+apiVersion: logging.openshift.io/v1
+kind: ClusterLogForwarder
+metadata:
+  managedFields:
+  name: instance
+  namespace: openshift-logging
+spec:
+  outputs:
+    - name: splunk-receiver
+      secret:
+        name: splunk-token
+      type: splunk
+      url: 'https://...
+```
+
+#### Additional Configuration Settings
+
+The ClusterLogForwarder will also need to be configured to only take `application` logs as inputRefs. This, combined with the ClusterLogging CR only being configured to run on worker nodes will prevent "infrastructure" logs from inundating our Splunk cloud instance with way more information that we need. Other tools are used in our organization for infrastructure-specific logging.
+
+```
+apiVersion: logging.openshift.io/v1
+kind: ClusterLogForwarder
+metadata:
+  managedFields:
+  name: instance
+  namespace: openshift-logging
+spec:
+  outputs:
+    ...
+  pipelines:
+    - inputRefs:
+        - application
+```
+
+### Configure HAProxy to Forward via Syslog
+
+Configure the OpenShift default HAProxy router to send access logs to the Splunk forwarders via syslog by editing the OpenShift ingresscontroller's `httpLogFormat` field: 
+
+```
+spec:
+  ...
+  logging:
+    access:
+      destination:
+        syslog:
+          address: 10.34.6.40
+          port: 514
+        type: Syslog
+      httpCaptureHeaders:
+        ...
+      httpLogFormat: '%ci:%cp %ft %b/%s %TR/%Tw/%Tc/%Tr/%Ta %ST %B %CC %CS %tsc %ac/%fc/%bc/%sc/%rc %sq/%bq %hr %hs %HM %HP %{+Q}HQ %HV'
+```
+
+## Verify Logs are Being Received in Splunk
+
+Query Splunk by using the index and source defined in the HEC token that was created earlier: 
+
+```
+index="<index>" source="<source>"
+```
 
