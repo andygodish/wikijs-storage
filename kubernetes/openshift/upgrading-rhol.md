@@ -2,7 +2,7 @@
 title: Upgrading RHOL Operator
 description: Upgrading the RHOL Operator
 published: true
-date: 2023-05-18T22:08:13.677Z
+date: 2023-05-19T17:40:23.455Z
 tags: kubernetes, openshift, logging
 editor: markdown
 dateCreated: 2023-05-18T22:08:13.677Z
@@ -23,6 +23,8 @@ helm delete --namespace openshift-logging openshift-logforwarding-splunk
 ## Upgrade the Operator
 
 At the time of this writing, 5.3.14 of the operator is in use. The target upgrade is the stable channel (5.6). Update the channel make sure your update approval process is set to manual. This will require a manual change to the operator manifest when performing future upgrades. Whereas setting it to automatic is analogous to setting the version tag to `latest` in a k8s manifest. 
+
+![operator-settings.png](/operator-settings.png)
 
 You'll see the existing operator installation error out and eventually clear before the new operator instance is installed. 
 
