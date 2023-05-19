@@ -32,7 +32,10 @@ You'll see the existing operator installation error out and eventually clear bef
 
 ### Run the Operator on Specific Nodes
 
-The operator itself should be run on an infrastructure node (not sure if an infa node is openshift specific or if it is synonymous with controlplane/master node). Update the yaml for the operator resource itself and add the appropirate `nodeSelector` and `tolerations` as indicated by your cluster. 
+The operator itself should be run on an infrastructure node (not sure if an infa node is openshift specific or if it is synonymous with controlplane/master node). Update the yaml for the operator resource itself and add the appropirate `nodeSelector` and `tolerations` as indicated by your cluster. Those yaml configurations should be placed at,
+
+- `spec.install.spec.deployments[].cluster-logging-operator.spec.template.spec.nodeselector`
+- `spec.install.spec.deployments[].cluster-logging-operator.spec.template.spec.tolerations`
 
 ### Create OpenShift Logging Instance
 
