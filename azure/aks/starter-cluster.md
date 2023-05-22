@@ -2,7 +2,7 @@
 title: Getting Started with AKS
 description: Stand up a starter cluster with the Azure CLI. 
 published: true
-date: 2023-05-22T02:20:22.419Z
+date: 2023-05-22T02:22:54.822Z
 tags: kubernetes, azure, azure-cli, aks
 editor: markdown
 dateCreated: 2023-05-22T02:08:40.594Z
@@ -45,5 +45,24 @@ az role assignment create --assignee $SERVICE_PRINCIPAL \
 --role Contributor
 ```
 
+## Creating the Cluster
 
+Modify the following command to your liking: 
+
+```
+az aks create -n aks-getting-started \
+--resource-group $RESOURCEGROUP \
+--location uswest2 \
+--kubernetes-version 1.16.10 \
+--load-balancer-sku standard \
+--nodepool-name default \
+--node-count 1 \
+--node-vm-size Standard_E4s_v3  \
+--node-osdisk-size 250 \
+--ssh-key-value ./id_rsa.pub \         ### if blank, uses id_rsa
+--network-plugin kubenet \
+--service-principal $SERVICE_PRINCIPAL \
+--client-secret "$SERVICE_PRINCIPAL_SECRET" \
+--output none
+```
 
