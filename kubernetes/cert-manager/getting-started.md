@@ -2,7 +2,7 @@
 title: Cert-Manager
 description: Getting started with a cert-manager deployment. 
 published: true
-date: 2023-05-22T18:59:28.040Z
+date: 2023-05-22T19:03:01.805Z
 tags: kubernetes, tls, cert-manager
 editor: markdown
 dateCreated: 2023-05-22T18:59:28.040Z
@@ -117,7 +117,9 @@ A cople points:
 - Note the annotations for configuring nginx and cert-manager. Make sure the targeted issuer exists. 
 - The `secretName` defines the secret which cert-manager will create --- this will contain the `.crt` and `.key` data.
 
+Once you create the ingress, Cert-manager will perform several steps that involve the creation of additional CRDs. I found that monitoring the associatet `Certificate` and `CertificateRequest` resource via *describe* commands was enough to help me troubleshoot through the issues I encountered. 
 
+That's it, check your hosted site and verify you have a valid TLS certificate.
 
 
 
