@@ -2,7 +2,7 @@
 title: Getting Started with AKS
 description: Stand up a starter cluster with the Azure CLI. 
 published: true
-date: 2023-05-22T02:22:54.822Z
+date: 2023-05-22T02:25:42.312Z
 tags: kubernetes, azure, azure-cli, aks
 editor: markdown
 dateCreated: 2023-05-22T02:08:40.594Z
@@ -65,4 +65,15 @@ az aks create -n aks-getting-started \
 --client-secret "$SERVICE_PRINCIPAL_SECRET" \
 --output none
 ```
+
+## Obtain Credentials (kubeconfig)
+
+I'm assuming the account used to sign in via the CLI (`az login`) needs to have adequate permissions inorder for this admin flag to work properly. 
+
+Once created, it is up to the admin to set up RBAC policies for additional users. 
+
+```
+az aks get-credentials -n \<aks-name> -g $RESOURCE_GROUP --admin
+```
+
 
