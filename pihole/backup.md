@@ -10,7 +10,7 @@ dateCreated: 2023-07-24T20:53:07.587Z
 
 # Back Up Solution
 
-This write-up primarily deals with the backing up of the relevant directtories in the filesystem used by the pihole conttainer. In my lab, I use a product called gravity sync that backs up my primary pihole instance to a second instance of pihole running on another server. 
+This write-up primarily deals with the backing up of the relevant directtories in the filesystem used by the pihole conttainer. In my lab, I use a product called [gravity](https://github.com/vmstan/gravity-sync) sync that backs up my primary pihole instance to a second instance of pihole running on another server. 
 
 This process utilizes an NFS mounnt from the primary pihole server to my qnap NAS. 
 
