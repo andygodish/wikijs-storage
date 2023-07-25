@@ -24,6 +24,14 @@ Pi-hole stores its configuration and data on the local filesystem in two differe
    - '$PWD/etc-dnsmasq.d/:/etc/dnsmasq.d/'
 ```
 
-These two directories will be backed up to a shared volume on my NAS. 
+These two directories will be backed up to a shared volume on my NAS at `/share/pihole`
+
+### Mounting QNAP Shared Folder
+
+- [Reference Article](https://jarasyola.blogspot.com/2017/02/how-to-mount-qnap-shared-folder-in-linux.html)
+
+```
+sudo mount -t nfs <nas.ip>:/share/pihole /mnt/qnap_nas/pihole
+```
 
 
