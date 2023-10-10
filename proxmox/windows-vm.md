@@ -2,10 +2,10 @@
 title: Setting Up a Windows VM
 description: How-to set up a Windows VM on proxmox.
 published: true
-date: 2022-09-23T23:07:43.828Z
-tags: proxmox, windows
+date: 2023-10-10T19:19:18.647Z
+tags: windows, proxmox
 editor: markdown
-dateCreated: 2022-09-12T20:17:53.048Z
+dateCreated: 2023-10-08T22:26:12.529Z
 ---
 
 # Windows VM
@@ -16,6 +16,7 @@ dateCreated: 2022-09-12T20:17:53.048Z
 - Windows Server 2019
 - Windows 10
 - Windows Drivers for Proxmox
+	- Download the lastest stable iso [here](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers)
 
 It'll be the same process for any type of windows product, in this example, I'm installing server 2019.
 
