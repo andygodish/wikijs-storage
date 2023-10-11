@@ -2,7 +2,7 @@
 title: Setting Up a Windows VM
 description: How-to set up a Windows VM on proxmox.
 published: true
-date: 2023-10-10T19:19:18.647Z
+date: 2023-10-11T03:58:44.165Z
 tags: windows, proxmox
 editor: markdown
 dateCreated: 2023-10-08T22:26:12.529Z
@@ -10,6 +10,7 @@ dateCreated: 2023-10-08T22:26:12.529Z
 
 # Windows VM
 
+- [Reference Video](https://www.youtube.com/watch?v=MUDjd44t2GE&t=405s)
 
 ## ISO Downloads
 
