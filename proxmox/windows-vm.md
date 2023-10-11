@@ -2,7 +2,7 @@
 title: Setting Up a Windows VM
 description: How-to set up a Windows VM on proxmox.
 published: true
-date: 2023-10-11T03:58:44.165Z
+date: 2023-10-11T04:06:15.434Z
 tags: windows, proxmox
 editor: markdown
 dateCreated: 2023-10-08T22:26:12.529Z
@@ -57,7 +57,11 @@ You can now start your VM for the first time.
 
 Go through the installation process once started up. Nothing much to note from this process. 
 
-Once complete, check the `Device Manager` for `other devices`. These are devices unknown to the machine because the required driver is not detected on the machine. Right click each one and select `Update Driver`. Select the external disk (D drive in my case) and go through the update process. 
+Once complete, check the `Device Manager` for `other devices`. These are devices unknown to the machine because the required driver is not detected on the machine. Right click each one and select `Update Driver`. Select the external disk (D drive in my case) and go through the update process.
+
+Alternatively, run the 64-itt setup wizzard for VirtIO found in the root directory of your attached CD Drive (VirtIO).
+
+Next, Assign your server a static IP from within the GUI. 
 
 ## Install Qemu Agent
 
