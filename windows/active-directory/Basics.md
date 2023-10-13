@@ -2,7 +2,7 @@
 title: Active Directory
 description: Basics of Active Directory pertaining to its use in my homelab.
 published: true
-date: 2023-10-13T03:17:45.171Z
+date: 2023-10-13T03:25:29.177Z
 tags: windows, sysadmin, active directory
 editor: markdown
 dateCreated: 2023-10-12T23:26:07.844Z
@@ -42,4 +42,8 @@ telnet ad.lan.andyg.io 389
 
 >SSL/TLS: If you're using LDAPS (port 636), ensure that your Wiki.js instance trusts the CA that issued the LDAP server's SSL certificate.
 
+### LDAP URL
 
+The LDAP URL: `ldap://ad.lan.andyg.io` 
+
+This is the scheme (*ldap:// prefix*) that tells the client to use the LDAP protocol.
