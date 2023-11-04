@@ -1,0 +1,32 @@
+---
+title: Chicken Coop Build
+description: Bullet points from the build process of my chicken coop.
+published: true
+date: 2023-11-04T15:36:34.644Z
+tags: house projects, chickens
+editor: markdown
+dateCreated: 2023-11-04T15:36:34.644Z
+---
+
+# Chicken Coop Build
+
+Following the plans laid out in this [YouTube Video](https://www.youtube.com/watch?v=uPgSpktlf4g).
+
+## Basic Structure
+
+There are two of these structures, one for the right and left sides of the coop.
+
+### Material
+
+- 
+
+###### Pressure Treated Lumber
+
+- Pressure Treated Lumber: Wood infused with chemical preservatives.
+- Purpose: Protects against rot, decay, and termite infestation.
+- Applications: Used in outdoor settings like decks, fences, and landscaping.
+- Durability: Resistant to rot and insects but still subject to wear and weathering.
+- Safety Precautions:
+	- Wear a dust mask and eye protection when cutting or sanding.
+	- Wash hands after handling.
+- Environmental Impact: Newer treatments are more environmentally friendly than older ones.
