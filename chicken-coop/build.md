@@ -2,7 +2,7 @@
 title: Chicken Coop Build
 description: Bullet points from the build process of my chicken coop.
 published: true
-date: 2023-11-04T15:36:34.644Z
+date: 2023-11-04T15:40:57.673Z
 tags: house projects, chickens
 editor: markdown
 dateCreated: 2023-11-04T15:36:34.644Z
@@ -18,7 +18,12 @@ There are two of these structures, one for the right and left sides of the coop.
 
 ### Material
 
-- 
+- 1x --- 4" x 4" x 10' pressure treated post
+- 2x ---  4" x 4" x 8' pressure treated post
+
+---
+---
+---
 
 ###### Pressure Treated Lumber
 
