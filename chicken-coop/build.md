@@ -2,7 +2,7 @@
 title: Chicken Coop Build
 description: Bullet points from the build process of my chicken coop.
 published: true
-date: 2023-11-06T04:24:50.286Z
+date: 2023-11-07T19:18:28.983Z
 tags: house projects, chickens
 editor: markdown
 dateCreated: 2023-11-04T15:36:34.644Z
@@ -18,13 +18,13 @@ There are two of these structures, one for the right and left sides of the coop.
 
 ### Material
 
-- 1x --- 4" x 4" x 10' pressure treated post
-- 2x ---  4" x 4" x 8' pressure treated post
+- 1x --- 4" x 4" x 10' pressure treated post --- $36.16 ($18.08/item)
+- 2x ---  4" x 4" x 8' pressure treated post --- $26.36 ($13.18/item)
 
 The top of the posts will need to be cut at a 15 degree angle to account for the slope of the roof. 
 
-- 2x --- 2" x 4" x 12' pressure treated lumber
-- 2x --- 2" x 4" x 12' construction pine
+- 2x --- 2" x 4" x 12' pressure treated lumber --- $18.96 ($9.48/item)
+- 2x --- 2" x 4" x 12' construction pine --- $15.86 ($7.93/item)
 
 ---
 ---
