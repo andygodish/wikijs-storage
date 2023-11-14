@@ -2,7 +2,7 @@
 title: Chicken Coop Build
 description: Bullet points from the build process of my chicken coop.
 published: true
-date: 2023-11-14T20:17:02.365Z
+date: 2023-11-14T20:17:38.945Z
 tags: house projects, chickens
 editor: markdown
 dateCreated: 2023-11-04T15:36:34.644Z
@@ -49,4 +49,4 @@ The top of the posts will need to be cut at a 15 degree angle to account for the
 
 Tac nailing is a technique commonly used in roofing and construction. It involves the use of a nail gun or hammer to partially drive nails into roofing material or shingles, without fully seating them. This method is used to temporarily secure the material in place while further adjustments or alignments are made. Once the materials are properly positioned and aligned, the nails can be fully driven in to secure them permanently.
 
-Use a frame nailer to build out each section and follow up by using exterior deck screws to fasten the pieces.
+Use a frame nailer to build out each section and follow up by using exterior construction screws to fasten the pieces.
