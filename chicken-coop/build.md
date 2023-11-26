@@ -2,7 +2,7 @@
 title: Chicken Coop Build
 description: Bullet points from the build process of my chicken coop.
 published: true
-date: 2023-11-15T17:48:47.740Z
+date: 2023-11-26T02:15:30.091Z
 tags: house projects, chickens
 editor: markdown
 dateCreated: 2023-11-04T15:36:34.644Z
@@ -30,6 +30,8 @@ The top of the posts will need to be cut at a 15 degree angle to account for the
 
 ![basic_structure_receipt.png](/images/basic_structure_receipt.png)
 
+- 1x --- 3". x 0.120" DEWALT Ring Shank Galvanized Nails (2000 Pack)
+
 ---
 ---
 ---
@@ -54,3 +56,5 @@ Use a frame nailer to build out each section and follow up by using exterior con
 ###### Frame Nailer 
 
 ![frame_nailer_receipt.png](/frame_nailer_receipt.png)
+
+
