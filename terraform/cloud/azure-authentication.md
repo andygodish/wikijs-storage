@@ -2,7 +2,7 @@
 title: Azure Authentication
 description: Configuring an App Registration to connect to an Azure subscription/tenant
 published: true
-date: 2023-12-22T05:44:55.761Z
+date: 2023-12-22T05:46:10.260Z
 tags: azure, terraform, authentication
 editor: markdown
 dateCreated: 2023-12-22T05:18:25.414Z
@@ -93,4 +93,16 @@ The following values will need to be set as environment variables:
 | ARM_SUBSCRIPTION_ID    	| Target subscription										  |
 | ARM_TENANT_ID		    		| Entra ID tenant ID										  |
 
+### Provider Block
 
+A minimal provider block can then be used: 
+
+```
+provider "azurerm" {
+  features {}
+  use_cli = false
+  use_oidc = true
+}
+```
+
+This piece can become more complex if other authentication methods involving additional tenant configurations is used. 
