@@ -2,13 +2,13 @@
 title: Azure Authentication
 description: Configuring an App Registration to connect to an Azure subscription/tenant
 published: true
-date: 2023-12-22T05:46:10.260Z
+date: 2023-12-22T05:46:36.536Z
 tags: azure, terraform, authentication
 editor: markdown
 dateCreated: 2023-12-22T05:18:25.414Z
 ---
 
-# Azure Authentication
+# Azure Authentication (SPN)
 
 - [Reference Guide](https://dev.to/this-is-learning/deploy-azure-infrastructure-using-terraform-cloud-3j9d)
 - [Azure Env Variables](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret.html#configuring-the-service-principal-in-terraform)
