@@ -2,7 +2,7 @@
 title: Azure Authentication
 description: Configuring an App Registration to connect to an Azure subscription/tenant
 published: true
-date: 2023-12-22T05:46:36.536Z
+date: 2023-12-22T05:46:59.882Z
 tags: azure, terraform, authentication
 editor: markdown
 dateCreated: 2023-12-22T05:18:25.414Z
