@@ -2,7 +2,7 @@
 title: Azure Authentication
 description: Configuring an App Registration to connect to an Azure subscription/tenant
 published: true
-date: 2023-12-22T05:42:49.803Z
+date: 2023-12-22T05:44:55.761Z
 tags: azure, terraform, authentication
 editor: markdown
 dateCreated: 2023-12-22T05:18:25.414Z
@@ -87,10 +87,10 @@ The following values will need to be set as environment variables:
 
 | Key     | Value |
 | -------- | ------- |
-| TFC_AZURE_RUN_CLIENT_ID  | Application (client) ID of Azure App    |
-| February | $80     |
-| March    | $420    |
-
-
+| TFC_AZURE_RUN_CLIENT_ID | Application (client) ID of Azure App    |
+| TFC_AZURE_PROVIDER_AUTH | true    																|
+| ARM_CLIENT_SECRET    		| Create a secret for your app in Azure   |
+| ARM_SUBSCRIPTION_ID    	| Target subscription										  |
+| ARM_TENANT_ID		    		| Entra ID tenant ID										  |
 
 
