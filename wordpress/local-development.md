@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2023-12-23T16:54:07.423Z
+date: 2023-12-23T16:59:18.752Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -10,7 +10,7 @@ dateCreated: 2023-12-16T17:59:08.482Z
 
 # Local Wordpress Development
 
-This document outlines my process for developing in Wordpress locally using docker containers.
+This document outlines my process for developing in Wordpress locally using docker containers. The focus is proper configuration of the WP source code, not theme and plugin development. 
 
 ## FS_Method
 
