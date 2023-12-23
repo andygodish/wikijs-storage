@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2023-12-23T19:46:15.397Z
+date: 2023-12-23T19:56:19.845Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -34,11 +34,31 @@ The `web` service listed deploys the wordpress UI application.
 
 The WP application code for the web service is served by an apache instance built into the container image by default. Apache looks to serve the files at `/var/www/html/`. Running the container with this volume mount will copy the files from from that directory in the container to the root directory of your repo. This negates the need to download the source files outlined in the [installation docs](https://developer.wordpress.org/advanced-administration/before-install/howto-install/#basic-instructions).
 
-The wordpress container itself will automatically generate your wp-config.php based on environment variables set in the docker-compose.yaml.
+The wordpress container itself will automatically generate your wp-config.php based on environment variables set in the docker-compose.yaml, so you should immediately be able to access wp at localhost on the designated port.
 
 ### Database
 
+Make sure to configure a version of mysql/mariadb that meets the requirements of WP. You can configure a database at container runtime by providing environment variables. For example: 
 
+```
+mysql:
+  environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: my-wpdb
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: password
+```
+
+The environment variables used by the `web service` (wordpress image) will need to match what you configure in the database container: 
+
+```
+web:
+  environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: my-wpdb
+```
 
 ## FS_Method
 
