@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2023-12-23T20:03:04.943Z
+date: 2023-12-23T20:04:40.443Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
