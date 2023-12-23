@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2023-12-23T19:56:19.845Z
+date: 2023-12-23T20:03:04.943Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -58,6 +58,43 @@ web:
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: password
       WORDPRESS_DB_NAME: my-wpdb
+```
+
+The DB host in the web service environment configuration can be set to `mysql` because each of these services are deployed to the same docker network. 
+
+#### Network
+
+This is configured in the docker-compose.yaml as well:
+
+```
+networks:
+  wp-network:
+    driver: bridge
+```
+
+It is assigned to each service:
+
+```
+mysql:
+  networks:
+  - wp-network
+```
+
+#### Database Volume
+
+Instead of mounting the database directory to the local file system, the docker-compose yaml is configured to create a docker volume like so:
+
+```
+volumes: 
+  db_data:
+```
+
+The docker volume, `db_data`, can then be mounted to the database directory configured in the container: 
+
+```
+mysql:
+  volumes: 
+    - db_data:/var/lib/mysql
 ```
 
 ## FS_Method
