@@ -2,7 +2,7 @@
 title: WordPress Theme Development
 description: WordPress theme development
 published: true
-date: 2023-12-27T17:48:58.243Z
+date: 2023-12-27T18:23:28.915Z
 tags: dev, wordpress, themes
 editor: markdown
 dateCreated: 2023-12-27T05:37:44.888Z
@@ -31,3 +31,10 @@ In order to properly install tailwind and the other dev dependencies that come w
 - `npm install` 
 - `npm run dev`
 - `npm run watch`
+
+Out of the box, you are not going to have access to the full tailwind codebase. For example, attempting to work with a new color (ie, `text-red-900`) in your code base will not work until `npm run development` has properly "mixed" in those css styles:
+
+![tailwind-mix.png](/images/tailwind-mix.png)
+
+You can see the `mix` command being exectued. Once complete, access to the red color is available in your compiled css. By using the `npm run watch` command, you'll see that the `development` script is executed upon changes to your codebase. 
+
