@@ -2,7 +2,7 @@
 title: WordPress Theme Development
 description: WordPress theme development
 published: true
-date: 2023-12-27T17:19:45.468Z
+date: 2023-12-27T17:48:58.243Z
 tags: dev, wordpress, themes
 editor: markdown
 dateCreated: 2023-12-27T05:37:44.888Z
@@ -24,3 +24,10 @@ I follow the "Regular Method" installation process involving the cloning of the 
 - [Regular Method](https://github.com/jeffreyvr/tailpress/?tab=readme-ov-file#regular-method)
 
 Using the local development environment outlined [here](https://github.com/andygodish/wikijs-storage/blob/main/wordpress/local-development.md), I can simply clone the theme repo into the `wp-content/themes` directory of my WP source code. It is then available for selection as a theme in the admin console.
+
+### Install
+
+In order to properly install tailwind and the other dev dependencies that come with TailPress, run the following `npm` commands from the root of the cloned:
+- `npm install` 
+- `npm run dev`
+- `npm run watch`
