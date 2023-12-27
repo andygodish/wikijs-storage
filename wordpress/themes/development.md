@@ -2,7 +2,7 @@
 title: WordPress Theme Development
 description: WordPress theme development
 published: true
-date: 2023-12-27T05:37:44.889Z
+date: 2023-12-27T05:46:05.532Z
 tags: dev, wordpress, themes
 editor: markdown
 dateCreated: 2023-12-27T05:37:44.888Z
@@ -10,9 +10,13 @@ dateCreated: 2023-12-27T05:37:44.888Z
 
 # WordPress Theme Development
 
+- [Repository]()
+- [Documentation]()
+
 ## TailPress
 
 - [Github Readme/Documentation](https://github.com/jeffreyvr/tailpress/#readme)
 
 I chose this open source template due to my past experience with Tailwind css. This repo is actively maintained at the time of this writing and does come with a working bootstrap of Tailwind. 
 
+I follow the "Regular Method" installation process involving the cloning of the TailPress repo as a starter template. There is a lot of npm dependencies that I have been ignoring without issue. From what I can tell, these only pertain to development and shouldn't have any bearing on production builds of the theme itself. 
