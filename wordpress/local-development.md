@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2023-12-23T20:04:40.443Z
+date: 2023-12-28T05:21:13.163Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -112,5 +112,5 @@ define( 'FS_METHOD', 'direct' );
 I was then able to install the plugin directly. Make sure permissions are set correctly:
 
 ```
-sudo -u root touch /var/www/html/wordpress/wp-content/plugins/test.txt
+sudo chown -R www-data:www-data ./
 ```
