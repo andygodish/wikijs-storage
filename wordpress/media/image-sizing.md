@@ -2,7 +2,7 @@
 title: WordPress Image Sizing
 description: Notes on the built in WP features involving image sizing. 
 published: true
-date: 2023-12-29T06:33:10.711Z
+date: 2023-12-29T06:33:44.562Z
 tags: wordpress, media, images
 editor: markdown
 dateCreated: 2023-12-29T06:29:19.495Z
@@ -37,6 +37,8 @@ Search for the above text in the plugin store. You're looking for this plugin:
 ![force-regenerate-plugin.png](/images/force-regenerate-plugin.png)
 
 This is useful if you already have a large number of images uploaded. You can also simple delete and upload images again.
+
+### Use in Code
 
 Now you can tell your php code to use a particular image size as needed: 
 
