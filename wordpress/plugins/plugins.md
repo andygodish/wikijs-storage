@@ -2,7 +2,7 @@
 title: Plugins
 description: Basics about WP Plugins
 published: true
-date: 2023-10-22T22:13:21.143Z
+date: 2024-01-02T16:01:30.002Z
 tags: wordpress, plugins
 editor: markdown
 dateCreated: 2023-10-22T22:11:02.531Z
@@ -20,4 +20,13 @@ Plugins can be activated/deactivated.
 
 Tracking plugins for use in the future
 
+- Classic Editor
 - Contact Form 7
+- Advanced Custom Fields (Free & Pro Version)
+
+### Advanced Custom Fields
+
+This will remove the default custom fields functionality that comes with WP out of the box. Note: existing custom fields data will be maintained after installation. This data will still be pulled from the database. 
+
+
+
