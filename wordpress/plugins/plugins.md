@@ -2,7 +2,7 @@
 title: Plugins
 description: Basics about WP Plugins
 published: true
-date: 2024-01-02T16:01:30.002Z
+date: 2024-01-02T16:04:00.026Z
 tags: wordpress, plugins
 editor: markdown
 dateCreated: 2023-10-22T22:11:02.531Z
@@ -27,6 +27,12 @@ Tracking plugins for use in the future
 ### Advanced Custom Fields
 
 This will remove the default custom fields functionality that comes with WP out of the box. Note: existing custom fields data will be maintained after installation. This data will still be pulled from the database. 
+
+You'll have to use a plugn specific function, 
+
+```
+<?php the_field('your-fieled');?>
+```
 
 
 
