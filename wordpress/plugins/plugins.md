@@ -2,7 +2,7 @@
 title: Plugins
 description: Basics about WP Plugins
 published: true
-date: 2024-01-02T16:06:18.594Z
+date: 2024-01-02T16:09:43.030Z
 tags: wordpress, plugins
 editor: markdown
 dateCreated: 2023-10-22T22:11:02.531Z
@@ -35,5 +35,10 @@ You'll have to use a plugn specific function,
 <?php the_field('your-field');?>
 ```
 
+#### Repeater Field
+
+- Pro version is needed for this feature of Advanced Custom Fields
+
+Adding a list of sub fields into an array. 
 
 
