@@ -2,7 +2,7 @@
 title: Plugins
 description: Basics about WP Plugins
 published: true
-date: 2024-01-02T16:04:00.026Z
+date: 2024-01-02T16:04:41.818Z
 tags: wordpress, plugins
 editor: markdown
 dateCreated: 2023-10-22T22:11:02.531Z
@@ -31,7 +31,7 @@ This will remove the default custom fields functionality that comes with WP out 
 You'll have to use a plugn specific function, 
 
 ```
-<?php the_field('your-fieled');?>
+<?php the_field('your-field');?>
 ```
 
 
