@@ -2,7 +2,7 @@
 title: Create a Proxmox VM Template with Packer
 description: Create a Proxmox VM Template with Packer
 published: true
-date: 2024-01-04T21:51:57.135Z
+date: 2024-01-04T21:55:41.247Z
 tags: proxmox, packer, iac
 editor: markdown
 dateCreated: 2024-01-04T21:29:35.148Z
@@ -43,4 +43,17 @@ The Makefile used to execute the Packer template builds looks for environment va
 cp variables.pkrvars-example.hcl variables.pkrvars.hcl
 ```
 
+5. Run the local container, mounting the Proxmox directory
+
+Navigate to the Proxmox directory. 
+
+```
+cd Iac/hasicorp/packer/proxmox
+
+docker run -it --network host --entrypoint=/bin/bash -v $PWD:/app packer:local
+```
+
+### Volume Mount
+
+We are mounting the codebase of the proxmox directory containing our template manifests into the working directory of the 
 
