@@ -2,7 +2,7 @@
 title: Create a Proxmox VM Template with Packer
 description: Create a Proxmox VM Template with Packer
 published: true
-date: 2024-01-04T22:26:51.674Z
+date: 2024-01-04T23:30:12.544Z
 tags: proxmox, packer, iac
 editor: markdown
 dateCreated: 2024-01-04T21:29:35.148Z
@@ -13,6 +13,7 @@ dateCreated: 2024-01-04T21:29:35.148Z
 - [Github Repo](https://github.com/andygodish/IaC/tree/main/hashicorp/packer/proxmox)
 - [Wikijs Documentation](https://github.com/andygodish/wikijs-storage/blob/main/proxmox/packer-vm-template.md)
 ---
+- [Packer Documentation for Proxmox](https://developer.hashicorp.com/packer/integrations/hashicorp/proxmox/latest/components/builder/iso#network-adapters)
 - [Reference Repository(dustinrue)](https://github.com/dustinrue/proxmox-packer)
 - [Reference Repository(ChristianLempa)](https://github.com/ChristianLempa/boilerplates/tree/main/packer/proxmox/ubuntu-server-focal)
 - [YouTube Video](https://www.youtube.com/watch?v=1nf3WOEFq1Y)
@@ -22,7 +23,7 @@ The IaC repo linked above contains a blueprint for creating Packer manifests for
 
 ## Quickstart
 
-This assumes the targeted `.iso` file has been uploaded to the configured location in Proxmox, a connection from the docker host can be made to your proxmox server, and an API token with adequate permissions has been created on your target Proxmox node. 
+This assumes the targeted `.iso` file has been uploaded to the configured location in Proxmox, a connection from the docker host can be made to your proxmox server, and [an API token with adequate permissions has been created](https://github.com/andygodish/wikijs-storage/blob/main/proxmox/create-api-key.md) on your target Proxmox node. 
 
 1. Clone the IaC repo.
 ```
@@ -89,3 +90,40 @@ In Proxmox, you'll observe the creation of a tempory VM, named like so:
 
 This will boot a new instance based on the `.iso` provided to Packer and configure it based on the inputs provided in the manifest. Once the initial boot is completed, the VM will be converted to a template by Packer. 
 
+## Create an API Token
+
+## Issues
+
+### Keyboard Layout
+
+Regarding this piece from the `cloud-config` file (ubuntu2204):
+
+```
+autoinstall:
+  locale: en_US
+  keyboard:
+    layout: us
+    # variant: en --- this is not needed
+```
+
+I originally had `keyboard.varient` set to `en`. The boot process would crash due to an invalid field. This value appears to have been valid in the past. 
+
+### Boot Command
+
+#### Ubuntu2204
+
+It took me a while to find a valid set of boot commands:
+
+```
+  boot_command = [
+    "c",
+    "<wait5>",
+    "linux /casper/vmlinuz -- autoinstall ds='nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/'",
+    "<enter><wait><wait>",
+    "initrd /casper/initrd",
+    "<enter><wait><wait>",
+    "boot<enter>"
+  ]
+```
+
+It appears that different commands are required for different versions of ubuntu. 
