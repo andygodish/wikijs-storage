@@ -2,7 +2,7 @@
 title: Create a Proxmox VM Template with Packer
 description: Create a Proxmox VM Template with Packer
 published: true
-date: 2024-01-04T22:21:42.497Z
+date: 2024-01-04T22:26:51.674Z
 tags: proxmox, packer, iac
 editor: markdown
 dateCreated: 2024-01-04T21:29:35.148Z
@@ -11,7 +11,7 @@ dateCreated: 2024-01-04T21:29:35.148Z
 # Create a Proxmox VM Template with Packer
 
 - [Github Repo](https://github.com/andygodish/IaC/tree/main/hashicorp/packer/proxmox)
-- [Wikijs Storage](https://github.com/andygodish/wikijs-storage/blob/main/proxmox/packer-vm-template.md)
+- [Wikijs Documentation](https://github.com/andygodish/wikijs-storage/blob/main/proxmox/packer-vm-template.md)
 ---
 - [Reference Repository(dustinrue)](https://github.com/dustinrue/proxmox-packer)
 - [Reference Repository(ChristianLempa)](https://github.com/ChristianLempa/boilerplates/tree/main/packer/proxmox/ubuntu-server-focal)
