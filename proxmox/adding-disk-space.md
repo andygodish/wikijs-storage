@@ -2,7 +2,7 @@
 title: Adding Disk Space to a Proxmox VM
 description: How to increase the disk space of a Proxmox VM. 
 published: true
-date: 2024-01-05T19:19:52.880Z
+date: 2024-01-05T19:29:47.604Z
 tags: storage, proxmox
 editor: markdown
 dateCreated: 2024-01-05T18:37:08.811Z
@@ -71,5 +71,15 @@ where /dev/sda3 is the name of the physical volume (PV):
 
 ---
 ![pvdisplay.png](/images/pvdisplay.png)
+
+### Resizing Error
+
+![resize-error.png](/images/resize-error.png)
+
+This error suggests that LVM is unable to write to its archive directory due to lack of space. This typically happens when the /etc directory (or the root filesystem /) is full. Since your logical volume and, by extension, your root filesystem, is almost full, LVM can't perform operations that require writing to this directory.
+
+I did some exploring with the `du -sh *` command and found some directories that were taking up a lot of space in my `/var/lib/docker` directory. A `docker system prune -a` freed up enough space for me to resize the PV properly. `pvs`/`pvdisplay`now shows the expanded PV size.
+
+
 
 
