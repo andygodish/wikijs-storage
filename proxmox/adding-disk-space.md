@@ -2,7 +2,7 @@
 title: Adding Disk Space to a Proxmox VM
 description: How to increase the disk space of a Proxmox VM. 
 published: true
-date: 2024-01-05T18:39:01.934Z
+date: 2024-01-05T18:50:00.866Z
 tags: storage, proxmox
 editor: markdown
 dateCreated: 2024-01-05T18:37:08.811Z
@@ -18,4 +18,19 @@ I built a VM template using a Packer manifest that was configured to 8GB of disk
 2024-01-05T17:05:12.626950Z 0 [Note] InnoDB: Some operating system error numbers are described at http://dev.mysql.com/doc/refman/5.7/en/operating-system-error-codes.html
 2024-01-05T17:05:12.626956Z 0 [ERROR] InnoDB: Could not set the file size of './ibtmp1'. Probably out of disk space
 ```
+
+## Adding Disk Space
+
+I used the Proxmox GUI to add more disk space to the VM. Select your VM from the list > Hardware > Hard Disk > Disk Action > Resize
+
+What you place in the `Size Increment (GiB)` field will add to the existing disk space. In my case, I entered 32 GiB and the result was a new `sda` disk of 40GB. However, my root partition remained 6.2 GB in size:
+
+![lsblk-root-partition.png](/images/lsblk-root-partition.png)
+
+## Enlarge the partition(s) in the virtual disk
+- [Proxmox Docs](https://pve.proxmox.com/wiki/Resize_disks)
+
+> From the docs: *Note that the partition you want to enlarge should be at the end of the disk.* 
+
+In my case, the `lsblk` command shows that my root partition (sda3) is already located at the "end of the disk (sda)". If the partition you want to resize is at the end of the disk and there is unallocated space following it, you can usually resize it while the system is running (online resizing). 
 
