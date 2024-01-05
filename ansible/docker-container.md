@@ -2,50 +2,70 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2022-08-18T04:09:29.960Z
+date: 2024-01-05T16:38:40.670Z
 tags: ansible, docker
 editor: markdown
-dateCreated: 2022-08-17T03:12:17.961Z
+dateCreated: 2023-10-08T22:19:26.587Z
 ---
 
-# Ansible in Docker
+# Ansible
 
-Exploring different ways to run ansible playbooks from a docker container. 
+Run Ansible from a docker container.
 
-## Python Base Image
+## Build the Ansible Container Images
 
-[Reference Article](https://iceburn.medium.com/run-ansible-with-docker-9eb27d75285b)
-
-Docker Image: 
+Rather than running and maintaining Ansible on my local machine, I like spin up a Docker container with `sshpass` to allow ansible to execute remote commands on the target inventory.
 
 ```
-FROM python:python:3.10.5
+cd ansible
 
-RUN pip install pip --upgrade
-RUN pip install ansible
-
-RUN apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    sshpass
-
-WORKDIR /work
+docker build -t ansible:local .
 ```
 
-Pretty straight forward. Using pip to install ansible.
+The dockerfile in this directory contains instructions for installing Ansible ontop of a python base image along with the ssh dependencies required to connect to a target machine via ssh. 
 
-### Noninteractive Frontend
+- [sshpass article](https://www.redhat.com/sysadmin/ssh-automation-sshpass)
+- this project is based largely on [this repo](https://github.com/willhallonline/docker-ansible)
+- And on [this guide](https://iceburn.medium.com/run-ansible-with-docker-9eb27d75285b)
 
-A bit on the `DEVIAN_FRONTNED` variable set in the subsequent commands: 
+The subsequent directory tree is broken up into playbooks/roles for specific tasks (playbook directories). In most cases, ansible-galaxy is used as an entrypoint command to install or upgrade particular roles. Those roles are then edited to fit the needs of the project. 
 
-[Referece](https://askubuntu.com/questions/972516/debian-frontend-environment-variable)
+## Configuration
 
-Simply prepending an apt command with `DEBIAN_FRONTEND=something` does not persist after the single command to which it is applied.
+Everything stems from the `ansible.cfg` configuration file. Some of the settings it configures:
 
-`noninteractive` - This is the anti-frontend. It never interacts with you  at  all, and  makes  the  default  answers  be used for all questions. It might mail error messages to root, but that's it;  otherwise  it is  completely  silent  and  unobtrusive, a perfect frontend for automatic installs. If you are using this front-end, and require non-default  answers  to questions, you will need to preseed the debconf database; see the section below  on  Unattended  Package Installation for more details.
+1. inventory
 
-### sshpass
+- This defines a local inventory file that playbooks should utilize by default
+- Points to the `./inventory` directory within the project directory
 
-[Article explaining this tool](https://www.redhat.com/sysadmin/ssh-automation-sshpass)
+#### hosts.ini
+
+This file defines the target host IPs and the ssh user/private key used by ansible at execution time. The defined `ansible_ssh_private_key_file` is the location of the ssh private key needed for the container to ssh into your target host. 
+
+2. roles_path
+
+- This is the directory containing the roles used by your Ansible Project
+- points to `./roles`
+
+## Executing a Playbook
+
+Mount the ansible scripts and configuration files within each playbook directory in your docker run command: 
+
+> Make sure your volume mounts are referring to the correct directory
+
+```
+docker run \
+-v ${PWD}:/app \
+-v ${PWD}/roles:/app/.ansible/roles \
+-v ~/.ssh:/app/.ssh \
+--rm ansible:local ansible-playbook main.yaml
+```
+
+`-v ~/.ssh:/app/.ssh \` --- this volume mount corresponds to the `ansible_ssh_private_key_file` field definted in each playbook directory's `hosts.ini` file. 
+
+
+
 
 
 
