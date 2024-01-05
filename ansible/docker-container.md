@@ -2,7 +2,7 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2024-01-05T16:42:42.588Z
+date: 2024-01-05T16:43:01.607Z
 tags: ansible, docker
 editor: markdown
 dateCreated: 2023-10-08T22:19:26.587Z
@@ -10,12 +10,8 @@ dateCreated: 2023-10-08T22:19:26.587Z
 
 # Ansible
 
-# Create a Proxmox VM Template with Packer
-
 - [Github Repo](https://github.com/andygodish/IaC/tree/main/hashicorp/packer/proxmox)
 - [Wikijs Documentation](https://github.com/andygodish/wikijs-storage/blob/main/proxmox/packer-vm-template.md)
-
----
 
 Run Ansible from a docker container.
 
