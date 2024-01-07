@@ -2,7 +2,7 @@
 title: WordPress Theme Development
 description: WordPress theme development
 published: true
-date: 2023-12-27T18:23:28.915Z
+date: 2024-01-07T16:06:31.157Z
 tags: dev, wordpress, themes
 editor: markdown
 dateCreated: 2023-12-27T05:37:44.888Z
@@ -38,3 +38,8 @@ Out of the box, you are not going to have access to the full tailwind codebase. 
 
 You can see the `mix` command being exectued. Once complete, access to the red color is available in your compiled css. By using the `npm run watch` command, you'll see that the `development` script is executed upon changes to your codebase. 
 
+## Containerized Development Environment
+
+- [Dev Environment Documentation](https://github.com/andygodish/wikijs-storage/blob/main/wordpress/local-development.md)
+
+The above link can be followed to a repo that deploys a containerized development environemt for WP. Once deployed, you can clone your theme repository to the wp-content directory in the root directory of the project and develop against WP running inside a docker container. 
