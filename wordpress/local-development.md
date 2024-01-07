@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2023-12-28T05:21:13.163Z
+date: 2024-01-07T15:30:55.393Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -114,3 +114,11 @@ I was then able to install the plugin directly. Make sure permissions are set co
 ```
 sudo chown -R www-data:www-data ./
 ```
+
+## WordPress Code Separation
+
+- [Reference Article](https://www.git-tower.com/blog/git-wordpress-2/)
+
+The volumes in the docker-compose.yaml are designed to separate the `wp-content` folder from the core codebase of wordpress. This allows you to work on plugin and theme code in isolation from the version of wp defined by the image version of the `web` service (docker-compose.yaml).
+
+This prevents the need to use an `.htaccess` file in the root directory to redirect traffic to another directory as outlined in the reference article above. 
