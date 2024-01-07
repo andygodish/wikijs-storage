@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2024-01-07T15:30:55.393Z
+date: 2024-01-07T16:12:16.051Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -122,3 +122,4 @@ sudo chown -R www-data:www-data ./
 The volumes in the docker-compose.yaml are designed to separate the `wp-content` folder from the core codebase of wordpress. This allows you to work on plugin and theme code in isolation from the version of wp defined by the image version of the `web` service (docker-compose.yaml).
 
 This prevents the need to use an `.htaccess` file in the root directory to redirect traffic to another directory as outlined in the reference article above. 
+
