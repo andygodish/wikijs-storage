@@ -2,7 +2,7 @@
 title: WordPress Theme Development
 description: WordPress theme development
 published: true
-date: 2024-01-07T16:06:31.157Z
+date: 2024-01-19T18:03:52.742Z
 tags: dev, wordpress, themes
 editor: markdown
 dateCreated: 2023-12-27T05:37:44.888Z
@@ -37,6 +37,12 @@ Out of the box, you are not going to have access to the full tailwind codebase. 
 ![tailwind-mix.png](/images/tailwind-mix.png)
 
 You can see the `mix` command being exectued. Once complete, access to the red color is available in your compiled css. By using the `npm run watch` command, you'll see that the `development` script is executed upon changes to your codebase. 
+
+#### Nodejs Dependency
+
+To execute the tailwind scripts, you'll need nodejs installed on your development machine. Run [this playbook](https://github.com/andygodish/IaC/tree/main/ansible/nodejs). 
+
+See [this post](https://github.com/andygodish/wikijs-storage/blob/main/ansible/docker-container.md) regarding a containerized ansible setup.
 
 ## Containerized Development Environment
 
