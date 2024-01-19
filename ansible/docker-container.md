@@ -2,7 +2,7 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2024-01-05T16:44:04.874Z
+date: 2024-01-19T17:52:48.038Z
 tags: ansible, docker
 editor: markdown
 dateCreated: 2023-10-08T22:19:26.587Z
@@ -69,8 +69,22 @@ docker run \
 
 `-v ~/.ssh:/app/.ssh \` --- this volume mount corresponds to the `ansible_ssh_private_key_file` field definted in each playbook directory's `hosts.ini` file. 
 
+## Ansible Galaxy
 
+### Installing a Role or Collection
 
+Once you have the local ansible container built, you can run `ansible-galaxy` commands just as you would execute a playbook.
 
+Change into your directory and make sure to appropriately map a volume so the role or collection file are appropriately copied to your directory.
+
+#### [Nodejs Role] (example) (https://galaxy.ansible.com/ui/standalone/roles/geerlingguy/nodejs/)
+
+```
+docker run \
+-v ${PWD}:/app \
+-v ${PWD}/roles:/app/.ansible/roles \
+-v ~/.ssh:/app/.ssh \
+--rm ansible:local ansible-galaxy role install geerlingguy.nodejs
+```
 
 
