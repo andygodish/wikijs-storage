@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2024-01-19T16:38:10.378Z
+date: 2024-01-19T16:40:58.153Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -125,5 +125,5 @@ This prevents the need to use an `.htaccess` file in the root directory to redir
 
 ## Remote-SSH (vscode)
 
-Refer to this [Wiki Post]() outlining the vscode extension used to develop on the remote server running your containerized development environment. 
+Refer to this [Wiki Post](https://github.com/andygodish/wikijs-storage/blob/main/vscode/remote-ssh.md) outlining the vscode extension used to develop on the remote server running your containerized development environment. 
 
