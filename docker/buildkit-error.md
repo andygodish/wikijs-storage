@@ -2,7 +2,7 @@
 title: Buildkit Error
 description: Troubleshooting a Docker buildkit error I encountered at work. 
 published: true
-date: 2024-01-22T22:14:22.468Z
+date: 2024-01-22T22:14:55.942Z
 tags: docker, troubleshooting
 editor: markdown
 dateCreated: 2024-01-22T22:14:22.468Z
@@ -26,5 +26,5 @@ Using DOCKER_BUILDKIT=0 before your Docker build command disables the BuildKit f
 
 The app inquestion is a dotnet7 app. I haven't run into this issues on any other projects, it is possible that it is an issue with this tech stack or the version of docker originally used by the dev team to build the original Dockerfile. 
 
-By setting DOCKER_BUILDKIT=0, you effectively told Docker to ignore the newer BuildKit features and revert to the traditional build process. This can resolve issues stemming from BuildKit's different handling of Dockerfile instructions, file copying mechanisms, layer caching, and error reporting.
+By setting DOCKER_BUILDKIT=0, Docker ignores the newer BuildKit features and revert to the traditional build process. This can resolve issues stemming from BuildKit's different handling of Dockerfile instructions, file copying mechanisms, layer caching, and error reporting.
 
