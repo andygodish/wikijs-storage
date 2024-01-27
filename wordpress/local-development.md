@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2024-01-19T16:40:58.153Z
+date: 2024-01-27T23:46:04.219Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -126,4 +126,26 @@ This prevents the need to use an `.htaccess` file in the root directory to redir
 ## Remote-SSH (vscode)
 
 Refer to this [Wiki Post](https://github.com/andygodish/wikijs-storage/blob/main/vscode/remote-ssh.md) outlining the vscode extension used to develop on the remote server running your containerized development environment. 
+
+## Local Migration
+
+This scenario outlines my intiial attempts at backing up the wordpress database and restoring it on another mysql docker container. 
+
+The goal is to migrate a wordpres site running on one server using the docker containers outlined earlier in this post to another server running the same containerized setup. 
+
+### Backup Database (Docker Volume) 
+
+This guide can be thought of as a way to gain a basic understanding of the backup and restoration process of the mysql database associated with this WP dev environment.
+
+Since we are working with docker containers, the first step is to backup the docker volume associated withe mysql container. [This post](https://github.com/andygodish/wikijs-storage/blob/main/docker/backup-volume.md) outlines how to take a backup of the docker volume defined in the docker-compose file.
+
+Once you have a backup, upload the file to your new server and replace the data in your new environment's associated docker volume mount point. 
+
+### Database Changes
+
+I immiately ran into the issue of my new environment attempting to forward my requests to the old server. To fix this, I needed to update the `siteurl` and `home` values found in the `wp_options` table of the database. I did this via the phpmyadmin console deployed on a separate container (more on this at a later time).
+
+
+![wp-options.png](/images/wp-options.png)
+
 
