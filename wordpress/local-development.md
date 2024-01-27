@@ -2,7 +2,7 @@
 title: Local Wordpress Development
 description: Tips and tricks for developing WP locally.
 published: true
-date: 2024-01-27T23:46:04.219Z
+date: 2024-01-27T23:46:43.856Z
 tags: development, wordpress
 editor: markdown
 dateCreated: 2023-12-16T17:59:08.482Z
@@ -145,7 +145,6 @@ Once you have a backup, upload the file to your new server and replace the data 
 
 I immiately ran into the issue of my new environment attempting to forward my requests to the old server. To fix this, I needed to update the `siteurl` and `home` values found in the `wp_options` table of the database. I did this via the phpmyadmin console deployed on a separate container (more on this at a later time).
 
-
 ![wp-options.png](/images/wp-options.png)
 
-
+Redirects to my original environment url no longer took place following those changes. 
