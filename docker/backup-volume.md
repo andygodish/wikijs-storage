@@ -2,7 +2,7 @@
 title: Docker Volume Backups
 description: Backing up a docker volume.
 published: true
-date: 2024-01-27T18:37:32.590Z
+date: 2024-01-27T19:08:45.309Z
 tags: docker, storage, backup
 editor: markdown
 dateCreated: 2024-01-27T18:29:50.000Z
@@ -62,6 +62,14 @@ To back up this data, you can simply copy the contents of this directory to a ba
 It's important to ensure the MySQL container is not actively writing to the database when you do this, to avoid a corrupted backup. You can stop the container temporarily:
 
 ```
-docker stop 
+docker stop wordpress-dev-mysql-1
 ```
+
+Simply copy the files from the location of that volume to another location:
+
+```
+cp -r /var/lib/docker/volumes/wordpress-236_db_data/_data [backup-location]
+```
+
+Once copied, don't forget to restarted your container. 
 
