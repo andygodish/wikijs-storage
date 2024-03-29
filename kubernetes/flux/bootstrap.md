@@ -2,10 +2,10 @@
 title: Bootstrapping Flux
 description: Getting started with Flux.
 published: true
-date: 2023-03-13T22:10:35.418Z
+date: 2024-03-29T15:47:59.949Z
 tags: kubernetes, flux, gitops
 editor: markdown
-dateCreated: 2023-03-13T22:08:24.830Z
+dateCreated: 2023-10-08T22:30:44.835Z
 ---
 
 # Bootstrapping Flux
@@ -25,15 +25,16 @@ export GITHUB_USER=andygodish
 export GITHUB_TOKEN=xxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-The next step will create a repo for you assuming it doesn't already exist in your GH account. 
+The next step will create a new repo based on the `--repository` tag using the `GITHUB_TOKEN` set as an env variable in the previous step. See [docs](https://fluxcd.io/flux/installation/bootstrap/github/) for permission details. 
 
 ```
 flux bootstrap github \
---owner=$GITHUB_USER \
---repository=lb \
---branch=main \
---path=app-cluster \
---personal
+  --token-auth \
+  --owner=$GITHUB_USER \
+  --repository=flux-fleet \
+  --branch=main \
+  --path=clusters/my-cluster \
+  --personal
 ```
 
 Verify by checking,
