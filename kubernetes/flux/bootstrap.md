@@ -2,7 +2,7 @@
 title: Bootstrapping Flux
 description: Getting started with Flux.
 published: true
-date: 2024-03-29T15:47:59.949Z
+date: 2024-03-29T15:57:52.904Z
 tags: kubernetes, flux, gitops
 editor: markdown
 dateCreated: 2023-10-08T22:30:44.835Z
@@ -33,7 +33,7 @@ flux bootstrap github \
   --owner=$GITHUB_USER \
   --repository=flux-fleet \
   --branch=main \
-  --path=clusters/my-cluster \
+  --path=clusters/rke2-dev \
   --personal
 ```
 
