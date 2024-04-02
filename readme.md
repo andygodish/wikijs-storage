@@ -2,7 +2,7 @@
 title: About This Wiki
 description: Homepage for wiki.andyg.io.
 published: true
-date: 2024-04-02T03:59:24.854Z
+date: 2024-04-02T03:59:51.508Z
 tags: home, about, wiki
 editor: markdown
 dateCreated: 2023-10-08T22:19:10.837Z
@@ -10,7 +10,7 @@ dateCreated: 2023-10-08T22:19:10.837Z
 
 # Welcome to my Personal Wiki
 
-This is a place for me to put my own technical documentation outlining processes/procedures pertaining to work, my homelab, and more. 
+This is a place for me to put my own technical documentation outlining processes/procedures pertaining to work and my homelab.
 
 ## About this Wiki
 
