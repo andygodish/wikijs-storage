@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-03-23T15:03:12.762Z
+date: 2024-04-03T14:34:18.160Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -14,7 +14,9 @@ dateCreated: 2024-03-23T14:39:09.073Z
 - [Terraform Project (production infrastructure)](https://github.com/andygodish/terraform-agio-landing)
 - [Landing Page](https://andyg.io)
 
-This project was built as presentation material for the Technical Apprenticeship Program (TAP) demonstration of how CICD pipelines are implemented in our organization. 
+This project was built as presentation material for the Technical Apprenticeship Program (TAP) demonstration of how CICD pipelines are implemented in our organization.
+
+![landing-cicd.jpg](/images/landing-cicd.jpg)
 
 ## GitHub Actions
 
