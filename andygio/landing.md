@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-04-03T17:30:43.304Z
+date: 2024-04-03T17:34:05.465Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -48,14 +48,11 @@ Nodejs is required to execute the `npm test` command outlined in the package.jso
 
 #### version
 
-A tool, originally written and designed for npm packages, rewritten in Golang, called Semantic Release is used to programatically create releases and semantic version tags in the GitHub repository. 
+A tool, originally written and designed for npm/nodejs packages, rewritten in Golang, called Semantic Release is used to programatically create releases and semantic version tags in the GitHub repository. 
 
 - [Semantic Release (original)](https://semantic-release.gitbook.io/semantic-release)
 - [Go Semantic Release](https://github.com/go-semantic-release/action)
 - [Actions Marketplace](https://github.com/marketplace/actions/go-semantic-release)
-
-
-
 
 
 
