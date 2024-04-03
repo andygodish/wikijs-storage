@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-04-03T17:18:33.257Z
+date: 2024-04-03T17:30:43.304Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -43,6 +43,19 @@ Another staple of a CI pipline is the automated execution of unit tests. Before 
 The CI portion of the pipeline is kicked off when code is either pushed or mergered from a pull request into the main branch as definined in the `on:` field of the workflow yaml. The workflow consists of the following `jobs`:
 
 #### test
+
+Nodejs is required to execute the `npm test` command outlined in the package.json file. `Jest` is the testing library used for unit testing as definied by the `devDependencies` in the package.json file.
+
+#### version
+
+A tool, originally written and designed for npm packages, rewritten in Golang, called Semantic Release is used to programatically create releases and semantic version tags in the GitHub repository. 
+
+- [Semantic Release (original)](https://semantic-release.gitbook.io/semantic-release)
+- [Go Semantic Release](https://github.com/go-semantic-release/action)
+- [Actions Marketplace](https://github.com/marketplace/actions/go-semantic-release)
+
+
+
 
 
 
