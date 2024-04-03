@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-04-03T17:15:42.528Z
+date: 2024-04-03T17:18:33.257Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -36,9 +36,17 @@ Another staple of a CI pipline is the automated execution of unit tests. Before 
 
 ### Pipeline
 
+![ci-pipeline.png](/images/ci-pipeline.png)
+
 - [Source Code] (https://github.com/andygodish/landing/blob/main/.github/workflows/pipeline.yaml)
 
-The CI portion of the pipeline is kicked off when code is either pushed or mergered from a pull request into the main branch as definined in the `on:` field of the workflow yaml. 
+The CI portion of the pipeline is kicked off when code is either pushed or mergered from a pull request into the main branch as definined in the `on:` field of the workflow yaml. The workflow consists of the following `jobs`:
+
+#### test
+
+
+
+
 
 
 
