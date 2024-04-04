@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-04-04T16:56:27.501Z
+date: 2024-04-04T17:07:45.875Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -68,4 +68,7 @@ This app is autmatically deployed to a Kubernetes cluster running in my homelab.
 
 Once the build stage is complete and the new image tag has been pushed to the container registry, the `deploy-staging` job takes the new repo tag and updates the image field of the `deployment.yaml` file. Flux will routinely check for these changes. Once detected, it will update the resources deployed within the cluster to reflect the state of the GitHub repository. 
 
+### deploy-production
+
+This process is built into its own workflow and is configured to be executed my users with the required privileges on the main branch. It's meant to be done manually as indicated by the `on: workflow-dispatch` configuration in the workflow yaml following review by a hypothetical "QA" team in the staging environemt, somewhat simulating a complete lifecycle envrionment you might see at work. 
 
