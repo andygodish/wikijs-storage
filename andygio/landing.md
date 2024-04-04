@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-04-04T16:30:42.665Z
+date: 2024-04-04T16:56:07.499Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -62,6 +62,8 @@ This is a docker image build of the `dockerfile` in the root directory. It tags 
 
 ## CD
 
-This app is autmatically deployed to a Kubernetes cluster running in my homelab. [FluxCD](https://fluxcd.io/) is used 
+This app is autmatically deployed to a Kubernetes cluster running in my homelab. [FluxCD](https://fluxcd.io/) is configured on the cluster to detect changes made to the manifests files located in the `./manifests/staging` directory of the repo. 
+
+Once the build stage is complete and the new image tag has been pushed to the container registry, the `deploy-staging` job takes the new repo tag and updates the image field of the `deployment.yaml` file. Flux will routinely check for these changes. Once detected, it will update the resources deployed within the cluster to reflect the state of the GitHub repository. 
 
 
