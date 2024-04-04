@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-04-04T17:07:45.875Z
+date: 2024-04-04T17:15:18.017Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -72,3 +72,4 @@ Once the build stage is complete and the new image tag has been pushed to the co
 
 This process is built into its own workflow and is configured to be executed my users with the required privileges on the main branch. It's meant to be done manually as indicated by the `on: workflow-dispatch` configuration in the workflow yaml following review by a hypothetical "QA" team in the staging environemt, somewhat simulating a complete lifecycle envrionment you might see at work. 
 
+The workflow requires an input of the version tag you wish to deploy via a dropdown. The job itself logs into Azure and executes an Azure CLI command resulting in the configuration of an Azure Webapp to be updated with the new version of the container image.
