@@ -2,7 +2,7 @@
 title: Landing (TAP, cicd)
 description: About for andyg.io landing page. Documentation for TAP presentation on CICD processes.
 published: true
-date: 2024-04-04T15:43:26.719Z
+date: 2024-04-04T15:49:27.829Z
 tags: cicd, devops, andyg.io, tap
 editor: markdown
 dateCreated: 2024-03-23T14:39:09.073Z
@@ -56,7 +56,9 @@ A tool, originally written and designed for versioning npm packages, rewritten i
 
 It scans commit messages between releases and determines the proper version change using [Contentional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+#### build
 
+This is a docker image build of the `dockerfile` in the root directory. It tags the image with the version specified by the `version` job. 
 
 
 
