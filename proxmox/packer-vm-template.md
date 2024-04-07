@@ -2,7 +2,7 @@
 title: Create a Proxmox VM Template with Packer
 description: Create a Proxmox VM Template with Packer
 published: true
-date: 2024-04-07T03:38:26.348Z
+date: 2024-04-07T03:43:09.722Z
 tags: proxmox, packer, iac
 editor: markdown
 dateCreated: 2024-01-04T21:29:35.148Z
@@ -61,6 +61,8 @@ We are mounting the codebase of the proxmox directory containing our template ma
 This one hung me up for a while. I was originally attempting to execute the ubuntu2204 manifest from a WSL instance running on my Windows laptop. Part of the packer process involves the creation of an HTTP server that hosts and serves the cloud-init configuration files. The Proxmox server needs to be able to connect to the host IP running the docker container, not the IP of the container itself. 
 
 > The `--network host` tag is required, but this process does not work using WSL. Even though my Windows laptop is on the same network as the Proxmox host, I was unable to make the connection through my Windows IP down to the bridge to my WSL instance. I need to use another local machine on my network that does not use WSL.
+
+This machine will need docker installed.
 
 For example,
 
