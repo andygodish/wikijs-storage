@@ -2,7 +2,7 @@
 title: Create a Proxmox VM Template with Packer
 description: Create a Proxmox VM Template with Packer
 published: true
-date: 2024-01-04T23:30:12.544Z
+date: 2024-04-07T03:21:00.564Z
 tags: proxmox, packer, iac
 editor: markdown
 dateCreated: 2024-01-04T21:29:35.148Z
@@ -17,34 +17,25 @@ dateCreated: 2024-01-04T21:29:35.148Z
 - [Reference Repository(dustinrue)](https://github.com/dustinrue/proxmox-packer)
 - [Reference Repository(ChristianLempa)](https://github.com/ChristianLempa/boilerplates/tree/main/packer/proxmox/ubuntu-server-focal)
 - [YouTube Video](https://www.youtube.com/watch?v=1nf3WOEFq1Y)
----
-
-The IaC repo linked above contains a blueprint for creating Packer manifests for VM templates in Proxmox. 
 
 ## Quickstart
 
 This assumes the targeted `.iso` file has been uploaded to the configured location in Proxmox, a connection from the docker host can be made to your proxmox server, and [an API token with adequate permissions has been created](https://github.com/andygodish/wikijs-storage/blob/main/proxmox/create-api-key.md) on your target Proxmox node. 
 
-1. Clone the IaC repo.
+1. Clone the  repo.
 ```
-git clone https://github.com/andygodish/IaC.git
+git clone https://github.com/andygodish/packer-docker
 ```
-2. Navigate to the packer directory.
-```
-cd Iac/hasicorp/packer
-```
-- This directory contains a docker image that allows you to execute packer commands from a docker container. 
+The root directory contains a docker image that allows you to execute packer commands from inside a container. 
 
 3. Build the docker image.
 ```
-docker build -t packer:local -f 1.10.dockerfile .
+docker build -t packer -f 1.10.dockerfile .
 ```
-- this dockerfile also install `make` to allow for the execution of commands found in this [Makefile](https://github.com/andygodish/IaC/blob/main/hashicorp/packer/proxmox/Makefile).
-- It also sets the working directory to `/app`
 
 4. Set Packer environment variables. 
 
-The Makefile used to execute the Packer template builds looks for environment variables set in the  `variables.pkrvars.hcl` file. The \*-example.hcl file contains the required variables. Copy it to the properly named file and set the values according to your environment. Make sure to keep sensitive information safe. 
+The Makefile used to execute the Packer template builds looks for environment variables set in the  `variables.pkrvars.hcl` file. The \*-example.hcl file contains the required variables. Rename it to the properly named file and set the values according to your environment. Make sure to keep sensitive information safe. 
 
 ```
 cp variables.pkrvars-example.hcl variables.pkrvars.hcl
@@ -55,9 +46,9 @@ cp variables.pkrvars-example.hcl variables.pkrvars.hcl
 Navigate to the Proxmox directory. 
 
 ```
-cd Iac/hasicorp/packer/proxmox
+cd proxmox
 
-docker run -it --network host --entrypoint=/bin/bash -v $PWD:/app packer:local
+docker run -it --network host --entrypoint=/bin/bash -v $PWD:/app packer
 ```
 
 ### Volume Mount
