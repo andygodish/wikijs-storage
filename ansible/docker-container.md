@@ -2,7 +2,7 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2024-04-08T03:43:19.987Z
+date: 2024-04-08T04:15:27.422Z
 tags: ansible, docker
 editor: markdown
 dateCreated: 2023-10-08T22:19:26.587Z
@@ -105,7 +105,7 @@ docker run \
 -v ${PWD}:/app \
 -v ${PWD}/roles:/app/.ansible/roles \
 -v ~/.ssh:/app/.ssh \
---rm andygodish/ansible-docker ansible-playbook main.yaml
+--rm ansible ansible-playbook main.yaml
 ```
 
 `-v ~/.ssh:/app/.ssh \` --- this volume mount corresponds to the `ansible_ssh_private_key_file` field definted in each playbook directory's `hosts.ini` file. 
@@ -125,7 +125,7 @@ docker run \
 -v ${PWD}:/app \
 -v ${PWD}/roles:/app/.ansible/roles \
 -v ~/.ssh:/app/.ssh \
---rm andygodish/ansible-docker ansible-galaxy role install geerlingguy.nodejs
+--rm ansible ansible-galaxy role install geerlingguy.nodejs
 ```
 
 
