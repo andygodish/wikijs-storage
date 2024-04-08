@@ -2,7 +2,7 @@
 title: Ansible in Docker
 description: A wiki page dedicated to exploring various ways to package container images used to execute playbooks.
 published: true
-date: 2024-02-18T17:15:46.705Z
+date: 2024-04-08T03:43:19.987Z
 tags: ansible, docker
 editor: markdown
 dateCreated: 2023-10-08T22:19:26.587Z
@@ -24,7 +24,7 @@ Rather than running and maintaining Ansible on my local machine, I like spin up 
 ```
 git clone https://github.com/andygodish/ansible-docker.git
 
-docker build -t ansible-docker .
+docker build -t ansible .
 ```
 
 The dockerfile in this directory contains instructions for installing Ansible ontop of a python base image along with the ssh dependencies required to connect to a target machine via ssh. 
@@ -42,7 +42,7 @@ The following stands up a consistent ansible playbook directory where you can th
 ```
 docker run \                   
 -v ${PWD}:/app \
--e ANSIBLE_PLAYBOOK_NAME=update --rm ansible:local /bin/bash /scripts/bootstrap-new-playbook.sh
+-e ANSIBLE_PLAYBOOK_NAME=update --rm ansible /bin/bash /scripts/bootstrap-new-playbook.sh
 ```
 
 ### ZSH Alias
@@ -59,7 +59,7 @@ vim ~/.zshrc
 ansible-docker() {
     if [ "$1" = "new" ] && [ "$2" = "playbook" ] && [ -n "$3" ]; then
         docker run -v ${PWD}:/app \
-        -e ANSIBLE_PLAYBOOK_NAME=$3 --rm ansible:local /bin/bash /scripts/bootstrap-new-playbook.sh
+        -e ANSIBLE_PLAYBOOK_NAME=$3 --rm ansible /bin/bash /scripts/bootstrap-new-playbook.sh
     else
         echo "Usage: ansible-docker new role <name>"
     fi
@@ -87,6 +87,12 @@ This file defines the target host IPs and the ssh user/private key used by ansib
 
 - This is the directory containing the roles used by your Ansible Project
 - points to `./roles`
+
+---
+
+The `boostrap-new-playbook.sh` script copies the hosts.ini.example file from the root dir of this repo and places it in your new playbook directory as a hosts.ini file that maps to the default value of the ansible.cfg file (also in the root dir of this repo).
+
+So, before building the dockerfile, make sure to define your inventory. 
 
 ## Executing a Playbook
 
