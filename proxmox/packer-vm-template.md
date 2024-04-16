@@ -2,7 +2,7 @@
 title: Create a Proxmox VM Template with Packer
 description: Create a Proxmox VM Template with Packer
 published: true
-date: 2024-04-08T03:39:39.490Z
+date: 2024-04-16T15:05:54.532Z
 tags: proxmox, packer, iac
 editor: markdown
 dateCreated: 2024-01-04T21:29:35.148Z
@@ -34,6 +34,10 @@ docker build -t packer -f 1.10.dockerfile .
 ```
 
 4. Set Packer environment variables. 
+
+```
+cd proxmox
+```
 
 The Makefile used to execute the Packer template builds looks for environment variables set in the  `variables.pkrvars.hcl` file. The \*-example.hcl file contains the required variables. Rename it to the properly named file and set the values according to your environment. Make sure to keep sensitive information safe. 
 
