@@ -121,10 +121,8 @@ Change into your directory and make sure to appropriately map a volume so the ro
 #### [Nodejs Role] (example) (https://galaxy.ansible.com/ui/standalone/roles/geerlingguy/nodejs/)
 
 ```
-docker run \
+docker run -it \
 -v ${PWD}:/app \
--v ${PWD}/roles:/app/.ansible/roles \
--v ~/.ssh:/app/.ssh \
 --rm ansible ansible-galaxy role install geerlingguy.nodejs
 ```
 
