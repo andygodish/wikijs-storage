@@ -29,3 +29,7 @@ Select a user from the dropdown and provide a token ID. The table listing your t
 The image above shows `Privilege Separation` as Yes, you want to make sure to uncheck this if you don't know what you are doing with it. 
 
 Unchecking this allows your api token to have the same privileges as the selected user. 
+
+## Clustered Nodes
+
+If you have a cluster of Proxmox nodes, a single token can be used among all nodes in your cluster assuming the configured user is present on all machines. 
