@@ -104,7 +104,7 @@ Mount the ansible scripts and configuration files within each playbook directory
 docker run \
 -v ${PWD}:/app \
 -v ${PWD}/roles:/app/.ansible/roles \
--v ~/.ssh:/app/.ssh \
+-v ~/.ssh:/home/appuser/.ssh/id_rsa \
 --rm ansible ansible-playbook main.yaml
 ```
 
