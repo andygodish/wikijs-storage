@@ -22,7 +22,7 @@ This project was built as presentation material for the Technical Apprenticeship
 
 ## CI
 
-The pipeline is initiated by a push to the main branch.
+The full pipeline (pipeline.yaml) is initiated by a push to the main branch. A smaller portion of the workflow is executed when a pull request is created. 
 
 ### Compilation
 
