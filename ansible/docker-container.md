@@ -125,4 +125,12 @@ docker run -it \
 --rm ansible ansible-galaxy role install geerlingguy.nodejs
 ```
 
+### Installing Requirements
+
+```
+docker run -it \
+-v ${PWD}:/app \
+--rm ansible ansible-galaxy install -r requirements.yml
+```
+
 
