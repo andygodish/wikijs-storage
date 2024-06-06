@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-06T21:51:49.628Z
+date: 2024-06-06T22:16:41.765Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -28,4 +28,12 @@ terraform {
 
 The goal is to migrate the state files in the storage account to Terraform Cloud for management of the project and associated workspaces.
 
+The project was initially built on a local machine using the Terraform CLI. Two workspaces were established to allow for deployment of resources to two separate Azure subscriptions,
+
+```
+terraform-appi-splunk git:(main) terraform workspace list
+  default
+* dev
+  prod
+```
 
