@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-07T03:38:32.327Z
+date: 2024-06-07T03:42:45.928Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -55,7 +55,9 @@ terraform {
 }
 ```
 
-Once the backend block has been replaced with a valid cloud block, you will need to sign into Terraform Cloud and perform a `terraform init` command. 
+Once the backend block has been replaced with a valid cloud block, you will need to sign into Terraform Cloud and perform a `terraform init` command. To sign into Terraform Cloud via the CLI, you will need to create an API token in your Account Settings. 
+
+
 
 
 
