@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-06T22:16:41.765Z
+date: 2024-06-07T03:15:53.864Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -36,4 +36,8 @@ terraform-appi-splunk git:(main) terraform workspace list
 * dev
   prod
 ```
+
+
+
+
 
