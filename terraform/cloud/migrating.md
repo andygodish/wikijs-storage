@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-07T03:15:53.864Z
+date: 2024-06-07T03:25:30.163Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -37,7 +37,23 @@ terraform-appi-splunk git:(main) terraform workspace list
   prod
 ```
 
+To migrate, first create a target workspace of type "CLI-Driven Workflow" in Terraform Cloud. 
 
+> While the organization defined in the cloud block must already exist, the workspace does not have to; Terraform Cloud will create it if necessary. If you use an existing workspace, it must not have any existing states.
+
+In my first attempt at this, I did not pre-define a target workspace. Terraform Cloud created a new one inside the default project with the name provided in a `cloud` block. You'll need to comment out the existing backend block (shown above) and replace it with the following cloud block:
+
+```
+terraform {
+  cloud {
+    organization = "<organization>"
+
+    workspaces {
+      name = "<cloud_workspace_name>"
+    }
+  }
+}
+```
 
 
 
