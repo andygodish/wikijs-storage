@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-11T14:37:36.582Z
+date: 2024-06-11T15:24:15.721Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -64,6 +64,8 @@ You'll also need to login to Azure CLI with an account that can fetch the existi
 ```
 az account login
 ```
+
+**IMPORTANT**: Once you execute `terraform init` you will be warned that this will only migrate the state of the currently selected workspace. You'll have to repeat this entire process for each workspace. 
 
 ### Updating the Workflow
 
