@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-11T14:32:34.766Z
+date: 2024-06-11T14:37:36.582Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -65,7 +65,9 @@ You'll also need to login to Azure CLI with an account that can fetch the existi
 az account login
 ```
 
+### Updating the Workflow
 
+By default, your migrated workspace will be contifued as a "CLI-Driven Workflow." To change this to a "Version Control Workflow, navigate to the workspace settings menu and select "Version Control" in the left side menu. Navigate through the configuration menu and select the appropriate VCS/repo for your project.  
 
 
 
