@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-11T14:30:31.171Z
+date: 2024-06-11T14:32:34.766Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -61,6 +61,9 @@ Once the backend block has been replaced with a valid cloud block, you will need
 
 You'll also need to login to Azure CLI with an account that can fetch the existing statefile. 
 
+```
+az account login
+```
 
 
 
