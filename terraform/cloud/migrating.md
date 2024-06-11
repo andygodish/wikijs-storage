@@ -2,7 +2,7 @@
 title: Migrating Terraform State
 description: Outlining the migration of Terraform state files. 
 published: true
-date: 2024-06-07T20:30:21.845Z
+date: 2024-06-11T14:29:30.164Z
 tags: terraform, terraform-cloud
 editor: markdown
 dateCreated: 2024-06-06T21:51:49.628Z
@@ -10,7 +10,7 @@ dateCreated: 2024-06-06T21:51:49.628Z
 
 # Migrating Terraform State
 
-## CLI Managed Remote State to Cloud
+## CLI Managed Remote State (Azure) --> Terraform Cloud
 
 I have an existing Terraform "project" connected to remote Azure storeage account defined in a backend block for remote state management,
 
@@ -58,6 +58,8 @@ terraform {
 Once the backend block has been replaced with a valid cloud block, you will need to sign into Terraform Cloud and perform a `terraform init` command. To sign into Terraform Cloud via the CLI, you will need to create an API token in your Account Settings. 
 
 You'll also need to login to Azure CLI with an account that can fetch the existing statefile. 
+
+
 
 
 
