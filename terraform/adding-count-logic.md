@@ -2,7 +2,7 @@
 title: Adding Count Logic to Existing Module
 description: Gotcha I found working with an existing Azure module that I needed to add 'count' logic to.
 published: true
-date: 2024-06-20T14:31:50.795Z
+date: 2024-06-20T14:32:28.783Z
 tags: azure, terraform
 editor: markdown
 dateCreated: 2024-06-20T14:31:50.795Z
@@ -34,3 +34,5 @@ to this,
 ```
 "module": "module.elastic_job_agent[0]"
 ```
+
+I wasn't expecting this and it caused some manual work to have to be redone by the DBA working with the existing module. 
