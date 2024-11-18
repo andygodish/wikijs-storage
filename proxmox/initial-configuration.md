@@ -25,7 +25,7 @@ vim /etc/apt/source.list
 ---
 ## Add the two lines below (including the comment)
 # not for production
-deb http://download.proxmox.com/debian buster pve-no-subscription
+deb http://download.proxmox.com/debian bookworm pve-no-subscription
 ```
 
 The pve-enterprise.list contains a single line by default, comment it out.
